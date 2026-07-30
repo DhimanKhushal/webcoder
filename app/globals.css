@@ -1989,6 +1989,55 @@ a {
   line-height: 1.65;
 }
 
+.about-page-hero {
+  padding: clamp(142px, 13vw, 176px) 0 clamp(74px, 7vw, 96px);
+}
+
+.about-page-hero::before {
+  display: none;
+}
+
+.about-page-hero > .container {
+  width: min(1360px, calc(100% - 48px));
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(480px, 0.92fr);
+  align-items: center;
+  gap: clamp(58px, 6vw, 92px);
+}
+
+.about-hero-content > p:last-child {
+  max-width: 58ch;
+  margin: 34px 0 0;
+  color: var(--muted);
+  font-size: clamp(16px, 1.45vw, 18px);
+  line-height: 1.68;
+}
+
+.about-command-panel {
+  position: relative;
+  min-height: 540px;
+  overflow: hidden;
+  border: 1px solid rgba(18, 18, 18, 0.12);
+  border-radius: 28px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    var(--ink);
+  background-size: 48px 48px;
+  box-shadow: 0 32px 80px rgba(18, 18, 18, 0.2);
+}
+
+.about-command-panel .hero-command-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(96%, 560px);
+  translate: -50% -50%;
+}
+
 .story-grid {
   display: grid;
   grid-template-columns: 1.08fr 0.92fr;
@@ -2855,6 +2904,28 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .about-page-hero {
+    padding: 132px 0 78px;
+  }
+
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .about-hero-content {
+    max-width: 680px;
+  }
+
+  .about-command-panel {
+    min-height: 520px;
+  }
+
+  .about-command-panel .hero-command-center {
+    width: min(94%, 520px);
+    margin: 0;
+  }
+
   .hero-command-center {
     width: min(520px, 90vw);
     min-height: 475px;
@@ -3350,6 +3421,32 @@ a {
 
   .page-hero {
     padding: 138px 0 68px;
+  }
+
+  .about-page-hero {
+    padding: 124px 0 68px;
+  }
+
+  .about-page-hero > .container {
+    width: min(100% - 28px, 1360px);
+  }
+
+  .about-hero-grid {
+    gap: 36px;
+  }
+
+  .about-hero-content > p:last-child {
+    margin-top: 24px;
+    font-size: 15px;
+  }
+
+  .about-command-panel {
+    min-height: 420px;
+    border-radius: 22px;
+  }
+
+  .about-command-panel .hero-command-center {
+    width: min(96%, 390px);
   }
 
   .page-hero h1 {

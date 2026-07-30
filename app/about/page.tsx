@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CTA } from "@/components/cta";
+import { HeroVisual } from "@/components/hero-visual";
 
 export const metadata: Metadata = {
   title: "About",
@@ -9,17 +10,19 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <p className="eyebrow" data-hero>About Webcodder</p>
-          <h1 data-hero>Small team.<br /><span>Serious craft.</span></h1>
-          <div className="page-hero-copy" data-hero>
-            <p />
-            <p>
+      <section className="page-hero about-page-hero">
+        <div className="container about-hero-grid">
+          <div className="about-hero-content">
+            <p className="eyebrow" data-hero>About Webcodder</p>
+            <h1 data-hero>Small team.<br /><span>Serious craft.</span></h1>
+            <p data-hero>
               We are a Chandigarh-based independent agency helping ambitious
               businesses look sharper, work smarter and grow through thoughtful
               digital products.
             </p>
+          </div>
+          <div className="about-command-panel">
+            <HeroVisual />
           </div>
         </div>
       </section>
