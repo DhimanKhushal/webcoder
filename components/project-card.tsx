@@ -10,7 +10,7 @@ export type Project = {
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="project-card" data-reveal>
+    <article className="project-card" data-reveal data-reveal-card>
       <div className="project-image">
         <Image
           src={project.image}

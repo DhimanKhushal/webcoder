@@ -53,7 +53,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="marquee" aria-hidden="true">
+      <div className="marquee" aria-hidden="true" data-home-section>
         <div className="marquee-track">
           {[...Array(2)].flatMap((_, group) =>
             ["Strategy", "UI/UX", "Web Development", "Branding", "Software"].map((item) => (
@@ -63,13 +63,13 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="section">
+      <section className="section" data-home-section>
         <div className="container intro-grid">
-          <div className="intro-note" data-reveal>
+          <div className="intro-note" data-reveal-card>
             <strong>Digital, but deeply human.</strong>
             <p>Small senior team. Big attention to every interaction.</p>
           </div>
-          <div data-reveal>
+          <div data-reveal-card>
             <p className="eyebrow">Hello, we&apos;re Webcodder</p>
             <h2 className="section-title">
               We build digital experiences that work as good as they look.
@@ -83,7 +83,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section" style={{ paddingTop: 0 }} data-home-section>
         <div className="container">
           <p className="eyebrow" data-reveal>What we do</p>
           <h2 className="section-title" data-reveal>One team. Every digital touchpoint.</h2>
@@ -91,7 +91,7 @@ export default function Home() {
             {services.map((service, index) => {
               const Icon = serviceIcons[index];
               return (
-                <article className="service-card" key={service.title} data-reveal>
+                <article className="service-card" key={service.title} data-reveal-card>
                   <span className="service-number">{service.number}</span>
                   <Icon className="service-icon" size={30} strokeWidth={1.5} />
                   <h3>{service.title}</h3>
@@ -105,20 +105,22 @@ export default function Home() {
 
       <section className="section dark-section">
         <div className="container">
-          <div className="work-head">
-            <div>
-              <p className="eyebrow">Selected work</p>
-              <h2 className="section-title">Proof lives in the product.</h2>
+          <div data-home-section>
+            <div className="work-head">
+              <div>
+                <p className="eyebrow">Selected work</p>
+                <h2 className="section-title">Proof lives in the product.</h2>
+              </div>
+              <Link href="/projects" className="button">
+                View all projects <ArrowUpRight size={18} />
+              </Link>
             </div>
-            <Link href="/projects" className="button">
-              View all projects <ArrowUpRight size={18} />
-            </Link>
+            <div className="work-grid">
+              {projects.map((project) => <ProjectCard key={project.title} project={project} />)}
+            </div>
           </div>
-          <div className="work-grid">
-            {projects.map((project) => <ProjectCard key={project.title} project={project} />)}
-          </div>
-          <div className="tech-strip">
-            <div data-reveal>
+          <div className="tech-strip" data-home-section>
+            <div data-reveal-card>
               <p className="eyebrow">Technology stack</p>
               <h2 className="section-title" style={{ fontSize: "clamp(42px, 5vw, 68px)" }}>
                 The right tools. No tech theatre.
@@ -127,16 +129,16 @@ export default function Home() {
                 We choose the stack that best serves your product, users and team.
               </p>
             </div>
-            <div className="tech-cloud" data-reveal>
+            <div className="tech-cloud">
               {["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "GSAP", "Figma", "WordPress", "Shopify", "Laravel"].map((tech, index) => (
-                <span className={`tech-pill ${index < 3 ? "accent" : ""}`} key={tech}>{tech}</span>
+                <span className={`tech-pill ${index < 3 ? "accent" : ""}`} key={tech} data-reveal-card>{tech}</span>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" data-home-section>
         <div className="container">
           <p className="eyebrow" data-reveal>Client notes</p>
           <h2 className="section-title" data-reveal>Good work gets talked about.</h2>
@@ -146,7 +148,7 @@ export default function Home() {
               ["Webcodder made a complicated brief feel simple. Clear communication, thoughtful design and a strong launch.", "Aman K.", "Kingsland Digital"],
               ["Fast, creative and refreshingly honest. We saw better engagement within the first few weeks.", "Rohan M.", "Franchise Advisor"],
             ].map(([quote, name, company]) => (
-              <article className="review-card" key={company} data-reveal>
+              <article className="review-card" key={company} data-reveal-card>
                 <div className="stars">★★★★★</div>
                 <blockquote>“{quote}”</blockquote>
                 <div className="review-person">
@@ -159,7 +161,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section" style={{ paddingTop: 0 }} data-home-section>
         <div className="container">
           <p className="eyebrow" data-reveal>FAQs</p>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", gap: 30 }}>
@@ -169,7 +171,9 @@ export default function Home() {
           <FAQ />
         </div>
       </section>
-      <CTA />
+      <div data-home-section>
+        <CTA />
+      </div>
     </>
   );
 }

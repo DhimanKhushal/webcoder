@@ -30,7 +30,7 @@ export function FAQ() {
       {faqs.map((faq, index) => {
         const isOpen = index === active;
         return (
-          <div className="faq-item" key={faq.q}>
+          <div className="faq-item" key={faq.q} data-reveal-card>
             <button
               className="faq-question"
               onClick={() => setActive(isOpen ? -1 : index)}
