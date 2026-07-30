@@ -10,6 +10,7 @@ import {
 import { CTA } from "@/components/cta";
 import { FAQ } from "@/components/faq";
 import { HeroVisual } from "@/components/hero-visual";
+import { IndustriesSection } from "@/components/industries-section";
 import { ProjectCard } from "@/components/project-card";
 import { projects, services } from "@/lib/data";
 
@@ -132,6 +133,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <IndustriesSection />
 
       <section className="section" data-home-section>
         <div className="container">
