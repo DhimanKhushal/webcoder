@@ -18,6 +18,13 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") setOpen(false);
+    }
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, []);
 
   return (
     <header className="site-header">
@@ -33,6 +40,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={`nav-link ${pathname === link.href ? "active" : ""}`}
+                aria-current={pathname === link.href ? "page" : undefined}
               >
                 {link.label}
               </Link>
@@ -45,18 +53,29 @@ export function Header() {
             className="menu-button"
             onClick={() => setOpen((value) => !value)}
             aria-expanded={open}
+            aria-controls="mobile-navigation"
             aria-label={open ? "Close menu" : "Open menu"}
           >
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
-        {open && (
-          <nav className="mobile-nav" aria-label="Mobile navigation">
-            {links.map((link) => (
-              <Link key={link.href} href={link.href}>{link.label}</Link>
-            ))}
-          </nav>
-        )}
+        <nav
+          id="mobile-navigation"
+          className={`mobile-nav ${open ? "open" : ""}`}
+          aria-label="Mobile navigation"
+          aria-hidden={!open}
+        >
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              tabIndex={open ? 0 : -1}
+              aria-current={pathname === link.href ? "page" : undefined}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
       </div>
     </header>
   );

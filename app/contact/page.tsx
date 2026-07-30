@@ -45,7 +45,7 @@ export default function ContactPage() {
           </div>
 
           <form className="contact-form" onSubmit={submit} data-reveal>
-            <h2>{sent ? "Message received." : "Tell us about your project."}</h2>
+            <h2 aria-live="polite">{sent ? "Message received." : "Tell us about your project."}</h2>
             {sent ? (
               <>
                 <p className="section-copy">

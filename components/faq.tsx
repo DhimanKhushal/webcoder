@@ -35,15 +35,20 @@ export function FAQ() {
               className="faq-question"
               onClick={() => setActive(isOpen ? -1 : index)}
               aria-expanded={isOpen}
+              aria-controls={`faq-answer-${index}`}
             >
               {faq.q}
               {isOpen ? <Minus size={22} /> : <Plus size={22} />}
             </button>
-            {isOpen && (
-              <div className="faq-answer">
+            <div
+              id={`faq-answer-${index}`}
+              className={`faq-answer ${isOpen ? "open" : ""}`}
+              aria-hidden={!isOpen}
+            >
+              <div>
                 <p>{faq.a}</p>
               </div>
-            )}
+            </div>
           </div>
         );
       })}

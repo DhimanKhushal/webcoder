@@ -49,20 +49,25 @@ export function MotionProvider({ children }: { children: React.ReactNode }) {
 
             timeline.fromTo(
               section,
-              { y: 80, autoAlpha: 0 },
+              {
+                y: 64,
+                autoAlpha: 0,
+                clipPath: "inset(0 0 12% 0 round 28px)",
+              },
               {
                 y: 0,
                 autoAlpha: 1,
-                duration: 1.05,
+                clipPath: "inset(0 0 0% 0 round 0px)",
+                duration: 1,
                 ease: "power3.out",
-                clearProps: "transform",
+                clearProps: "transform,clipPath",
               }
             );
 
             if (cards.length) {
               timeline.fromTo(
                 cards,
-                { y: 80, autoAlpha: 0 },
+                { y: 48, autoAlpha: 0 },
                 {
                   y: 0,
                   autoAlpha: 1,
@@ -79,24 +84,33 @@ export function MotionProvider({ children }: { children: React.ReactNode }) {
           gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((element) => {
             gsap.fromTo(
               element,
-              { y: 80, opacity: 0 },
+              {
+                y: 60,
+                opacity: 0,
+                clipPath: "inset(0 0 12% 0 round 22px)",
+              },
               {
                 y: 0,
                 opacity: 1,
+                clipPath: "inset(0 0 0% 0 round 0px)",
                 duration: 0.95,
                 ease: "power3.out",
+                clearProps: "transform,clipPath",
                 scrollTrigger: { trigger: element, start: "top 88%", once: true },
               }
             );
           });
         }
 
-        gsap.to("[data-orbit]", {
-          rotation: 360,
-          duration: 48,
-          repeat: -1,
-          ease: "none",
-        });
+        const orbit = document.querySelector("[data-orbit]");
+        if (orbit) {
+          gsap.to(orbit, {
+            rotation: 360,
+            duration: 48,
+            repeat: -1,
+            ease: "none",
+          });
+        }
       });
       ScrollTrigger.refresh();
       cleanup = () => {
