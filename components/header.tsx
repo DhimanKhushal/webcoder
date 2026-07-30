@@ -36,8 +36,8 @@ export function Header() {
               className="brand-logo-image"
               src="/webcodder-logo.png"
               alt="Webcodder Digital Marketing Agency"
-              width={220}
-              height={44}
+              width={2508}
+              height={627}
               priority
             />
           </Link>

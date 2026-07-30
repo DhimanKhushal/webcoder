@@ -224,13 +224,13 @@ a {
 
 .brand-logo-image {
   display: block;
-  width: 220px;
+  width: 240px;
   height: auto;
   object-fit: contain;
 }
 
 .site-footer .brand-logo-image {
-  width: 280px;
+  width: 340px;
   filter: invert(1);
 }
 
