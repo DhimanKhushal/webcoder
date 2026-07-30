@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { CTA } from "@/components/cta";
 import { FAQ } from "@/components/faq";
+import { HeroVisual } from "@/components/hero-visual";
 import { ProjectCard } from "@/components/project-card";
 import { projects, services } from "@/lib/data";
 
@@ -36,13 +37,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="hero-orbit" data-hero data-orbit>
-              <span className="orbit-word">web<br />codder</span>
-              <span className="orbit-chip">Strategy</span>
-              <span className="orbit-chip">Design</span>
-              <span className="orbit-chip">Motion</span>
-              <span className="orbit-chip">Code</span>
-            </div>
+            <HeroVisual />
           </div>
           <div className="hero-bottom" data-hero>
             <div className="stat"><strong>40+</strong><span>Projects delivered</span></div>

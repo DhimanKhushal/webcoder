@@ -101,16 +101,6 @@ export function MotionProvider({ children }: { children: React.ReactNode }) {
             );
           });
         }
-
-        const orbit = document.querySelector("[data-orbit]");
-        if (orbit) {
-          gsap.to(orbit, {
-            rotation: 360,
-            duration: 48,
-            repeat: -1,
-            ease: "none",
-          });
-        }
       });
       ScrollTrigger.refresh();
       cleanup = () => {
