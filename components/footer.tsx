@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowUpRight, Braces } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
 export function Footer() {
   return (
@@ -8,8 +9,13 @@ export function Footer() {
         <div className="footer-top">
           <div>
             <div className="logo">
-              <span className="logo-mark"><Braces size={18} /></span>
-              webcodder
+              <Image
+                className="brand-logo-image"
+                src="/webcodder-logo.png"
+                alt="Webcodder Digital Marketing Agency"
+                width={280}
+                height={56}
+              />
             </div>
             <h2>Have a query? Drop us an email.</h2>
             <a className="footer-email" href="mailto:opt.webcodder@gmail.com">

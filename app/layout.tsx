@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Space_Grotesk } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import { headers } from "next/headers";
 import "lenis/dist/lenis.css";
 import "./globals.css";
@@ -9,11 +9,6 @@ import { MotionProvider } from "@/components/motion-provider";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
-  subsets: ["latin"],
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
 
@@ -52,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" className={dmSans.variable}>
       <body>
         <Header />
         <MotionProvider>

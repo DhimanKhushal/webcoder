@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, Braces, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const links = [
@@ -31,8 +32,14 @@ export function Header() {
       <div className="container">
         <div className="nav-shell">
           <Link href="/" className="logo" aria-label="Webcodder home">
-            <span className="logo-mark"><Braces size={18} /></span>
-            webcodder
+            <Image
+              className="brand-logo-image"
+              src="/webcodder-logo.png"
+              alt="Webcodder Digital Marketing Agency"
+              width={220}
+              height={44}
+              priority
+            />
           </Link>
           <nav className="desktop-nav" aria-label="Primary navigation">
             {links.map((link) => (
