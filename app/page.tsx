@@ -12,6 +12,7 @@ import { FAQ } from "@/components/faq";
 import { HeroVisual } from "@/components/hero-visual";
 import { IndustriesSection } from "@/components/industries-section";
 import { ProjectCard } from "@/components/project-card";
+import { ProjectScopeBuilder } from "@/components/project-scope/ProjectScopeBuilder";
 import { projects, services } from "@/lib/data";
 
 const serviceIcons = [PenTool, Code2, Boxes, Layers3];
@@ -98,6 +99,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ProjectScopeBuilder />
 
       <section className="section dark-section">
         <div className="container">

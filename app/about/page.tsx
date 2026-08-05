@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { CTA } from "@/components/cta";
 import { HeroVisual } from "@/components/hero-visual";
+import { ComparisonSection } from "@/components/about/ComparisonSection";
+import { ProjectRoadmap } from "@/components/about/ProjectRoadmap";
 
 export const metadata: Metadata = {
   title: "About",
@@ -70,6 +72,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <ProjectRoadmap />
+      <ComparisonSection />
       <CTA />
     </>
   );
