@@ -2,6 +2,7 @@
 
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { FormEvent, useState } from "react";
+import { OfficeLocation } from "@/components/contact/office-location";
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
@@ -95,6 +96,8 @@ export default function ContactPage() {
           </form>
         </div>
       </section>
+
+      <OfficeLocation />
     </>
   );
 }
