@@ -3,6 +3,7 @@ import { CTA } from "@/components/cta";
 import { HeroVisual } from "@/components/hero-visual";
 import { ComparisonSection } from "@/components/about/ComparisonSection";
 import { ProjectRoadmap } from "@/components/about/ProjectRoadmap";
+import { BehindEveryGreatProduct } from "@/components/about/BehindEveryGreatProduct";
 
 export const metadata: Metadata = {
   title: "About",
@@ -52,7 +53,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section">
+      <BehindEveryGreatProduct />
+
+      <section className="section" id="how-we-work">
         <div className="container">
           <p className="eyebrow" data-reveal>How we work</p>
           <h2 className="section-title" data-reveal>From “what if?” to “we shipped it.”</h2>
