@@ -17,7 +17,7 @@ export default function ProjectsPage() {
           <h1 data-hero>Work that does<br /><span>the talking.</span></h1>
           <div className="page-hero-copy" data-hero>
             <p />
-            <p style={{ color: "#aaa8a1" }}>
+            <p style={{ color: "#94A3B8" }}>
               A selection of brands, websites and digital platforms designed to
               create clarity, attention and meaningful business momentum.
             </p>
