@@ -13,7 +13,7 @@ export function BusinessStageSelector({ options, value, onChange }: BusinessStag
     <div
       role="radiogroup"
       aria-label="Business stage"
-      className="grid overflow-hidden rounded-2xl border border-white/[0.08] bg-[#1E293B] p-1.5 md:grid-cols-3"
+      className="grid overflow-hidden rounded-2xl border border-white/[0.08] bg-[#172033] p-1.5 md:grid-cols-3"
     >
       {options.map((option) => {
         const active = option.id === value;
@@ -24,8 +24,8 @@ export function BusinessStageSelector({ options, value, onChange }: BusinessStag
             role="radio"
             aria-checked={active}
             onClick={() => onChange(option.id)}
-            className={`rounded-xl px-4 py-4 text-left transition-colors focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] ${
-              active ? "bg-[#0F172A] text-white" : "text-white hover:bg-[#243244]"
+            className={`rounded-xl px-4 py-4 text-left transition-colors focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563EB] ${
+              active ? "bg-[#0F172A] text-white" : "text-white hover:bg-[#172033]"
             }`}
           >
             <span className="block text-sm font-semibold">{option.title}</span>

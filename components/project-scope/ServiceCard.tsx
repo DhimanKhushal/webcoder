@@ -22,23 +22,23 @@ export function ServiceCard({ service, selected, onToggle }: ServiceCardProps) {
       whileHover={reduceMotion ? undefined : { y: -3 }}
       whileTap={reduceMotion ? undefined : { scale: 0.99 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
-      className={`group relative min-h-44 rounded-2xl border p-5 text-left transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4F8CFF] ${
+      className={`group relative min-h-44 rounded-2xl border p-5 text-left transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2563EB] ${
         selected
-          ? "border-[#4F8CFF] bg-[#1E293B]"
-          : "border-white/[0.08] bg-[#243244] hover:border-white/[0.08]"
+          ? "border-[#2563EB] bg-[#172033]"
+          : "border-white/[0.08] bg-[#172033] hover:border-white/[0.08]"
       }`}
     >
       <span
         className={`mb-8 grid size-10 place-items-center rounded-xl transition-colors ${
-          selected ? "bg-[#0F172A] text-white" : "bg-[#1E293B] text-white"
+          selected ? "bg-[#0F172A] text-white" : "bg-[#172033] text-white"
         }`}
       >
         <Icon size={19} strokeWidth={1.8} aria-hidden="true" />
       </span>
-      <span className="block pr-8 text-[17px] font-semibold leading-tight tracking-[-0.02em] text-white">
+      <span className="block pr-8 text-[22px] font-semibold leading-[1.2] tracking-[-0.025em] text-white">
         {service.title}
       </span>
-      <span className="mt-2 block text-sm leading-5 text-[#CBD5E1]">
+      <span className="mt-2 block text-[16px] leading-7 text-[#CBD5E1]">
         {service.description}
       </span>
 
@@ -46,7 +46,7 @@ export function ServiceCard({ service, selected, onToggle }: ServiceCardProps) {
         initial={false}
         animate={{ scale: selected ? 1 : 0.55, opacity: selected ? 1 : 0 }}
         transition={reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 430, damping: 25 }}
-        className="absolute right-4 top-4 grid size-7 place-items-center rounded-full bg-[#4F8CFF] text-white"
+        className="absolute right-4 top-4 grid size-7 place-items-center rounded-full bg-[#2563EB] text-white"
         aria-hidden="true"
       >
         <Check size={15} strokeWidth={3} />

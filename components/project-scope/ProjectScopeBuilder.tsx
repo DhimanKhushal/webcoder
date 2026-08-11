@@ -101,7 +101,7 @@ export function ProjectScopeBuilder() {
               Turn an ambitious idea into a clear starting point.
             </h2>
           </div>
-          <p className="m-0 max-w-lg text-[15px] leading-6 text-[#CBD5E1] lg:justify-self-end">
+          <p className="m-0 max-w-lg text-[17px] leading-7 text-[#CBD5E1] lg:justify-self-end">
             Choose what you need. We&apos;ll shape the right delivery model, timeline and specialist team around your priorities.
           </p>
         </div>
@@ -127,7 +127,7 @@ export function ProjectScopeBuilder() {
 
             <div className="border-t border-white/[0.08] pt-8">
               <div className="mb-6 flex items-baseline justify-between gap-4">
-                <h3 className="m-0 text-xl font-semibold tracking-[-0.025em]">Where should we send the roadmap?</h3>
+                <h3 className="m-0 text-[22px] font-semibold leading-[1.2] tracking-[-0.025em]">Where should we send the roadmap?</h3>
                 <span className="hidden text-xs text-[#94A3B8] sm:block">All fields required</span>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -153,10 +153,10 @@ function FormSection({ number, title, description, children }: { number: string;
     <fieldset className="mb-10 border-0 border-t border-white/[0.08] p-0 pt-7">
       <legend className="sr-only">{title}</legend>
       <div className="mb-6 grid grid-cols-[34px_1fr] gap-3">
-        <span className="pt-1 text-xs font-semibold tracking-[0.12em] text-[#4F8CFF]" aria-hidden="true">{number}</span>
+        <span className="pt-1 text-xs font-semibold tracking-[0.12em] text-[#2563EB]" aria-hidden="true">{number}</span>
         <div>
-          <h3 className="m-0 text-xl font-semibold tracking-[-0.025em]">{title}</h3>
-          <p className="mb-0 mt-1 text-sm text-[#CBD5E1]">{description}</p>
+          <h3 className="m-0 text-[22px] font-semibold leading-[1.2] tracking-[-0.025em]">{title}</h3>
+          <p className="mb-0 mt-1 text-[16px] leading-7 text-[#CBD5E1]">{description}</p>
         </div>
       </div>
       {children}
@@ -177,7 +177,7 @@ function Field({ label, name, type = "text", autoComplete, value, error, onChang
         onChange={(event) => onChange(event.target.value)}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? errorId : undefined}
-        className={`mt-2 block min-h-13 w-full rounded-xl border bg-[#243244] px-4 text-[15px] text-white outline-none transition-colors placeholder:text-[#94A3B8] focus:border-[#4F8CFF] focus:ring-2 focus:ring-[#4F8CFF]/15 ${error ? "border-[#F87171]" : "border-white/[0.08]"}`}
+        className={`mt-2 block min-h-13 w-full rounded-xl border bg-[#172033] px-4 text-[15px] text-white outline-none transition-colors placeholder:text-[#94A3B8] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 ${error ? "border-[#F87171]" : "border-white/[0.08]"}`}
       />
       {error && <span id={errorId} role="alert" className="mt-1.5 block text-xs font-medium text-[#F87171]">{error}</span>}
     </label>

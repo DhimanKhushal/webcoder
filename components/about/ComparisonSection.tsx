@@ -45,10 +45,10 @@ export function ComparisonSection() {
           <div>
             <p className="eyebrow">Why Webcodder</p>
             <h2 id="comparison-title" className="m-0 max-w-3xl text-[clamp(32px,4.3vw,54px)] font-semibold leading-[1.06] tracking-[-0.045em] text-white text-balance">
-              Not every agency builds products. <span className="text-[#4F8CFF]">We build digital growth systems.</span>
+              Not every agency builds products. <span className="text-[#2563EB]">We build digital growth systems.</span>
             </h2>
           </div>
-          <p className="m-0 max-w-xl text-[15px] leading-6 text-[#CBD5E1] lg:justify-self-end">
+          <p className="m-0 max-w-xl text-[17px] leading-7 text-[#CBD5E1] lg:justify-self-end">
             Most agencies deliver projects. We build scalable digital experiences that continue creating value long after launch.
           </p>
         </motion.div>
@@ -68,9 +68,9 @@ export function ComparisonSection() {
         className="mx-auto w-[min(1000px,calc(100%-48px))] py-[clamp(72px,8vw,112px)] text-center max-sm:w-[calc(100%-32px)]"
       >
         <p className="m-0 text-[clamp(24px,3.2vw,40px)] font-semibold leading-[1.18] tracking-[-0.035em] text-white text-balance">
-          We don&apos;t compete on price.<br />We compete on <span className="text-[#4F8CFF]">long-term business value.</span>
+          We don&apos;t compete on price.<br />We compete on <span className="text-[#2563EB]">long-term business value.</span>
         </p>
-        <p className="mx-auto mb-0 mt-6 max-w-2xl text-sm leading-6 text-[#CBD5E1]">
+        <p className="mx-auto mb-0 mt-6 max-w-2xl text-[16px] leading-7 text-[#CBD5E1]">
           Choosing the right agency isn&apos;t about finding a vendor. It&apos;s about finding a long-term technology partner.
         </p>
         <Statistics />
@@ -82,11 +82,11 @@ export function ComparisonSection() {
 function ComparisonPanel({ title, subtitle, items, variant }: { title: string; subtitle: string; items: ComparisonItem[]; variant: "typical" | "webcodder" }) {
   const dark = variant === "typical";
   return (
-    <div className={`${dark ? "bg-[#0F172A] text-white" : "bg-[#243244] text-white"} min-w-0 px-5 py-10 sm:px-8 sm:py-12 xl:px-[clamp(48px,5vw,84px)] xl:py-16`}>
+    <div className={`${dark ? "bg-[#0F172A] text-white" : "bg-[#172033] text-white"} min-w-0 px-5 py-10 sm:px-8 sm:py-12 xl:px-[clamp(48px,5vw,84px)] xl:py-16`}>
       <div className="mx-auto max-w-[620px]">
         <div className="mb-8 flex items-end justify-between gap-5 border-b pb-6 sm:mb-10 sm:pb-7 border-current/10">
           <div>
-            <p className={`m-0 text-xs font-semibold uppercase tracking-[0.14em] ${dark ? "text-white/35" : "text-[#4F8CFF]"}`}>
+            <p className={`m-0 text-xs font-semibold uppercase tracking-[0.14em] ${dark ? "text-white/35" : "text-[#2563EB]"}`}>
               {dark ? "The old model" : "The Webcodder standard"}
             </p>
             <h3 className="mb-0 mt-3 text-[clamp(26px,3vw,36px)] font-semibold leading-none tracking-[-0.035em]">{title}</h3>

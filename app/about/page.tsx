@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { CTA } from "@/components/cta";
 import { HeroVisual } from "@/components/hero-visual";
 import { ComparisonSection } from "@/components/about/ComparisonSection";
+import { CompanyPhilosophy } from "@/components/about/CompanyPhilosophy";
+import { ClientJourney } from "@/components/about/ClientJourney";
 
 export const metadata: Metadata = {
   title: "About",
@@ -51,6 +53,8 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <CompanyPhilosophy />
+
       <section className="section">
         <div className="container">
           <p className="eyebrow" data-reveal>How we work</p>
@@ -71,6 +75,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <ClientJourney />
       <ComparisonSection />
       <CTA />
     </>
