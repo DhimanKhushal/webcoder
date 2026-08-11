@@ -103,6 +103,68 @@ export function MotionProvider({ children }: { children: React.ReactNode }) {
           });
         }
 
+        const servicesOverview = document.querySelector<HTMLElement>("[data-services-overview]");
+        if (servicesOverview) {
+          const header = servicesOverview.querySelector<HTMLElement>("[data-services-overview-header]");
+          const columns = gsap.utils.toArray<HTMLElement>(
+            "[data-services-overview-column]",
+            servicesOverview
+          );
+          const footer = servicesOverview.querySelector<HTMLElement>("[data-services-overview-footer]");
+          const reveal = gsap.timeline({
+            scrollTrigger: {
+              trigger: servicesOverview,
+              start: "top 82%",
+              once: true,
+            },
+          });
+
+          if (header) {
+            reveal.fromTo(
+              header,
+              { y: 24, autoAlpha: 0 },
+              {
+                y: 0,
+                autoAlpha: 1,
+                duration: 0.78,
+                ease: "power3.out",
+                clearProps: "transform",
+              }
+            );
+          }
+
+          if (columns.length) {
+            reveal.fromTo(
+              columns,
+              { y: 24, autoAlpha: 0 },
+              {
+                y: 0,
+                autoAlpha: 1,
+                duration: 0.72,
+                stagger: 0.1,
+                ease: "power3.out",
+                clearProps: "transform",
+              },
+              header ? "-=0.48" : 0
+            );
+          }
+
+          if (footer) {
+            reveal.fromTo(
+              footer,
+              { y: 18, autoAlpha: 0 },
+              {
+                y: 0,
+                autoAlpha: 1,
+                duration: 0.62,
+                ease: "power3.out",
+                clearProps: "transform",
+              },
+              "-=0.28"
+            );
+          }
+        }
+
         const philosophy = document.querySelector<HTMLElement>("[data-philosophy]");
         if (philosophy) {
           const content = philosophy.querySelector<HTMLElement>("[data-philosophy-content]");
