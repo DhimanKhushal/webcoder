@@ -1,5 +1,7 @@
 "use client";
 
+import { tw } from "@/lib/tailwind";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Check } from "lucide-react";
@@ -8,18 +10,18 @@ import { serviceDetails, type Service } from "@/lib/services-page-data";
 
 function ServiceDetailPanel({ service }: { service: Service }) {
   return (
-    <article className="service-detail-panel" id={`service-${service.number}`} data-service-panel>
-      <div className="service-detail-head">
+    <article className={tw("service-detail-panel")} id={`service-${service.number}`} data-service-panel>
+      <div className={tw("service-detail-head")}>
         <span>{service.number}</span>
         <small>{service.category}</small>
       </div>
       <h3>{service.title}</h3>
-      <p className="service-overview-copy">{service.overview}</p>
+      <p className={tw("service-overview-copy")}>{service.overview}</p>
 
-      <div className="service-information-grid">
+      <div className={tw("service-information-grid")}>
         <div>
           <h4>What we deliver</h4>
-          <div className="deliverable-list">
+          <div className={tw("deliverable-list")}>
             {service.deliverables.map((item) => (
               <span key={item}>
                 <Check size={13} />
@@ -30,24 +32,24 @@ function ServiceDetailPanel({ service }: { service: Service }) {
         </div>
         <div>
           <h4>{service.toolsLabel}</h4>
-          <div className="service-tool-pills">
+          <div className={tw("service-tool-pills")}>
             {service.tools.map((tool) => <span key={tool}>{tool}</span>)}
           </div>
-          <div className="service-timeline">
+          <div className={tw("service-timeline")}>
             <small>Estimated timeline</small>
             <strong>{service.timeline}</strong>
           </div>
         </div>
       </div>
 
-      <div className="service-project-preview">
-        <div className="service-browser-bar">
+      <div className={tw("service-project-preview")}>
+        <div className={tw("service-browser-bar")}>
           <i />
           <i />
           <i />
           <span>webcodder.project</span>
         </div>
-        <div className="service-project-image">
+        <div className={tw("service-project-image")}>
           <Image
             src={service.project.image}
             alt={`${service.project.title} website preview`}
@@ -55,7 +57,7 @@ function ServiceDetailPanel({ service }: { service: Service }) {
             sizes="(max-width: 820px) 92vw, 620px"
           />
         </div>
-        <div className="service-project-meta">
+        <div className={tw("service-project-meta")}>
           <div>
             <small>{service.project.category}</small>
             <strong>{service.project.title}</strong>
@@ -64,7 +66,7 @@ function ServiceDetailPanel({ service }: { service: Service }) {
         </div>
       </div>
 
-      <Link className="service-explore-link" href="/contact">
+      <Link className={tw("service-explore-link")} href="/contact">
         {service.cta} <ArrowUpRight size={17} />
       </Link>
     </article>
@@ -117,10 +119,10 @@ export function StickyServices() {
   }, []);
 
   return (
-    <section className="sticky-services" id="service-details" ref={rootRef}>
-      <div className="services-page-container sticky-services-layout">
-        <aside className="service-sticky-nav">
-          <p className="eyebrow">Detailed services</p>
+    <section className={tw("sticky-services")} id="service-details" ref={rootRef}>
+      <div className={tw("services-page-container sticky-services-layout")}>
+        <aside className={tw("service-sticky-nav")}>
+          <p className={tw("eyebrow")}>Detailed services</p>
           <h2>Depth where it matters.</h2>
           <nav aria-label="Service details">
             {serviceDetails.map((service, index) => (
@@ -136,11 +138,11 @@ export function StickyServices() {
               </a>
             ))}
           </nav>
-          <div className="service-progress" aria-hidden="true">
+          <div className={tw("service-progress")} aria-hidden="true">
             <span style={{ transform: `scaleY(${(activeIndex + 1) / serviceDetails.length})` }} />
           </div>
         </aside>
-        <div className="service-detail-stack">
+        <div className={tw("service-detail-stack")}>
           {serviceDetails.map((service) => <ServiceDetailPanel service={service} key={service.number} />)}
         </div>
       </div>

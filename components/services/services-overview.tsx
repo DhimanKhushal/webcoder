@@ -1,3 +1,4 @@
+import { tw } from "@/lib/tailwind";
 import Link from "next/link";
 import {
   ArrowDown,
@@ -14,17 +15,17 @@ const serviceIcons = [Code2, PenTool, Megaphone, Sparkles, Search];
 
 export function ServicesOverview() {
   return (
-    <section className="services-overview" data-services-overview>
-      <div className="services-overview-construction" aria-hidden="true">
+    <section className={tw("services-overview")} data-services-overview>
+      <div className={tw("services-overview-construction")} aria-hidden="true">
         <span />
         <span />
         <i />
       </div>
 
-      <div className="services-page-container services-overview-container">
-        <div className="services-section-head" data-services-overview-header>
+      <div className={tw("services-page-container services-overview-container")}>
+        <div className={tw("services-section-head")} data-services-overview-header>
           <div>
-            <p className="eyebrow services-overview-eyebrow">Our expertise</p>
+            <p className={tw("eyebrow services-overview-eyebrow")}>Our expertise</p>
             <h2>Everything your business{" "}<br />needs under one roof.</h2>
           </div>
           <p>
@@ -32,20 +33,20 @@ export function ServicesOverview() {
           </p>
         </div>
 
-        <div className="service-summary-grid">
+        <div className={tw("service-summary-grid")}>
           {serviceDetails.map((service, index) => {
             const ServiceIcon = serviceIcons[index];
 
             return (
               <Link
-                className="service-summary-card"
+                className={tw("service-summary-card")}
                 href={`#service-${service.number}`}
                 key={service.number}
                 data-services-overview-column
               >
-                <span className="service-summary-number">{service.number}</span>
-                <div className="service-summary-content">
-                  <div className="service-summary-mark" aria-hidden="true">
+                <span className={tw("service-summary-number")}>{service.number}</span>
+                <div className={tw("service-summary-content")}>
+                  <div className={tw("service-summary-mark")} aria-hidden="true">
                     <ServiceIcon size={68} strokeWidth={1.15} />
                     <span>{service.category}</span>
                   </div>
@@ -55,15 +56,15 @@ export function ServicesOverview() {
                       <li key={offering}>{offering}</li>
                     ))}
                   </ul>
-                  <ArrowUpRight className="service-summary-arrow" size={22} aria-hidden="true" />
+                  <ArrowUpRight className={tw("service-summary-arrow")} size={22} aria-hidden="true" />
                 </div>
               </Link>
             );
           })}
         </div>
 
-        <div className="service-summary-footer" data-services-overview-footer>
-          <Link href="#service-details" className="service-summary-cta">
+        <div className={tw("service-summary-footer")} data-services-overview-footer>
+          <Link href="#service-details" className={tw("service-summary-cta")}>
             Explore Every Service <ArrowDown size={18} aria-hidden="true" />
           </Link>
         </div>

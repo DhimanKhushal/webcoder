@@ -1,5 +1,7 @@
 "use client";
 
+import { tw } from "@/lib/tailwind";
+
 import {
   ArrowUpRight,
   Gauge,
@@ -39,7 +41,7 @@ export function FloatingMetricCard({
 
   return (
     <motion.div
-      className={`command-float ${className}`}
+      className={tw(`command-float ${className}`)}
       variants={reveal}
       transition={{ duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }}
       animate={
@@ -74,7 +76,7 @@ export function TechnologyPill({
 }) {
   return (
     <FloatingMetricCard
-      className={`command-pill ${className}`}
+      className={tw(`command-pill ${className}`)}
       delay={delay}
       duration={5.8}
     >
@@ -94,24 +96,24 @@ export function BrowserMockup({
 }) {
   return (
     <motion.div
-      className="command-browser"
+      className={tw("command-browser")}
       variants={reveal}
       style={style}
       transition={{ duration: 0.8, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="browser-bar">
-        <div className="browser-dots" aria-hidden="true">
+      <div className={tw("browser-bar")}>
+        <div className={tw("browser-dots")} aria-hidden="true">
           <span />
           <span />
           <span />
         </div>
-        <div className="browser-address">webcodder.studio</div>
+        <div className={tw("browser-address")}>webcodder.studio</div>
         <MousePointer2 size={13} aria-hidden="true" />
       </div>
 
-      <div className="browser-viewport">
-        <div className="browser-page">
-          <div className="mock-nav">
+      <div className={tw("browser-viewport")}>
+        <div className={tw("browser-page")}>
+          <div className={tw("mock-nav")}>
             <strong>webcodder.</strong>
             <div>
               <span>Work</span>
@@ -120,7 +122,7 @@ export function BrowserMockup({
             </div>
           </div>
 
-          <div className="mock-hero">
+          <div className={tw("mock-hero")}>
             <p>Independent digital studio</p>
             <h3>We shape digital ideas into real growth.</h3>
             <button type="button">
@@ -128,29 +130,29 @@ export function BrowserMockup({
             </button>
           </div>
 
-          <div className="mock-projects">
-            <article className="mock-project mock-project-dark">
+          <div className={tw("mock-projects")}>
+            <article className={tw("mock-project mock-project-dark")}>
               <span>01 / Product</span>
               <strong>Fintech reimagined</strong>
               <i />
             </article>
-            <article className="mock-project">
+            <article className={tw("mock-project")}>
               <span>02 / Commerce</span>
               <strong>Built to convert</strong>
               <i />
             </article>
           </div>
 
-          <div className="mock-service-row">
+          <div className={tw("mock-service-row")}>
             <span>Strategy</span>
             <span>UI/UX</span>
             <span>Development</span>
           </div>
 
-          <div className="mock-case-study">
+          <div className={tw("mock-case-study")}>
             <small>Featured outcome</small>
             <strong>Digital products with measurable impact.</strong>
-            <div className="mock-case-grid">
+            <div className={tw("mock-case-grid")}>
               <span />
               <span />
               <span />
@@ -172,7 +174,7 @@ export function CursorGlow({
   return (
     <motion.div
       aria-hidden="true"
-      className="command-cursor-glow"
+      className={tw("command-cursor-glow")}
       style={{ x, y }}
     />
   );
@@ -217,7 +219,7 @@ export function HeroVisual() {
 
   return (
     <motion.div
-      className="hero-command-center"
+      className={tw("hero-command-center")}
       initial="hidden"
       animate="visible"
       transition={{ staggerChildren: 0.1 }}
@@ -226,12 +228,12 @@ export function HeroVisual() {
       aria-label="Webcodder digital product command center"
     >
       <CursorGlow x={pointerX} y={pointerY} />
-      <div className="command-orange-glow" aria-hidden="true" />
+      <div className={tw("command-orange-glow")} aria-hidden="true" />
 
       <BrowserMockup style={{ rotateX, rotateY }} />
 
       <FloatingMetricCard
-        className="performance-card"
+        className={tw("performance-card")}
         delay={0.24}
         duration={5.2}
       >
@@ -243,15 +245,15 @@ export function HeroVisual() {
       </FloatingMetricCard>
 
       <FloatingMetricCard
-        className="growth-card"
+        className={tw("growth-card")}
         delay={0.32}
         duration={6.4}
       >
-        <div className="growth-card-copy">
+        <div className={tw("growth-card-copy")}>
           <strong>+42%</strong>
           <span>Conversion Growth</span>
         </div>
-        <div className="growth-bars" aria-hidden="true">
+        <div className={tw("growth-bars")} aria-hidden="true">
           <i />
           <i />
           <i />
@@ -261,7 +263,7 @@ export function HeroVisual() {
       </FloatingMetricCard>
 
       <TechnologyPill
-        className="technology-pill"
+        className={tw("technology-pill")}
         icon={<Radio size={14} />}
         delay={0.4}
       >
@@ -269,7 +271,7 @@ export function HeroVisual() {
       </TechnologyPill>
 
       <TechnologyPill
-        className="design-pill"
+        className={tw("design-pill")}
         icon={<Layers3 size={14} />}
         delay={0.48}
       >
@@ -277,11 +279,11 @@ export function HeroVisual() {
       </TechnologyPill>
 
       <FloatingMetricCard
-        className="project-live-card"
+        className={tw("project-live-card")}
         delay={0.56}
         duration={5.6}
       >
-        <span className="live-dot" aria-hidden="true" />
+        <span className={tw("live-dot")} aria-hidden="true" />
         <span>Project Live</span>
       </FloatingMetricCard>
     </motion.div>

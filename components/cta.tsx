@@ -1,5 +1,7 @@
 "use client";
 
+import { tw } from "@/lib/tailwind";
+
 import Link from "next/link";
 import { ArrowUpRight, Check, ChevronRight } from "lucide-react";
 import {
@@ -27,7 +29,7 @@ function ChoiceChip({
   return (
     <button
       type="button"
-      className={`brief-chip ${selected ? "selected" : ""}`}
+      className={tw(`brief-chip ${selected ? "selected" : ""}`)}
       aria-pressed={selected}
       onClick={onClick}
     >
@@ -52,17 +54,17 @@ function DecorativeOrbit({
     <>
       <motion.span
         aria-hidden="true"
-        className="cta-outline-text"
+        className={tw("cta-outline-text")}
         style={{ x: textX }}
       >
         LET&apos;S TALK
       </motion.span>
       <motion.div
         aria-hidden="true"
-        className="cta-orbits"
+        className={tw("cta-orbits")}
         style={{ x: orbitX, y: orbitY }}
       >
-        <span className="cta-orbit-dot" />
+        <span className={tw("cta-orbit-dot")} />
       </motion.div>
     </>
   );
@@ -84,7 +86,7 @@ function ProjectBriefCard({
 
   return (
     <motion.div
-      className="project-brief-card"
+      className={tw("project-brief-card")}
       initial={{ opacity: 0, y: 34, scale: 0.96 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, amount: 0.35 }}
@@ -99,20 +101,20 @@ function ProjectBriefCard({
       }
       style={{ rotateX, rotateY }}
     >
-      <div className="brief-card-head">
+      <div className={tw("brief-card-head")}>
         <div>
           <small>Quick brief · 01</small>
           <h3>Start Your Project</h3>
         </div>
-        <span className="brief-status">
+        <span className={tw("brief-status")}>
           <i />
           Open
         </span>
       </div>
 
-      <fieldset className="brief-fieldset">
+      <fieldset className={tw("brief-fieldset")}>
         <legend>What do you need?</legend>
-        <div className="brief-chip-row">
+        <div className={tw("brief-chip-row")}>
           {services.map((item) => (
             <ChoiceChip
               key={item}
@@ -125,9 +127,9 @@ function ProjectBriefCard({
         </div>
       </fieldset>
 
-      <fieldset className="brief-fieldset">
+      <fieldset className={tw("brief-fieldset")}>
         <legend>Ideal timeline</legend>
-        <div className="brief-chip-row">
+        <div className={tw("brief-chip-row")}>
           {timelines.map((item) => (
             <ChoiceChip
               key={item}
@@ -140,7 +142,7 @@ function ProjectBriefCard({
         </div>
       </fieldset>
 
-      <div className="brief-budget">
+      <div className={tw("brief-budget")}>
         <div>
           <span>Estimated budget</span>
           <strong>${budget}k</strong>
@@ -154,13 +156,13 @@ function ProjectBriefCard({
           value={budget}
           onChange={(event) => setBudget(Number(event.target.value))}
         />
-        <div className="budget-range">
+        <div className={tw("budget-range")}>
           <small>$5k</small>
           <small>$50k+</small>
         </div>
       </div>
 
-      <Link className="brief-continue" href="/contact">
+      <Link className={tw("brief-continue")} href="/contact">
         Continue
         <ChevronRight size={16} />
       </Link>
@@ -198,10 +200,10 @@ export function CTA() {
   }, [pointerX, pointerY]);
 
   return (
-    <section className="cta-wrap">
-      <div className="container">
+    <section className={tw("cta-wrap")}>
+      <div className={tw("container")}>
         <motion.div
-          className="cta-panel"
+          className={tw("cta-panel")}
           initial={{ opacity: 0, y: 54 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.18 }}
@@ -209,34 +211,34 @@ export function CTA() {
           onPointerMove={handlePointerMove}
           onPointerLeave={resetPointer}
         >
-          <div className="cta-copy">
-            <p className="eyebrow">Let&apos;s build together</p>
+          <div className={tw("cta-copy")}>
+            <p className={tw("eyebrow")}>Let&apos;s build together</p>
             <h2>
               Have an idea worth building?
               <br />
               Let&apos;s turn it into something real.
             </h2>
-            <p className="cta-description">
+            <p className={tw("cta-description")}>
               Tell us what you&apos;re planning — we&apos;ll help with strategy,
               design and development.
             </p>
-            <div className="cta-actions">
-              <Link className="button button-dark cta-primary" href="/contact">
+            <div className={tw("cta-actions")}>
+              <Link className={tw("button button-dark cta-primary")} href="/contact">
                 Start a Project <ArrowUpRight size={18} />
               </Link>
-              <a className="cta-call-link" href="tel:+918298295419">
+              <a className={tw("cta-call-link")} href="tel:+918298295419">
                 Book a quick call <ArrowUpRight size={14} />
               </a>
             </div>
           </div>
 
-          <div className="cta-visual">
+          <div className={tw("cta-visual")}>
             <DecorativeOrbit x={springX} y={springY} />
             <ProjectBriefCard x={springX} y={springY} />
           </div>
 
-          <div className="cta-service-marquee" aria-label="Webcodder services">
-            <div className="cta-service-track">
+          <div className={tw("cta-service-marquee")} aria-label="Webcodder services">
+            <div className={tw("cta-service-track")}>
               {[0, 1].map((group) => (
                 <span key={group} aria-hidden={group === 1}>
                   WEB DEVELOPMENT <i>—</i> UI/UX <i>—</i> BRANDING <i>—</i>{" "}

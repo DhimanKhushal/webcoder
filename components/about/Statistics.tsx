@@ -1,5 +1,7 @@
 "use client";
 
+import { tw } from "@/lib/tailwind";
+
 import { animate, motion, useInView, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -22,11 +24,11 @@ export function Statistics() {
   const inView = useInView(ref, { once: true, amount: 0.45 });
 
   return (
-    <div ref={ref} className="mt-12 grid border-y border-white/[0.08] sm:grid-cols-3">
+    <div ref={ref} className={tw("mt-12 grid border-y border-white/[0.08] sm:grid-cols-3")}>
       {stats.map((stat, index) => (
-        <div key={stat.label} className={`py-7 text-center sm:px-5 sm:py-8 ${index > 0 ? "border-t border-white/[0.08] sm:border-l sm:border-t-0" : ""}`}>
+        <div key={stat.label} className={tw(`py-7 text-center sm:px-5 sm:py-8 ${index > 0 ? "border-t border-white/[0.08] sm:border-l sm:border-t-0" : ""}`)}>
           <AnimatedNumber stat={stat} active={inView} />
-          <p className="mb-0 mt-2 text-xs font-semibold uppercase tracking-[0.11em] text-[#CBD5E1]">{stat.label}</p>
+          <p className={tw("mb-0 mt-2 text-xs font-semibold uppercase tracking-[0.11em] text-[#CBD5E1]")}>{stat.label}</p>
         </div>
       ))}
     </div>
@@ -52,7 +54,7 @@ function AnimatedNumber({ stat, active }: { stat: StatItem; active: boolean }) {
     <motion.strong
       initial={{ opacity: 0, y: 12 }}
       animate={active ? { opacity: 1, y: 0 } : undefined}
-      className="block text-[clamp(36px,4.5vw,58px)] font-semibold leading-none tracking-[-0.045em] text-white"
+      className={tw("block text-[clamp(36px,4.5vw,58px)] font-semibold leading-none tracking-[-0.045em] text-white")}
       aria-label={`${stat.value}${stat.suffix} ${stat.label}`}
     >
       <span aria-hidden="true">{stat.prefix}{(reduceMotion && active ? stat.value : display).toFixed(stat.decimals ?? 0)}{stat.suffix}</span>

@@ -10,7 +10,7 @@ import {
   Phone,
   type LucideIcon,
 } from "lucide-react";
-import styles from "./office-location.module.css";
+import { tw } from "@/lib/tailwind";
 
 const officeAddress = [
   "SCO 114-115, 2nd Floor,",
@@ -81,19 +81,19 @@ export function OfficeLocation() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className={styles.section} aria-labelledby="office-location-title">
-      <div className={styles.container}>
+    <section className={tw("office-section")} aria-labelledby="office-location-title">
+      <div className={tw("office-container")}>
         <motion.header
-          className={styles.header}
+          className={tw("office-header")}
           initial={reduceMotion ? false : "hidden"}
           whileInView="visible"
           viewport={{ once: true, amount: 0.45 }}
           variants={detailsReveal}
         >
-          <motion.p className={styles.eyebrow} variants={reveal}>
+          <motion.p className={tw("office-eyebrow")} variants={reveal}>
             Our location
           </motion.p>
-          <motion.div className={styles.headingRow} variants={reveal}>
+          <motion.div className={tw("office-headingRow")} variants={reveal}>
             <h2 id="office-location-title">Visit Our Creative Workspace</h2>
             <p>
               Have a project in mind? Visit our Chandigarh office and let&apos;s
@@ -102,21 +102,21 @@ export function OfficeLocation() {
           </motion.div>
         </motion.header>
 
-        <div className={styles.locationCard}>
+        <div className={tw("office-locationCard")}>
           <motion.article
-            className={styles.infoPanel}
+            className={tw("office-infoPanel")}
             initial={reduceMotion ? false : { opacity: 0, x: -32 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
             aria-labelledby="webcodder-office-title"
           >
-            <div className={styles.officeIntro}>
-              <span className={styles.officeMarker} aria-hidden="true">
+            <div className={tw("office-officeIntro")}>
+              <span className={tw("office-officeMarker")} aria-hidden="true">
                 <MapPin size={18} strokeWidth={1.8} />
               </span>
               <div>
-                <p className={styles.panelLabel}>Chandigarh · India</p>
+                <p className={tw("office-panelLabel")}>Chandigarh · India</p>
                 <h3 id="webcodder-office-title">Webcodder Office</h3>
                 <address>
                   {officeAddress.map((line) => (
@@ -127,7 +127,7 @@ export function OfficeLocation() {
             </div>
 
             <motion.div
-              className={styles.details}
+              className={tw("office-details")}
               initial={reduceMotion ? false : "hidden"}
               whileInView="visible"
               viewport={{ once: true, amount: 0.55 }}
@@ -136,10 +136,10 @@ export function OfficeLocation() {
               {officeDetails.map(({ label, value, href, icon: Icon, ariaLabel }) => {
                 const content = (
                   <>
-                    <span className={styles.detailIcon} aria-hidden="true">
+                    <span className={tw("office-detailIcon")} aria-hidden="true">
                       <Icon size={18} strokeWidth={1.7} />
                     </span>
-                    <span className={styles.detailCopy}>
+                    <span className={tw("office-detailCopy")}>
                       <small>{label}</small>
                       <strong>
                         {value.map((line) => (
@@ -151,7 +151,7 @@ export function OfficeLocation() {
                 );
 
                 return (
-                  <motion.div className={styles.detailRow} variants={detailItem} key={label}>
+                  <motion.div className={tw("office-detailRow")} variants={detailItem} key={label}>
                     {href ? (
                       <a href={href} aria-label={ariaLabel}>
                         {content}
@@ -164,9 +164,9 @@ export function OfficeLocation() {
               })}
             </motion.div>
 
-            <div className={styles.actions}>
+            <div className={tw("office-actions")}>
               <a
-                className={styles.directionsButton}
+                className={tw("office-directionsButton")}
                 href={directionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -176,7 +176,7 @@ export function OfficeLocation() {
                 <ArrowUpRight size={19} strokeWidth={2} aria-hidden="true" />
               </a>
               <a
-                className={styles.callLink}
+                className={tw("office-callLink")}
                 href="tel:+918298295419"
                 aria-label="Call Webcodder before visiting"
               >
@@ -186,7 +186,7 @@ export function OfficeLocation() {
           </motion.article>
 
           <motion.div
-            className={styles.mapPanel}
+            className={tw("office-mapPanel")}
             initial={reduceMotion ? false : { opacity: 0, x: 32 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.25 }}
@@ -199,16 +199,16 @@ export function OfficeLocation() {
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
             />
-            <div className={styles.mapFade} aria-hidden="true" />
+            <div className={tw("office-mapFade")} aria-hidden="true" />
 
             <a
-              className={styles.mapBadge}
+              className={tw("office-mapBadge")}
               href={directionsUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Open Webcodder office location in Google Maps (opens in a new tab)"
             >
-              <span className={styles.badgePin} aria-hidden="true">
+              <span className={tw("office-badgePin")} aria-hidden="true">
                 <i />
                 <Navigation size={17} fill="currentColor" strokeWidth={1.5} />
               </span>

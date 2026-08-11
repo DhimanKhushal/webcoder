@@ -1,5 +1,7 @@
 "use client";
 
+import { tw } from "@/lib/tailwind";
+
 import { useState } from "react";
 import { technologies, type Technology } from "@/lib/services-page-data";
 
@@ -32,11 +34,11 @@ export function TechnologyMarquee() {
     );
 
   return (
-    <section className="technology-system section">
-      <div className="services-page-container">
-        <p className="eyebrow">Our Toolkit</p>
-        <h2 className="services-editorial-heading">Modern tools for modern digital products.</h2>
-        <div className="technology-filters" role="group" aria-label="Filter technologies">
+    <section className={tw("technology-system section")}>
+      <div className={tw("services-page-container")}>
+        <p className={tw("eyebrow")}>Our Toolkit</p>
+        <h2 className={tw("services-editorial-heading")}>Modern tools for modern digital products.</h2>
+        <div className={tw("technology-filters")} role="group" aria-label="Filter technologies">
           {categories.map((category) => (
             <button
               type="button"
@@ -50,11 +52,11 @@ export function TechnologyMarquee() {
           ))}
         </div>
       </div>
-      <div className="technology-marquees">
-        <div className="technology-marquee-row">
+      <div className={tw("technology-marquees")}>
+        <div className={tw("technology-marquee-row")}>
           <div>{renderItems(upper, "upper")}</div>
         </div>
-        <div className="technology-marquee-row reverse">
+        <div className={tw("technology-marquee-row reverse")}>
           <div>{renderItems(lower, "lower")}</div>
         </div>
       </div>

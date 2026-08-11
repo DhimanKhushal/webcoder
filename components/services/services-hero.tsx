@@ -1,5 +1,7 @@
 "use client";
 
+import { tw } from "@/lib/tailwind";
+
 import Link from "next/link";
 import {
   ArrowDown,
@@ -51,19 +53,19 @@ export function ServicesHero() {
   );
 
   return (
-    <section className="services-hero">
-      <div className="services-hero-grid" aria-hidden="true" />
-      <div className="services-page-container services-hero-layout">
+    <section className={tw("services-hero")}>
+      <div className={tw("services-hero-grid")} aria-hidden="true" />
+      <div className={tw("services-page-container services-hero-layout")}>
         <motion.div
-          className="services-hero-copy"
+          className={tw("services-hero-copy")}
           initial="hidden"
           animate="visible"
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.11 } } }}
         >
-          <motion.p className="eyebrow" variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }}>
+          <motion.p className={tw("eyebrow")} variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }}>
             Our Services
           </motion.p>
-          <div className="services-hero-heading-mask">
+          <div className={tw("services-hero-heading-mask")}>
             <motion.h1
               variants={{
                 hidden: { y: "105%" },
@@ -74,33 +76,33 @@ export function ServicesHero() {
             </motion.h1>
           </div>
           <motion.p
-            className="services-hero-description"
+            className={tw("services-hero-description")}
             variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } }}
           >
             From strategy and design to development and growth, we create digital
             experiences that help modern businesses perform, connect and scale.
           </motion.p>
           <motion.div
-            className="services-hero-actions"
+            className={tw("services-hero-actions")}
             variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }}
           >
-            <Link className="button" href="/contact">
+            <Link className={tw("button")} href="/contact">
               Start a Project <ArrowUpRight size={17} />
             </Link>
-            <a className="button button-outline" href="#service-details">
+            <a className={tw("button button-outline")} href="#service-details">
               Explore Our Services <ArrowDown size={16} />
             </a>
           </motion.div>
         </motion.div>
 
-        <div className="services-ecosystem" onPointerMove={handlePointerMove}>
-          <span className="ecosystem-spotlight" aria-hidden="true" />
-          <span className="ecosystem-line line-one" aria-hidden="true" />
-          <span className="ecosystem-line line-two" aria-hidden="true" />
-          <motion.div style={{ x: ecosystemX, y: ecosystemY }} className="ecosystem-card-field">
+        <div className={tw("services-ecosystem")} onPointerMove={handlePointerMove}>
+          <span className={tw("ecosystem-spotlight")} aria-hidden="true" />
+          <span className={tw("ecosystem-line line-one")} aria-hidden="true" />
+          <span className={tw("ecosystem-line line-two")} aria-hidden="true" />
+          <motion.div style={{ x: ecosystemX, y: ecosystemY }} className={tw("ecosystem-card-field")}>
             {cards.map(({ number, title, label, icon: Icon, className }, index) => (
               <motion.article
-                className={`ecosystem-card ${className}`}
+                className={tw(`ecosystem-card ${className}`)}
                 key={title}
                 initial={{ opacity: 0, x: index % 2 ? 35 : -35, y: 22, scale: 0.94 }}
                 animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}

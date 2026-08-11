@@ -1,5 +1,7 @@
 "use client";
 
+import { tw } from "@/lib/tailwind";
+
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { FormEvent, useState } from "react";
 import { OfficeLocation } from "@/components/contact/office-location";
@@ -14,11 +16,11 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <p className="eyebrow" data-hero>Get in touch</p>
+      <section className={tw("page-hero")}>
+        <div className={tw("container")}>
+          <p className={tw("eyebrow")} data-hero>Get in touch</p>
           <h1 data-hero>Let&apos;s make<br /><span>something matter.</span></h1>
-          <div className="page-hero-copy" data-hero>
+          <div className={tw("page-hero-copy")} data-hero>
             <p />
             <p>
               Have a project in mind, a problem to solve or simply want to say
@@ -29,49 +31,49 @@ export default function ContactPage() {
       </section>
 
       <section>
-        <div className="container contact-grid">
-          <div className="contact-stack">
-            <div className="contact-card" data-reveal>
+        <div className={tw("container contact-grid")}>
+          <div className={tw("contact-stack")}>
+            <div className={tw("contact-card")} data-reveal>
               <span><Mail size={15} /> Have a query? Drop us an email</span>
               <a href="mailto:opt.webcodder@gmail.com">opt.webcodder@gmail.com</a>
             </div>
-            <div className="contact-card" data-reveal>
+            <div className={tw("contact-card")} data-reveal>
               <span><Phone size={15} /> Contact us</span>
               <a href="tel:+918298295419">+91-829-829-5419</a>
             </div>
-            <div className="contact-card" data-reveal>
+            <div className={tw("contact-card")} data-reveal>
               <span><MapPin size={15} /> Our office address</span>
               <p>SCO 114–115, 2nd Floor, Sector 34-A, Chandigarh, Punjab 160022</p>
             </div>
           </div>
 
-          <form className="contact-form" onSubmit={submit} data-reveal>
+          <form className={tw("contact-form")} onSubmit={submit} data-reveal>
             <h2 aria-live="polite">{sent ? "Message received." : "Tell us about your project."}</h2>
             {sent ? (
               <>
-                <p className="section-copy">
+                <p className={tw("section-copy")}>
                   Thank you. Your brief is ready to send—email us at
                   opt.webcodder@gmail.com and our team will get back to you.
                 </p>
-                <a className="button" href="mailto:opt.webcodder@gmail.com">
+                <a className={tw("button")} href="mailto:opt.webcodder@gmail.com">
                   Open email <ArrowUpRight size={18} />
                 </a>
               </>
             ) : (
-              <div className="form-grid">
-                <div className="field">
+              <div className={tw("form-grid")}>
+                <div className={tw("field")}>
                   <label htmlFor="name">Your name</label>
                   <input id="name" name="name" required placeholder="Aman Sharma" />
                 </div>
-                <div className="field">
+                <div className={tw("field")}>
                   <label htmlFor="email">Work email</label>
                   <input id="email" name="email" type="email" required placeholder="aman@company.com" />
                 </div>
-                <div className="field">
+                <div className={tw("field")}>
                   <label htmlFor="phone">Phone</label>
                   <input id="phone" name="phone" type="tel" placeholder="+91" />
                 </div>
-                <div className="field">
+                <div className={tw("field")}>
                   <label htmlFor="service">I need help with</label>
                   <select id="service" name="service" defaultValue="">
                     <option value="" disabled>Select a service</option>
@@ -82,12 +84,12 @@ export default function ContactPage() {
                     <option>E-commerce</option>
                   </select>
                 </div>
-                <div className="field full">
+                <div className={tw("field full")}>
                   <label htmlFor="message">Project details</label>
                   <textarea id="message" name="message" required placeholder="A little about your idea, timeline and goals..." />
                 </div>
-                <div className="field full">
-                  <button className="button" type="submit">
+                <div className={tw("field full")}>
+                  <button className={tw("button")} type="submit">
                     Send enquiry <ArrowUpRight size={18} />
                   </button>
                 </div>

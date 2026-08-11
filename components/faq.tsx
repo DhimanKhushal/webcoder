@@ -1,5 +1,7 @@
 "use client";
 
+import { tw } from "@/lib/tailwind";
+
 import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 
@@ -26,13 +28,13 @@ export function FAQ() {
   const [active, setActive] = useState(0);
 
   return (
-    <div className="faq-list">
+    <div className={tw("faq-list")}>
       {faqs.map((faq, index) => {
         const isOpen = index === active;
         return (
-          <div className="faq-item" key={faq.q} data-reveal-card>
+          <div className={tw("faq-item")} key={faq.q} data-reveal-card>
             <button
-              className="faq-question"
+              className={tw("faq-question")}
               onClick={() => setActive(isOpen ? -1 : index)}
               aria-expanded={isOpen}
               aria-controls={`faq-answer-${index}`}
@@ -42,7 +44,7 @@ export function FAQ() {
             </button>
             <div
               id={`faq-answer-${index}`}
-              className={`faq-answer ${isOpen ? "open" : ""}`}
+              className={tw(`faq-answer ${isOpen ? "open" : ""}`)}
               aria-hidden={!isOpen}
             >
               <div>

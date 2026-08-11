@@ -1,5 +1,7 @@
 "use client";
 
+import { tw } from "@/lib/tailwind";
+
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Check, X } from "lucide-react";
 import { useEffect, useRef } from "react";
@@ -34,7 +36,7 @@ export function RoadmapModal({ open, name, onClose }: RoadmapModalProps) {
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-[100] grid place-items-center bg-[#0F172A]/75 p-5"
+          className={tw("fixed inset-0 z-[100] grid place-items-center bg-[#0F172A]/75 p-5")}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -50,31 +52,31 @@ export function RoadmapModal({ open, name, onClose }: RoadmapModalProps) {
             initial={reduceMotion ? false : { opacity: 0, y: 22, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={reduceMotion ? undefined : { opacity: 0, y: 12, scale: 0.98 }}
-            className="relative w-full max-w-lg overflow-hidden rounded-[26px] bg-[#172033] p-7 text-white sm:p-10"
+            className={tw("relative w-full max-w-lg overflow-hidden rounded-[26px] bg-[#172033] p-7 text-white sm:p-10")}
           >
             <button
               ref={closeButtonRef}
               type="button"
               onClick={onClose}
               aria-label="Close confirmation"
-              className="absolute right-5 top-5 grid size-10 place-items-center rounded-full border border-white/[0.08] bg-[#172033] transition-colors hover:bg-[#172033] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563EB]"
+              className={tw("absolute right-5 top-5 grid size-10 place-items-center rounded-full border border-white/[0.08] bg-[#172033] transition-colors hover:bg-[#172033] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563EB]")}
             >
               <X size={18} aria-hidden="true" />
             </button>
-            <div className="grid size-14 place-items-center rounded-2xl bg-[#2563EB]">
+            <div className={tw("grid size-14 place-items-center rounded-2xl bg-[#2563EB]")}>
               <Check size={28} strokeWidth={2.5} aria-hidden="true" />
             </div>
-            <p className="mb-0 mt-8 text-xs font-semibold uppercase tracking-[0.14em] text-[#2563EB]">Scope received</p>
-            <h3 id="roadmap-success-title" className="mb-0 mt-3 text-[clamp(28px,5vw,38px)] font-semibold leading-[1.08] tracking-[-0.04em]">
+            <p className={tw("mb-0 mt-8 text-xs font-semibold uppercase tracking-[0.14em] text-[#2563EB]")}>Scope received</p>
+            <h3 id="roadmap-success-title" className={tw("mb-0 mt-3 text-[clamp(28px,5vw,38px)] font-semibold leading-[1.08] tracking-[-0.04em]")}>
               Your roadmap is taking shape{name ? `, ${name.split(" ")[0]}` : ""}.
             </h3>
-            <p className="mb-0 mt-5 text-[17px] leading-7 text-[#CBD5E1]">
+            <p className={tw("mb-0 mt-5 text-[17px] leading-7 text-[#CBD5E1]")}>
               We&apos;ll review your priorities, identify the clearest route forward and contact you within one business day.
             </p>
             <button
               type="button"
               onClick={onClose}
-              className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#0F172A] px-5 text-[15px] font-medium tracking-[0.005em] text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2563EB]"
+              className={tw("mt-8 inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#0F172A] px-5 text-[15px] font-medium tracking-[0.005em] text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2563EB]")}
             >
               Back to Webcodder <ArrowRight size={17} aria-hidden="true" />
             </button>

@@ -1,5 +1,7 @@
 "use client";
 
+import { tw } from "@/lib/tailwind";
+
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -18,7 +20,6 @@ export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
     function closeOnEscape(event: KeyboardEvent) {
       if (event.key === "Escape") setOpen(false);
@@ -28,12 +29,12 @@ export function Header() {
   }, []);
 
   return (
-    <header className="site-header">
-      <div className="container">
-        <div className="nav-shell">
-          <Link href="/" className="logo" aria-label="Webcodder home">
+    <header className={tw("site-header")}>
+      <div className={tw("container")}>
+        <div className={tw("nav-shell")}>
+          <Link href="/" className={tw("logo")} aria-label="Webcodder home" onClick={() => setOpen(false)}>
             <Image
-              className="brand-logo-image"
+              className={tw("brand-logo-image")}
               src="/webcodder-logo.png"
               alt="Webcodder Digital Marketing Agency"
               width={2508}
@@ -41,23 +42,23 @@ export function Header() {
               priority
             />
           </Link>
-          <nav className="desktop-nav" aria-label="Primary navigation">
+          <nav className={tw("desktop-nav")} aria-label="Primary navigation">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`nav-link ${pathname === link.href ? "active" : ""}`}
+                className={tw(`nav-link ${pathname === link.href ? "active" : ""}`)}
                 aria-current={pathname === link.href ? "page" : undefined}
               >
                 {link.label}
               </Link>
             ))}
           </nav>
-          <Link href="/contact" className="nav-cta">
+          <Link href="/contact" className={tw("nav-cta")}>
             Start a project <ArrowUpRight size={15} />
           </Link>
           <button
-            className="menu-button"
+            className={tw("menu-button")}
             onClick={() => setOpen((value) => !value)}
             aria-expanded={open}
             aria-controls="mobile-navigation"
@@ -68,7 +69,7 @@ export function Header() {
         </div>
         <nav
           id="mobile-navigation"
-          className={`mobile-nav ${open ? "open" : ""}`}
+          className={tw(`mobile-nav ${open ? "open" : ""}`)}
           aria-label="Mobile navigation"
           aria-hidden={!open}
         >
@@ -78,6 +79,7 @@ export function Header() {
               href={link.href}
               tabIndex={open ? 0 : -1}
               aria-current={pathname === link.href ? "page" : undefined}
+              onClick={() => setOpen(false)}
             >
               {link.label}
             </Link>

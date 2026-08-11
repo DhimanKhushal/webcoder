@@ -1,5 +1,7 @@
 "use client";
 
+import { tw } from "@/lib/tailwind";
+
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
@@ -64,19 +66,19 @@ export function AnimatedDivider() {
   }, []);
 
   return (
-    <div ref={rootRef} className="relative h-24 w-full lg:h-auto lg:min-h-full lg:w-[72px]" aria-hidden="true">
-      <div className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-white/[0.08] lg:left-1/2 lg:top-0 lg:h-full lg:w-px lg:-translate-x-1/2 lg:translate-y-0" />
+    <div ref={rootRef} className={tw("relative h-24 w-full lg:h-auto lg:min-h-full lg:w-[72px]")} aria-hidden="true">
+      <div className={tw("absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-white/[0.08] lg:left-1/2 lg:top-0 lg:h-full lg:w-px lg:-translate-x-1/2 lg:translate-y-0")} />
       <div
         data-comparison-line
-        className="absolute left-0 top-1/2 h-0.5 w-full origin-left -translate-y-1/2 bg-[#2563EB] shadow-[0_0_16px_rgba(37, 99, 235,0.42)] lg:left-1/2 lg:top-0 lg:h-full lg:w-0.5 lg:origin-top lg:-translate-x-1/2 lg:translate-y-0"
+        className={tw("absolute left-0 top-1/2 h-0.5 w-full origin-left -translate-y-1/2 bg-[#2563EB] shadow-[0_0_16px_rgba(37, 99, 235,0.42)] lg:left-1/2 lg:top-0 lg:h-full lg:w-0.5 lg:origin-top lg:-translate-x-1/2 lg:translate-y-0")}
       />
       <div
         data-comparison-badge
-        className="absolute left-1/2 top-1/2 z-10 grid size-18 -translate-x-1/2 -translate-y-1/2 place-items-center overflow-hidden rounded-full border-2 border-[#2563EB] bg-[#172033] shadow-[0_0_0_8px_rgba(37, 99, 235,0.11)] sm:size-20"
+        className={tw("absolute left-1/2 top-1/2 z-10 grid size-18 -translate-x-1/2 -translate-y-1/2 place-items-center overflow-hidden rounded-full border-2 border-[#2563EB] bg-[#172033] shadow-[0_0_0_8px_rgba(37, 99, 235,0.11)] sm:size-20")}
       >
-        <Image src="/webcodder-logo.png" alt="" width={82} height={21} unoptimized className="h-auto w-14 object-contain sm:w-16" />
+        <Image src="/webcodder-logo.png" alt="" width={82} height={21} unoptimized className={tw("h-auto w-14 object-contain sm:w-16")} />
       </div>
-      <span className="absolute left-1/2 top-1/2 size-20 -translate-x-1/2 -translate-y-1/2 animate-[ping_2.6s_ease-in-out_infinite] rounded-full border border-[#2563EB]/30 motion-reduce:animate-none sm:size-22" />
+      <span className={tw("absolute left-1/2 top-1/2 size-20 -translate-x-1/2 -translate-y-1/2 animate-[ping_2.6s_ease-in-out_infinite] rounded-full border border-[#2563EB]/30 motion-reduce:animate-none sm:size-22")} />
     </div>
   );
 }

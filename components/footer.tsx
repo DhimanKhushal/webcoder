@@ -1,5 +1,7 @@
 "use client";
 
+import { tw } from "@/lib/tailwind";
+
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -126,40 +128,40 @@ export function Footer() {
   }
 
   return (
-    <footer className="site-footer">
-      <div className="footer-orbit-decoration" aria-hidden="true">
+    <footer className={tw("site-footer")}>
+      <div className={tw("footer-orbit-decoration")} aria-hidden="true">
         <span />
       </div>
 
-      <div className="footer-container">
-        <div className="footer-main">
-          <section className="footer-brand" aria-labelledby="footer-brand-title">
+      <div className={tw("footer-container")}>
+        <div className={tw("footer-main")}>
+          <section className={tw("footer-brand")} aria-labelledby="footer-brand-title">
             <Image
-              className="footer-brand-logo"
+              className={tw("footer-brand-logo")}
               src="/webcodder-logo.png"
               alt="Webcodder Digital Marketing Agency"
               width={2508}
               height={627}
             />
-            <h2 id="footer-brand-title" className="sr-only">
+            <h2 id="footer-brand-title" className={tw("sr-only")}>
               Webcodder Digital Marketing Agency
             </h2>
-            <p className="footer-brand-description">
+            <p className={tw("footer-brand-description")}>
               We help brands grow digitally with creative strategies, powerful
               websites and result-driven marketing.
             </p>
-            <span className="footer-orange-rule" aria-hidden="true" />
+            <span className={tw("footer-orange-rule")} aria-hidden="true" />
 
-            <div className="footer-contact-list">
+            <div className={tw("footer-contact-list")}>
               {contactItems.map(({ label, helper, href, icon: Icon }) => (
                 <a
-                  className="footer-contact-item"
+                  className={tw("footer-contact-item")}
                   href={href}
                   key={label}
                   target={href.startsWith("http") ? "_blank" : undefined}
                   rel={href.startsWith("http") ? "noreferrer" : undefined}
                 >
-                  <span className="footer-contact-icon">
+                  <span className={tw("footer-contact-icon")}>
                     <Icon size={17} strokeWidth={1.8} />
                   </span>
                   <span>
@@ -171,9 +173,9 @@ export function Footer() {
             </div>
           </section>
 
-          <nav className="footer-directory" aria-label="Footer navigation">
+          <nav className={tw("footer-directory")} aria-label="Footer navigation">
             {footerGroups.map((group) => (
-              <div className="footer-link-group" key={group.title}>
+              <div className={tw("footer-link-group")} key={group.title}>
                 <h3>{group.title}</h3>
                 <ul>
                   {group.links.map(([label, href]) => (
@@ -186,15 +188,15 @@ export function Footer() {
             ))}
           </nav>
 
-          <aside className="footer-aside">
-            <div className="footer-newsletter">
-              <p className="footer-column-title">Stay Updated</p>
+          <aside className={tw("footer-aside")}>
+            <div className={tw("footer-newsletter")}>
+              <p className={tw("footer-column-title")}>Stay Updated</p>
               <p>
                 Subscribe to get the latest insights, trends and offers
                 straight to your inbox.
               </p>
               <form onSubmit={handleSubscribe}>
-                <label className="sr-only" htmlFor="footer-email">
+                <label className={tw("sr-only")} htmlFor="footer-email">
                   Email address
                 </label>
                 <input
@@ -212,13 +214,13 @@ export function Footer() {
                   <Send size={17} />
                 </button>
               </form>
-              <span className="newsletter-status" aria-live="polite">
+              <span className={tw("newsletter-status")} aria-live="polite">
                 {subscribed ? "Thank you — you’re on the list." : ""}
               </span>
             </div>
 
-            <div className="footer-project-card">
-              <span className="footer-dot-pattern" aria-hidden="true" />
+            <div className={tw("footer-project-card")}>
+              <span className={tw("footer-dot-pattern")} aria-hidden="true" />
               <small>Got a project in mind?</small>
               <h3>Let&apos;s build something amazing together.</h3>
               <Link href="/contact">
@@ -228,14 +230,14 @@ export function Footer() {
           </aside>
         </div>
 
-        <section className="footer-tech-strip" aria-labelledby="footer-tech-title">
-          <div className="footer-tech-copy">
+        <section className={tw("footer-tech-strip")} aria-labelledby="footer-tech-title">
+          <div className={tw("footer-tech-copy")}>
             <h3 id="footer-tech-title">Technologies we work with</h3>
             <p>Modern tools. Scalable solutions.</p>
           </div>
-          <div className="footer-tech-list">
+          <div className={tw("footer-tech-list")}>
             {technologies.map(({ name, icon: Icon }) => (
-              <span className="footer-tech-badge" key={name}>
+              <span className={tw("footer-tech-badge")} key={name}>
                 <Icon size={16} strokeWidth={1.7} />
                 {name}
               </span>
@@ -243,9 +245,9 @@ export function Footer() {
           </div>
         </section>
 
-        <div className="footer-social-row">
+        <div className={tw("footer-social-row")}>
           <div>
-            <div className="footer-socials" aria-label="Social media">
+            <div className={tw("footer-socials")} aria-label="Social media">
               <a href="#" aria-label="Instagram">
                 <span>IG</span>
               </a>
@@ -255,7 +257,7 @@ export function Footer() {
               <a href="#" aria-label="Facebook">
                 <span>f</span>
               </a>
-              <a href="#" aria-label="Behance" className="behance-icon">
+              <a href="#" aria-label="Behance" className={tw("behance-icon")}>
                 Bē
               </a>
               <a href="#" aria-label="Dribbble">
@@ -266,10 +268,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="footer-bottom">
+        <div className={tw("footer-bottom")}>
           <span>© {new Date().getFullYear()} Webcodder. All rights reserved.</span>
           <span>Built with strategy, pixels &amp; clean code.</span>
-          <div className="footer-legal">
+          <div className={tw("footer-legal")}>
             <Link href="/">Privacy Policy</Link>
             <Link href="/">Terms &amp; Conditions</Link>
             <Link href="/">Sitemap</Link>

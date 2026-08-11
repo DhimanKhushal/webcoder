@@ -1,5 +1,7 @@
 "use client";
 
+import { tw } from "@/lib/tailwind";
+
 import { Check } from "lucide-react";
 import type { GoalId, GoalOption } from "./project-scope-types";
 
@@ -11,7 +13,7 @@ interface GoalSelectorProps {
 
 export function GoalSelector({ options, value, onChange }: GoalSelectorProps) {
   return (
-    <div role="radiogroup" aria-label="Primary goal" className="grid gap-2.5 sm:grid-cols-2">
+    <div role="radiogroup" aria-label="Primary goal" className={tw("grid gap-2.5 sm:grid-cols-2")}>
       {options.map((option) => {
         const active = option.id === value;
         return (
@@ -21,13 +23,13 @@ export function GoalSelector({ options, value, onChange }: GoalSelectorProps) {
             role="radio"
             aria-checked={active}
             onClick={() => onChange(option.id)}
-            className={`flex min-h-12 items-center gap-3 rounded-xl border px-3.5 py-2.5 text-left text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2563EB] ${
+            className={tw(`flex min-h-12 items-center gap-3 rounded-xl border px-3.5 py-2.5 text-left text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2563EB] ${
               active
                 ? "border-[#2563EB] bg-[#172033] text-white"
                 : "border-white/[0.08] bg-[#172033] text-[#CBD5E1] hover:border-white/[0.08]"
-            }`}
+            }`)}
           >
-            <span className={`grid size-5 shrink-0 place-items-center rounded-full border ${active ? "border-[#2563EB] bg-[#2563EB]" : "border-white/[0.08]"}`}>
+            <span className={tw(`grid size-5 shrink-0 place-items-center rounded-full border ${active ? "border-[#2563EB] bg-[#2563EB]" : "border-white/[0.08]"}`)}>
               {active && <Check size={12} strokeWidth={3} aria-hidden="true" />}
             </span>
             {option.label}

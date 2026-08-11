@@ -1,3 +1,4 @@
+import { tw } from "@/lib/tailwind";
 import {
   ArrowUpRight,
   Gauge,
@@ -19,22 +20,22 @@ const benefits = [
 
 export function WhatYouGet() {
   return (
-    <section className="services-benefits section">
-      <div className="services-page-container">
-        <p className="eyebrow" data-reveal>The Webcodder difference</p>
-        <h2 className="services-editorial-heading" data-reveal>
+    <section className={tw("services-benefits section")}>
+      <div className={tw("services-page-container")}>
+        <p className={tw("eyebrow")} data-reveal>The Webcodder difference</p>
+        <h2 className={tw("services-editorial-heading")} data-reveal>
           More than a service. A complete digital partnership.
         </h2>
-        <div className="benefit-bento">
+        <div className={tw("benefit-bento")}>
           {benefits.map(({ number, title, copy, icon: Icon }) => (
-            <article className="benefit-card" key={number} data-reveal>
+            <article className={tw("benefit-card")} key={number} data-reveal>
               <div>
                 <span>{number}</span>
                 <Icon size={23} strokeWidth={1.45} />
               </div>
               <h3>{title}</h3>
               <p>{copy}</p>
-              <ArrowUpRight className="benefit-corner-arrow" size={17} />
+              <ArrowUpRight className={tw("benefit-corner-arrow")} size={17} />
             </article>
           ))}
         </div>

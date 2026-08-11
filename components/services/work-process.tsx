@@ -1,5 +1,7 @@
 "use client";
 
+import { tw } from "@/lib/tailwind";
+
 import { useEffect, useRef } from "react";
 import { processSteps } from "@/lib/services-page-data";
 
@@ -70,26 +72,26 @@ export function WorkProcess() {
   }, []);
 
   return (
-    <section className="services-process section" ref={rootRef}>
-      <div className="services-page-container">
-        <div className="services-section-head">
+    <section className={tw("services-process section")} ref={rootRef}>
+      <div className={tw("services-page-container")}>
+        <div className={tw("services-section-head")}>
           <div>
-            <p className="eyebrow">Our Process</p>
+            <p className={tw("eyebrow")}>Our Process</p>
             <h2>From first conversation to final launch.</h2>
           </div>
           <p>A connected, transparent process that keeps decisions clear and momentum visible.</p>
         </div>
-        <div className="services-process-list">
-          <div className="process-progress-track" aria-hidden="true">
-            <span className="process-progress-fill" />
+        <div className={tw("services-process-list")}>
+          <div className={tw("process-progress-track")} aria-hidden="true">
+            <span className={tw("process-progress-fill")} />
           </div>
           {processSteps.map((step, index) => (
             <article
-              className="services-process-card"
+              className={tw("services-process-card")}
               data-status={index === 0 ? "Active" : "Upcoming"}
               key={step.number}
             >
-              <span className="process-card-number">{step.number}</span>
+              <span className={tw("process-card-number")}>{step.number}</span>
               <h3>{step.title}</h3>
               <p>{step.description}</p>
               <small>{index === 0 ? "Active" : "Upcoming"}</small>

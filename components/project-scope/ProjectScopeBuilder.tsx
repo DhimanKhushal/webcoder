@@ -1,5 +1,7 @@
 "use client";
 
+import { tw } from "@/lib/tailwind";
+
 import { useMemo, useRef, useState } from "react";
 import { Bot, Code2, Megaphone, Palette, PanelsTopLeft, Workflow } from "lucide-react";
 import { BusinessStageSelector } from "./BusinessStageSelector";
@@ -92,29 +94,29 @@ export function ProjectScopeBuilder() {
   }
 
   return (
-    <section className="bg-[#0F172A] py-[clamp(82px,9vw,128px)]" data-home-section aria-labelledby="scope-builder-title">
-      <div className="mx-auto w-[min(1240px,calc(100%-48px))] max-sm:w-[calc(100%-32px)]">
-        <div className="mb-12 grid gap-6 border-b border-white/[0.08] pb-9 lg:grid-cols-[1fr_0.7fr] lg:items-end">
+    <section className={tw("bg-[#0F172A] py-[clamp(82px,9vw,128px)]")} data-home-section aria-labelledby="scope-builder-title">
+      <div className={tw("mx-auto w-[min(1240px,calc(100%-48px))] max-sm:w-[calc(100%-32px)]")}>
+        <div className={tw("mb-12 grid gap-6 border-b border-white/[0.08] pb-9 lg:grid-cols-[1fr_0.7fr] lg:items-end")}>
           <div>
-            <p className="eyebrow">Project scope builder</p>
-            <h2 id="scope-builder-title" className="m-0 max-w-2xl text-[clamp(30px,4vw,48px)] font-semibold leading-[1.08] tracking-[-0.04em] text-white">
+            <p className={tw("eyebrow")}>Project scope builder</p>
+            <h2 id="scope-builder-title" className={tw("m-0 max-w-2xl text-[clamp(44px,4.1vw,52px)] font-bold leading-[1.1] tracking-[-0.038em] text-white text-balance max-[820px]:text-[clamp(36px,5.4vw,44px)] max-[600px]:text-[clamp(30px,9vw,36px)] max-[600px]:leading-[1.12] max-[600px]:tracking-[-0.035em]")}>
               Turn an ambitious idea into a clear starting point.
             </h2>
           </div>
-          <p className="m-0 max-w-lg text-[17px] leading-7 text-[#CBD5E1] lg:justify-self-end">
+          <p className={tw("m-0 max-w-lg text-[17px] leading-7 text-[#CBD5E1] lg:justify-self-end")}>
             Choose what you need. We&apos;ll shape the right delivery model, timeline and specialist team around your priorities.
           </p>
         </div>
 
-        <div className="grid items-start gap-10 xl:grid-cols-[minmax(0,1.18fr)_minmax(390px,0.82fr)] xl:gap-12">
-          <form id="project-scope-form" ref={formRef} onSubmit={(event) => { event.preventDefault(); submitRoadmap(); }} noValidate className="min-w-0 scroll-mt-28">
+        <div className={tw("grid items-start gap-10 xl:grid-cols-[minmax(0,1.18fr)_minmax(390px,0.82fr)] xl:gap-12")}>
+          <form id="project-scope-form" ref={formRef} onSubmit={(event) => { event.preventDefault(); submitRoadmap(); }} noValidate className={tw("min-w-0 scroll-mt-28")}>
             <FormSection number="01" title="Required services" description="Select every capability your project needs.">
-              <div className="grid gap-3 md:grid-cols-2">
+              <div className={tw("grid gap-3 md:grid-cols-2")}>
                 {services.map((service) => (
                   <ServiceCard key={service.id} service={service} selected={selectedIds.includes(service.id)} onToggle={toggleService} />
                 ))}
               </div>
-              {errors.services && <p role="alert" className="mb-0 mt-3 text-sm font-medium text-[#F87171]">{errors.services}</p>}
+              {errors.services && <p role="alert" className={tw("mb-0 mt-3 text-sm font-medium text-[#F87171]")}>{errors.services}</p>}
             </FormSection>
 
             <FormSection number="02" title="Business stage" description="This helps us calibrate pace, risk and scale.">
@@ -125,15 +127,15 @@ export function ProjectScopeBuilder() {
               <GoalSelector options={goals} value={goal} onChange={setGoal} />
             </FormSection>
 
-            <div className="border-t border-white/[0.08] pt-8">
-              <div className="mb-6 flex items-baseline justify-between gap-4">
-                <h3 className="m-0 text-[22px] font-semibold leading-[1.2] tracking-[-0.025em]">Where should we send the roadmap?</h3>
-                <span className="hidden text-xs text-[#94A3B8] sm:block">All fields required</span>
+            <div className={tw("border-t border-white/[0.08] pt-8")}>
+              <div className={tw("mb-6 flex items-baseline justify-between gap-4")}>
+                <h3 className={tw("m-0 text-[22px] font-semibold leading-[1.2] tracking-[-0.025em]")}>Where should we send the roadmap?</h3>
+                <span className={tw("hidden text-xs text-[#94A3B8] sm:block")}>All fields required</span>
               </div>
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className={tw("grid gap-4 sm:grid-cols-2")}>
                 <Field label="Name" name="name" autoComplete="name" value={contact.name} error={errors.name} onChange={(value) => setContact({ ...contact, name: value })} />
                 <Field label="Work email" name="email" type="email" autoComplete="email" value={contact.email} error={errors.email} onChange={(value) => setContact({ ...contact, email: value })} />
-                <div className="sm:col-span-2">
+                <div className={tw("sm:col-span-2")}>
                   <Field label="Phone" name="phone" type="tel" autoComplete="tel" value={contact.phone} error={errors.phone} onChange={(value) => setContact({ ...contact, phone: value })} />
                 </div>
               </div>
@@ -150,13 +152,13 @@ export function ProjectScopeBuilder() {
 
 function FormSection({ number, title, description, children }: { number: string; title: string; description: string; children: React.ReactNode }) {
   return (
-    <fieldset className="mb-10 border-0 border-t border-white/[0.08] p-0 pt-7">
-      <legend className="sr-only">{title}</legend>
-      <div className="mb-6 grid grid-cols-[34px_1fr] gap-3">
-        <span className="pt-1 text-xs font-semibold tracking-[0.12em] text-[#2563EB]" aria-hidden="true">{number}</span>
+    <fieldset className={tw("mb-10 border-0 border-t border-white/[0.08] p-0 pt-7")}>
+      <legend className={tw("sr-only")}>{title}</legend>
+      <div className={tw("mb-6 grid grid-cols-[34px_1fr] gap-3")}>
+        <span className={tw("pt-1 text-xs font-semibold tracking-[0.12em] text-[#2563EB]")} aria-hidden="true">{number}</span>
         <div>
-          <h3 className="m-0 text-[22px] font-semibold leading-[1.2] tracking-[-0.025em]">{title}</h3>
-          <p className="mb-0 mt-1 text-[16px] leading-7 text-[#CBD5E1]">{description}</p>
+          <h3 className={tw("m-0 text-[22px] font-semibold leading-[1.2] tracking-[-0.025em]")}>{title}</h3>
+          <p className={tw("mb-0 mt-1 text-[16px] leading-7 text-[#CBD5E1]")}>{description}</p>
         </div>
       </div>
       {children}
@@ -167,7 +169,7 @@ function FormSection({ number, title, description, children }: { number: string;
 function Field({ label, name, type = "text", autoComplete, value, error, onChange }: { label: string; name: keyof ContactDetails; type?: string; autoComplete: string; value: string; error?: string; onChange: (value: string) => void }) {
   const errorId = `${name}-error`;
   return (
-    <label className="block text-sm font-medium text-[#CBD5E1]">
+    <label className={tw("block text-sm font-medium text-[#CBD5E1]")}>
       {label}
       <input
         name={name}
@@ -177,9 +179,9 @@ function Field({ label, name, type = "text", autoComplete, value, error, onChang
         onChange={(event) => onChange(event.target.value)}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? errorId : undefined}
-        className={`mt-2 block min-h-13 w-full rounded-xl border bg-[#172033] px-4 text-[15px] text-white outline-none transition-colors placeholder:text-[#94A3B8] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 ${error ? "border-[#F87171]" : "border-white/[0.08]"}`}
+        className={tw(`mt-2 block min-h-13 w-full rounded-xl border bg-[#172033] px-4 text-[15px] text-white outline-none transition-colors placeholder:text-[#94A3B8] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 ${error ? "border-[#F87171]" : "border-white/[0.08]"}`)}
       />
-      {error && <span id={errorId} role="alert" className="mt-1.5 block text-xs font-medium text-[#F87171]">{error}</span>}
+      {error && <span id={errorId} role="alert" className={tw("mt-1.5 block text-xs font-medium text-[#F87171]")}>{error}</span>}
     </label>
   );
 }

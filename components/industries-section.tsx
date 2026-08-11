@@ -1,5 +1,7 @@
 "use client";
 
+import { tw } from "@/lib/tailwind";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
@@ -118,11 +120,11 @@ export function IndustriesSection() {
   );
 
   return (
-    <section className="industries-section" data-home-section>
-      <span className="industries-outline-orbit" aria-hidden="true" />
-      <div className="container industries-layout">
+    <section className={tw("industries-section")} data-home-section>
+      <span className={tw("industries-outline-orbit")} aria-hidden="true" />
+      <div className={tw("container industries-layout")}>
         <motion.div
-          className="industries-intro"
+          className={tw("industries-intro")}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.24 }}
@@ -132,7 +134,7 @@ export function IndustriesSection() {
           }}
         >
           <motion.p
-            className="eyebrow"
+            className={tw("eyebrow")}
             variants={{
               hidden: { opacity: 0, y: 18 },
               visible: { opacity: 1, y: 0 },
@@ -140,7 +142,7 @@ export function IndustriesSection() {
           >
             Industries we serve
           </motion.p>
-          <div className="industries-heading-mask">
+          <div className={tw("industries-heading-mask")}>
             <motion.h2
               variants={{
                 hidden: { y: "105%" },
@@ -154,7 +156,7 @@ export function IndustriesSection() {
             </motion.h2>
           </div>
           <motion.p
-            className="industries-description"
+            className={tw("industries-description")}
             variants={{
               hidden: { opacity: 0, y: 22 },
               visible: {
@@ -168,7 +170,7 @@ export function IndustriesSection() {
             digital experiences tailored to the challenges of your industry.
           </motion.p>
           <motion.div
-            className="industries-intro-footer"
+            className={tw("industries-intro-footer")}
             variants={{
               hidden: { opacity: 0, y: 18 },
               visible: { opacity: 1, y: 0 },
@@ -182,7 +184,7 @@ export function IndustriesSection() {
         </motion.div>
 
         <motion.div
-          className="industries-list-wrap"
+          className={tw("industries-list-wrap")}
           onPointerMove={handlePointerMove}
           initial="hidden"
           whileInView="visible"
@@ -192,12 +194,12 @@ export function IndustriesSection() {
             visible: { transition: { staggerChildren: 0.07 } },
           }}
         >
-          <div className="industries-list">
+          <div className={tw("industries-list")}>
             {industries.map((industry, index) => {
               const active = activeIndex === index;
               return (
                 <motion.article
-                  className={`industry-item ${active ? "active" : ""}`}
+                  className={tw(`industry-item ${active ? "active" : ""}`)}
                   id={`industry-${industry.slug}`}
                   key={industry.slug}
                   onMouseEnter={() => setActiveIndex(index)}
@@ -215,29 +217,29 @@ export function IndustriesSection() {
                   }}
                 >
                   <button
-                    className="industry-trigger"
+                    className={tw("industry-trigger")}
                     type="button"
                     aria-expanded={active}
                     aria-controls={`industry-panel-${industry.slug}`}
                     onClick={() => setActiveIndex(index)}
                   >
-                    <span className="industry-number">{industry.number}</span>
-                    <span className="industry-main">
+                    <span className={tw("industry-number")}>{industry.number}</span>
+                    <span className={tw("industry-main")}>
                       <strong>{industry.title}</strong>
                       <span>{industry.description}</span>
                     </span>
-                    <span className="industry-arrow" aria-hidden="true">
+                    <span className={tw("industry-arrow")} aria-hidden="true">
                       <ArrowUpRight size={18} />
                       <ChevronDown size={17} />
                     </span>
                   </button>
                   <div
-                    className="industry-mobile-panel"
+                    className={tw("industry-mobile-panel")}
                     id={`industry-panel-${industry.slug}`}
                   >
                     <div>
                       <p>{industry.description}</p>
-                      <div className="industry-mobile-image">
+                      <div className={tw("industry-mobile-image")}>
                         <Image
                           src={industry.image}
                           alt={industry.imageAlt}
@@ -254,7 +256,7 @@ export function IndustriesSection() {
 
           <AnimatePresence mode="wait">
             <motion.div
-              className="industries-floating-image"
+              className={tw("industries-floating-image")}
               key={industries[activeIndex].slug}
               initial={{ opacity: 0, scale: 1.08 }}
               animate={{ opacity: 1, scale: 1 }}
