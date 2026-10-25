@@ -1,23 +1,72 @@
 @import "tailwindcss";
 
+/*
+ * Colour tokens.
+ *
+ * @theme is the single source of truth. Tailwind v4 reads it, emits each entry
+ * as a custom property on :root, and generates utilities from the namespace, so
+ * --color-accent gives bg-accent / text-accent / border-accent. Style new work
+ * against these names.
+ *
+ * The :root block below aliases the older variable names onto these tokens so
+ * the hand-written CSS in the rest of this file keeps working while it is
+ * migrated across. Do not add new aliases.
+ *
+ * `static` matters: by default Tailwind v4 only emits theme variables it sees
+ * referenced, and it does not scan var() usage inside .module.css files. A
+ * token used only from a CSS module would be dropped and resolve to nothing,
+ * so every token here is emitted unconditionally.
+ */
+@theme static {
+  /* Surfaces */
+  --color-ink: #121212;
+  --color-ink-soft: #1d1d1d;
+  --color-paper: #f7f7f7;
+  --color-paper-deep: #eeeeee;
+  --color-white: #ffffff;
+
+  /* Accent: one blue at three strengths. There is no second accent hue. */
+  --color-accent: #4f8cff;
+  --color-accent-soft: #eaf2ff;
+  --color-accent-deep: #2457ae;
+
+  /* Secondary text */
+  --color-muted: #606060;
+  --color-muted-light: #a0a0a0;
+
+  /* Hairlines */
+  --color-line: rgba(18, 18, 18, 0.12);
+  --color-line-dark: rgba(255, 255, 255, 0.13);
+}
+
 :root {
-  --ink: #121212;
-  --ink-soft: #1d1d1d;
-  --paper: #f7f7f7;
-  --paper-deep: #eeeeee;
-  --lime: #4f8cff;
-  --lime-soft: #eaf2ff;
-  --orange: #4f8cff;
-  --white: #ffffff;
-  --muted: #606060;
-  --muted-light: #a0a0a0;
-  --line: rgba(18, 18, 18, 0.12);
-  --line-dark: rgba(255, 255, 255, 0.13);
+  --ink: var(--color-ink);
+  --ink-soft: var(--color-ink-soft);
+  --paper: var(--color-paper);
+  --paper-deep: var(--color-paper-deep);
+  --white: var(--color-white);
+  --muted: var(--color-muted);
+  --muted-light: var(--color-muted-light);
+  --line: var(--color-line);
+  --line-dark: var(--color-line-dark);
+
+  /* --lime and --orange were two names for the same blue. Both resolve to the
+     one accent token; call sites move to --color-accent as they are touched. */
+  --lime: var(--color-accent);
+  --lime-soft: var(--color-accent-soft);
+  --orange: var(--color-accent);
+
+  /* Radius and elevation keep these exact names and values: the rounded-md and
+     shadow-sm utilities already resolve to them, so editing them here would
+     change rendered output rather than just the token layer. */
   --shadow-sm: 0 10px 30px rgba(26, 26, 26, 0.06);
   --shadow-md: 0 22px 70px rgba(26, 26, 26, 0.1);
   --radius-sm: 14px;
   --radius-md: 22px;
   --radius-lg: 32px;
+
+  /* Left as-is deliberately: neither carries a sans-serif fallback today, and
+     adding one would change every computed font-family. */
   --display: var(--font-dm-sans);
   --body: var(--font-dm-sans);
 }
