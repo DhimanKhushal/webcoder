@@ -1,5 +1,7 @@
 export interface Service {
   number: string;
+  /** The detailed service page this capability links through to. */
+  slug: string;
   title: string;
   category: string;
   overview: string;
@@ -12,7 +14,11 @@ export interface Service {
     title: string;
     category: string;
     metric: string;
-    image: string;
+    /**
+     * The screenshot in `public/projects/`. Optional so ProjectArtwork can fall
+     * back to its placeholder frame if a file is ever absent.
+     */
+    image?: string;
   };
 }
 
@@ -35,6 +41,7 @@ export interface CaseStudyMetric {
 export const serviceDetails: Service[] = [
   {
     number: "01",
+    slug: "web-development",
     title: "Web Development",
     category: "Build",
     overview:
@@ -62,6 +69,7 @@ export const serviceDetails: Service[] = [
   },
   {
     number: "02",
+    slug: "ui-ux-designing",
     title: "UI/UX Design",
     category: "Design",
     overview:
@@ -89,6 +97,7 @@ export const serviceDetails: Service[] = [
   },
   {
     number: "03",
+    slug: "performance-marketing",
     title: "Digital Marketing",
     category: "Grow",
     overview:
@@ -116,6 +125,7 @@ export const serviceDetails: Service[] = [
   },
   {
     number: "04",
+    slug: "brand-kit",
     title: "Branding",
     category: "Identity",
     overview:
@@ -143,6 +153,7 @@ export const serviceDetails: Service[] = [
   },
   {
     number: "05",
+    slug: "seo",
     title: "SEO",
     category: "Discover",
     overview:

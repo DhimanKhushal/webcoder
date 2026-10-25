@@ -30,7 +30,7 @@ export function ComparisonCard({ item, variant, index }: ComparisonCardProps) {
       whileHover={reduceMotion ? undefined : { y: -4, scale: isWebcodder ? 1.008 : 1 }}
       className={`group relative min-h-40 shrink-0 snap-center overflow-hidden rounded-2xl border p-5 sm:min-h-0 sm:p-6 ${
         isWebcodder
-          ? "w-[84vw] border-[#121212]/12 bg-[#F7F7F7] text-[#121212] transition-[border-color,box-shadow] duration-300 hover:border-[#F26A3D] hover:shadow-[0_18px_45px_rgba(18,18,18,0.09)] sm:w-auto"
+          ? "w-[84vw] border-[#121212]/12 bg-[#F7F7F7] text-[#121212] transition-[border-color,box-shadow] duration-300 hover:border-[#4F8CFF] hover:shadow-[0_18px_45px_rgba(18,18,18,0.09)] sm:w-auto"
           : "w-[84vw] border-white/12 bg-[#1D1D1D] text-white opacity-75 sm:w-auto"
       }`}
     >
@@ -38,7 +38,7 @@ export function ComparisonCard({ item, variant, index }: ComparisonCardProps) {
         <motion.span
           whileHover={reduceMotion || !isWebcodder ? undefined : { rotate: 7 }}
           className={`grid size-11 shrink-0 place-items-center rounded-xl ${
-            isWebcodder ? "bg-white text-[#F26A3D]" : "bg-white/[0.055] text-white/38"
+            isWebcodder ? "bg-white text-[#4F8CFF]" : "bg-white/[0.055] text-white/38"
           }`}
         >
           <Icon size={20} strokeWidth={1.7} aria-hidden="true" />
@@ -47,7 +47,7 @@ export function ComparisonCard({ item, variant, index }: ComparisonCardProps) {
           <ArrowUpRight
             size={19}
             aria-hidden="true"
-            className="text-[#F26A3D] opacity-45 transition-[transform,opacity] duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100"
+            className="text-[#4F8CFF] opacity-45 transition-[transform,opacity] duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100"
           />
         )}
       </div>
@@ -58,7 +58,7 @@ export function ComparisonCard({ item, variant, index }: ComparisonCardProps) {
         {item.description}
       </p>
       {isWebcodder && (
-        <span className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-[#F26A3D] transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
+        <span className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-[#4F8CFF] transition-transform duration-300 group-hover:scale-x-100" aria-hidden="true" />
       )}
     </motion.article>
   );

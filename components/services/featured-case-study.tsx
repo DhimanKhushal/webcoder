@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { ProjectArtwork } from "@/components/project-artwork";
 import { caseStudyMetrics } from "@/lib/services-page-data";
 
 export function FeaturedCaseStudy() {
@@ -17,23 +17,25 @@ export function FeaturedCaseStudy() {
             <div className="case-browser">
               <div className="case-browser-bar"><i /><i /><i /><span>webcodder.case-study</span></div>
               <div className="case-browser-image">
-                <Image
+                <ProjectArtwork
                   src="/projects/kingsland-digital.png"
                   alt="Kingsland Digital website displayed in a desktop browser"
-                  fill
+                  label="Kingsland Digital"
+                  caption="Digital Agency / Website"
                   sizes="(max-width: 820px) 94vw, 640px"
                 />
               </div>
             </div>
             <div className="case-mobile">
-              <Image
+              <ProjectArtwork
                 src="/projects/kingsland-digital.png"
                 alt="Kingsland Digital website mobile preview"
-                fill
+                label="Kingsland Digital"
+                compact
                 sizes="180px"
               />
             </div>
-            <Link href="/projects">
+            <Link href="/projects/kingsland-digital">
               Digital Agency · Website <ArrowUpRight size={15} />
             </Link>
           </div>
@@ -65,7 +67,7 @@ export function FeaturedCaseStudy() {
               ))}
             </div>
             <p className="case-disclaimer">Example case study metrics. Replace with verified project results before publishing.</p>
-            <Link className="button button-dark" href="/projects">
+            <Link className="button button-dark" href="/projects/kingsland-digital">
               View Full Case Study <ArrowUpRight size={17} />
             </Link>
           </div>

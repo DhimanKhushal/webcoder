@@ -1,21 +1,13 @@
 import Link from "next/link";
-import {
-  ArrowDownRight,
-  ArrowUpRight,
-  Boxes,
-  Code2,
-  Layers3,
-  PenTool,
-} from "lucide-react";
+import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { CTA } from "@/components/cta";
 import { FAQ } from "@/components/faq";
 import { HeroVisual } from "@/components/hero-visual";
+import { HomeServices } from "@/components/home-services";
 import { IndustriesSection } from "@/components/industries-section";
 import { ProjectCard } from "@/components/project-card";
 import { ProjectScopeBuilder } from "@/components/project-scope/ProjectScopeBuilder";
-import { projects, services } from "@/lib/data";
-
-const serviceIcons = [PenTool, Code2, Boxes, Layers3];
+import { projects } from "@/lib/data";
 
 export default function Home() {
   return (
@@ -80,25 +72,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }} data-home-section>
-        <div className="container">
-          <p className="eyebrow" data-reveal>What we do</p>
-          <h2 className="section-title" data-reveal>One team. Every digital touchpoint.</h2>
-          <div className="services-grid">
-            {services.map((service, index) => {
-              const Icon = serviceIcons[index];
-              return (
-                <article className="service-card" key={service.title} data-reveal-card>
-                  <span className="service-number">{service.number}</span>
-                  <Icon className="service-icon" size={30} strokeWidth={1.5} />
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <HomeServices />
 
       <ProjectScopeBuilder />
 

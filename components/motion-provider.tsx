@@ -7,6 +7,7 @@ export function MotionProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     let cleanup = () => {};
 
     async function animate() {
@@ -22,6 +23,7 @@ export function MotionProvider({ children }: { children: React.ReactNode }) {
         touchMultiplier: 1.1,
         wheelMultiplier: 0.9,
       });
+      lenis.scrollTo(0, { immediate: true });
       const updateScrollTrigger = () => ScrollTrigger.update();
       const updateLenis = (time: number) => lenis.raf(time * 1000);
 

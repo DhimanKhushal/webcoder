@@ -1,22 +1,25 @@
-import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { ProjectArtwork } from "@/components/project-artwork";
+import { getCaseStudyPath } from "@/lib/case-studies";
 
 export type Project = {
+  slug: string;
   title: string;
   category: string;
-  image: string;
+  image?: string;
   badge: string;
 };
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="project-card" data-reveal data-reveal-card>
+    <Link className="project-card" href={getCaseStudyPath(project.slug)} data-reveal data-reveal-card>
       <div className="project-image">
-        <Image
+        <ProjectArtwork
           src={project.image}
           alt={`${project.title} website project`}
-          width={720}
-          height={590}
+          label={project.title}
+          caption={project.category}
           sizes="(max-width: 900px) 100vw, 50vw"
         />
         <span className="project-badge">{project.badge}</span>
@@ -28,6 +31,6 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
         <ArrowUpRight size={25} />
       </div>
-    </article>
+    </Link>
   );
 }

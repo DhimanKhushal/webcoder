@@ -87,7 +87,7 @@ export function ServicesHero() {
             <Link className="button" href="/contact">
               Start a Project <ArrowUpRight size={17} />
             </Link>
-            <a className="button button-outline" href="#service-details">
+            <a className="button button-outline" href="#all-services">
               Explore Our Services <ArrowDown size={16} />
             </a>
           </motion.div>

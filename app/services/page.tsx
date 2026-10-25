@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { BeforeAfterTransformation } from "@/components/services/before-after-transformation";
 import { FeaturedCaseStudy } from "@/components/services/featured-case-study";
+import { ServiceDirectory } from "@/components/services/service-directory";
 import { ServicesCTA } from "@/components/services/services-cta";
 import { ServicesHero } from "@/components/services/services-hero";
-import { ServicesOverview } from "@/components/services/services-overview";
 import { StickyServices } from "@/components/services/sticky-services";
 import { TechnologyMarquee } from "@/components/services/technology-marquee";
 import { WhatYouGet } from "@/components/services/what-you-get";
@@ -19,7 +19,7 @@ export default function ServicesPage() {
   return (
     <>
       <ServicesHero />
-      <ServicesOverview />
+      <ServiceDirectory />
       <StickyServices />
       <WhatYouGet />
       <WorkProcess />

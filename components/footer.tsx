@@ -27,48 +27,46 @@ const footerGroups = [
     title: "Explore",
     links: [
       ["About Us", "/about"],
-      ["Our Process", "/about"],
+      ["Our Process", "/about#how-we-work"],
+      ["All Services", "/services"],
       ["Projects", "/projects"],
-      ["Careers", "/contact"],
-      ["Blog", "/"],
       ["Contact Us", "/contact"],
     ],
   },
   {
-    title: "Services",
+    title: "AI & Development",
     links: [
-      ["Web Development", "/services"],
-      ["UI/UX Design", "/services"],
-      ["Digital Marketing", "/services"],
-      ["SEO Services", "/services"],
-      ["Social Media Marketing", "/services"],
-      ["Google Ads", "/services"],
-      ["Branding", "/services"],
-      ["Content Marketing", "/services"],
+      ["AI Automation", "/services/ai-automation"],
+      ["AI Agents & Chatbots", "/services/ai-agents-chatbots"],
+      ["Workflow Automation", "/services/workflow-automation"],
+      ["Web Development", "/services/web-development"],
+      ["App Development", "/services/app-development"],
+      ["eCommerce Development", "/services/ecommerce-development"],
+      ["Software Development", "/services/software-development"],
     ],
   },
   {
-    title: "Industries",
+    title: "Design & Branding",
     links: [
-      ["Healthcare", "/projects"],
-      ["Education", "/projects"],
-      ["Real Estate", "/projects"],
-      ["E-Commerce", "/projects"],
-      ["IT & SaaS", "/projects"],
-      ["Hospitality", "/projects"],
-      ["Finance", "/projects"],
-      ["Startups", "/projects"],
+      ["Web Designing", "/services/web-designing"],
+      ["UI/UX Designing", "/services/ui-ux-designing"],
+      ["Brand Kit", "/services/brand-kit"],
+      ["Logo Design", "/services/logo-design"],
+      ["Brochure Design", "/services/brochure-design"],
+      ["Video Editing", "/services/video-editing"],
+      ["Content Creation", "/services/content-creation"],
     ],
   },
   {
-    title: "Resources",
+    title: "Marketing",
     links: [
-      ["Case Studies", "/projects"],
-      ["Blog & Insights", "/"],
-      ["Guides", "/services"],
-      ["FAQs", "/"],
-      ["Privacy Policy", "/"],
-      ["Terms & Conditions", "/"],
+      ["SEO", "/services/seo"],
+      ["Local Business SEO", "/services/local-business-seo"],
+      ["Social Media Marketing", "/services/social-media-marketing"],
+      ["Google Ads", "/services/google-ads"],
+      ["Meta Ads", "/services/meta-ads"],
+      ["Content Marketing", "/services/content-marketing"],
+      ["Marketing Automation", "/services/marketing-automation"],
     ],
   },
 ] as const;
@@ -270,9 +268,6 @@ export function Footer() {
           <span>© {new Date().getFullYear()} Webcodder. All rights reserved.</span>
           <span>Built with strategy, pixels &amp; clean code.</span>
           <div className="footer-legal">
-            <Link href="/">Privacy Policy</Link>
-            <Link href="/">Terms &amp; Conditions</Link>
-            <Link href="/">Sitemap</Link>
             <button type="button" onClick={backToTop} aria-label="Back to top">
               <ArrowUp size={17} />
             </button>

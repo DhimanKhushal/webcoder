@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Check } from "lucide-react";
+import { ProjectArtwork } from "@/components/project-artwork";
 import { useEffect, useRef, useState } from "react";
+import { getServicePath } from "@/lib/service-pages";
 import { serviceDetails, type Service } from "@/lib/services-page-data";
 
 function ServiceDetailPanel({ service }: { service: Service }) {
@@ -48,10 +49,11 @@ function ServiceDetailPanel({ service }: { service: Service }) {
           <span>webcodder.project</span>
         </div>
         <div className="service-project-image">
-          <Image
+          <ProjectArtwork
             src={service.project.image}
             alt={`${service.project.title} website preview`}
-            fill
+            label={service.project.title}
+            caption={service.project.category}
             sizes="(max-width: 820px) 92vw, 620px"
           />
         </div>
@@ -64,7 +66,7 @@ function ServiceDetailPanel({ service }: { service: Service }) {
         </div>
       </div>
 
-      <Link className="service-explore-link" href="/contact">
+      <Link className="service-explore-link" href={getServicePath(service.slug)}>
         {service.cta} <ArrowUpRight size={17} />
       </Link>
     </article>

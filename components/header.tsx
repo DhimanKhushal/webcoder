@@ -5,6 +5,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ServicesMenu } from "./services-menu";
+import styles from "./services-menu.module.css";
 
 const links = [
   { href: "/", label: "Home" },
@@ -16,9 +18,12 @@ const links = [
 
 export function Header() {
   const pathname = usePathname();
+  return <HeaderNavigation key={pathname} pathname={pathname} />;
+}
+
+function HeaderNavigation({ pathname }: { pathname: string }) {
   const [open, setOpen] = useState(false);
 
-  useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
     function closeOnEscape(event: KeyboardEvent) {
       if (event.key === "Escape") setOpen(false);
@@ -30,7 +35,7 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="container">
-        <div className="nav-shell">
+        <div className={`nav-shell ${styles.shell}`}>
           <Link href="/" className="logo" aria-label="Webcodder home">
             <Image
               className="brand-logo-image"
@@ -42,7 +47,9 @@ export function Header() {
             />
           </Link>
           <nav className="desktop-nav" aria-label="Primary navigation">
-            {links.map((link) => (
+            {links.map((link) => link.href === "/services" ? (
+              <ServicesMenu key={`${pathname}-services`} active={pathname === "/services"} />
+            ) : (
               <Link
                 key={link.href}
                 href={link.href}
@@ -68,14 +75,23 @@ export function Header() {
         </div>
         <nav
           id="mobile-navigation"
-          className={`mobile-nav ${open ? "open" : ""}`}
+          data-lenis-prevent
+          className={`mobile-nav ${styles.mobileNavigation} ${open ? "open" : ""}`}
           aria-label="Mobile navigation"
           aria-hidden={!open}
         >
-          {links.map((link) => (
+          {links.map((link) => link.href === "/services" ? (
+            <ServicesMenu
+              key={`${pathname}-${open}-services`}
+              mobile
+              active={pathname === "/services"}
+              onNavigate={() => setOpen(false)}
+            />
+          ) : (
             <Link
               key={link.href}
               href={link.href}
+              onClick={() => setOpen(false)}
               tabIndex={open ? 0 : -1}
               aria-current={pathname === link.href ? "page" : undefined}
             >

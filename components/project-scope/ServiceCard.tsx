@@ -22,9 +22,9 @@ export function ServiceCard({ service, selected, onToggle }: ServiceCardProps) {
       whileHover={reduceMotion ? undefined : { y: -3 }}
       whileTap={reduceMotion ? undefined : { scale: 0.99 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
-      className={`group relative min-h-44 rounded-2xl border p-5 text-left transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F26A3D] ${
+      className={`group relative min-h-44 rounded-2xl border p-5 text-left transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4F8CFF] ${
         selected
-          ? "border-[#F26A3D] bg-[#FFF0EA]"
+          ? "border-[#4F8CFF] bg-[#EAF2FF]"
           : "border-[#121212]/12 bg-white hover:border-[#121212]/35"
       }`}
     >
@@ -46,7 +46,7 @@ export function ServiceCard({ service, selected, onToggle }: ServiceCardProps) {
         initial={false}
         animate={{ scale: selected ? 1 : 0.55, opacity: selected ? 1 : 0 }}
         transition={reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 430, damping: 25 }}
-        className="absolute right-4 top-4 grid size-7 place-items-center rounded-full bg-[#F26A3D] text-[#121212]"
+        className="absolute right-4 top-4 grid size-7 place-items-center rounded-full bg-[#4F8CFF] text-[#121212]"
         aria-hidden="true"
       >
         <Check size={15} strokeWidth={3} />
