@@ -2,6 +2,10 @@
 
 # dependencies
 /node_modules
+
+# this project uses pnpm (see packageManager in package.json)
+package-lock.json
+yarn.lock
 /.pnp
 .pnp.*
 .yarn/*
@@ -22,6 +26,13 @@
 /dist
 /.vinext
 /.wrangler
+
+# local agent/tool scratch (not part of the project)
+.claude/
+.openai/
+.superdesign/
+.playwright-cli/
+.code-review-graph/
 
 # misc
 .DS_Store
