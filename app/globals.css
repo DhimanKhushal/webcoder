@@ -2311,6 +2311,15 @@ a {
   letter-spacing: normal;
 }
 
+/* The email and phone links are the primary actions on this page. As inline
+   elements their hit area was the ~19px font box, under the WCAG 2.5.8
+   minimum of 24px. */
+.contact-card a {
+  display: inline-flex;
+  min-height: 24px;
+  align-items: center;
+}
+
 .contact-form {
   padding: clamp(30px, 5vw, 50px);
   border: 1px solid rgba(255, 255, 255, 0.1);

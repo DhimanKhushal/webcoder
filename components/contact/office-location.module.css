@@ -240,6 +240,8 @@
 
 .callLink {
   display: inline-flex;
+  /* WCAG 2.5.8 minimum target size; 12px text alone gives 19px. */
+  min-height: 24px;
   align-items: center;
   gap: 6px;
   color: rgba(255, 255, 255, 0.58);

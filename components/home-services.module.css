@@ -122,6 +122,8 @@
 
 .cardLink {
   display: inline-flex;
+  /* 24px is the WCAG 2.5.8 minimum target size; 13px text alone gives 21px. */
+  min-height: 24px;
   align-items: center;
   gap: 9px;
   margin-top: auto;
