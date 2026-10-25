@@ -41,6 +41,15 @@
   /* Form validation. Deliberately not part of the accent ramp: an invalid
      field must not read as a brand highlight. */
   --color-danger: #b63e18;
+
+  /* Third step of the grey ramp, between muted and muted-light. */
+  --color-muted-mid: #777777;
+
+  /* Tracking. The components carried ten hand-nudged values between 0.08em
+     and 0.15em, and four between -0.045em and -0.055em, which is two
+     intents rather than fourteen. */
+  --tracking-label: 0.12em;
+  --tracking-display: -0.05em;
 }
 
 :root {

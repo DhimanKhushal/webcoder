@@ -26,7 +26,7 @@ export function Statistics() {
       {stats.map((stat, index) => (
         <div key={stat.label} className={`py-7 text-center sm:px-5 sm:py-8 ${index > 0 ? "border-t border-ink/14 sm:border-l sm:border-t-0" : ""}`}>
           <AnimatedNumber stat={stat} active={inView} />
-          <p className="mb-0 mt-2 text-xs font-semibold uppercase tracking-[0.11em] text-muted">{stat.label}</p>
+          <p className="mb-0 mt-2 text-xs font-semibold uppercase tracking-label text-muted">{stat.label}</p>
         </div>
       ))}
     </div>
@@ -52,7 +52,7 @@ function AnimatedNumber({ stat, active }: { stat: StatItem; active: boolean }) {
     <motion.strong
       initial={{ opacity: 0, y: 12 }}
       animate={active ? { opacity: 1, y: 0 } : undefined}
-      className="block text-[clamp(36px,4.5vw,58px)] font-semibold leading-none tracking-[-0.045em] text-ink"
+      className="block text-[clamp(36px,4.5vw,58px)] font-semibold leading-none tracking-display text-ink"
       aria-label={`${stat.value}${stat.suffix} ${stat.label}`}
     >
       <span aria-hidden="true">{stat.prefix}{(reduceMotion && active ? stat.value : display).toFixed(stat.decimals ?? 0)}{stat.suffix}</span>

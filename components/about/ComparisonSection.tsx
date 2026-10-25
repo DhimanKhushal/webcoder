@@ -44,7 +44,7 @@ export function ComparisonSection() {
         >
           <div>
             <p className="eyebrow">Why Webcodder</p>
-            <h2 id="comparison-title" className="m-0 max-w-3xl text-[clamp(32px,4.3vw,54px)] font-semibold leading-[1.06] tracking-[-0.045em] text-ink text-balance">
+            <h2 id="comparison-title" className="m-0 max-w-3xl text-[clamp(32px,4.3vw,54px)] font-semibold leading-[1.06] tracking-display text-ink text-balance">
               Not every agency builds products. <span className="text-accent">We build digital growth systems.</span>
             </h2>
           </div>
@@ -97,7 +97,7 @@ function ComparisonPanel({ title, subtitle, items, variant }: { title: string; s
         <div className="-mx-5 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:grid sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-1 xl:grid-cols-2">
           {items.map((item, index) => <ComparisonCard key={item.title} item={item} variant={variant} index={index} />)}
         </div>
-        <p className={`mb-0 mt-4 text-center text-xs uppercase tracking-[0.12em] sm:hidden ${dark ? "text-white/30" : "text-[#777]"}`}>
+        <p className={`mb-0 mt-4 text-center text-xs uppercase tracking-label sm:hidden ${dark ? "text-white/30" : "text-muted-mid"}`}>
           Swipe to compare →
         </p>
       </div>

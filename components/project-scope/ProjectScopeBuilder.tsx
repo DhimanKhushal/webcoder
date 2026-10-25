@@ -128,7 +128,7 @@ export function ProjectScopeBuilder() {
             <div className="border-t border-ink/15 pt-8">
               <div className="mb-6 flex items-baseline justify-between gap-4">
                 <h3 className="m-0 text-xl font-semibold tracking-[-0.025em]">Where should we send the roadmap?</h3>
-                <span className="hidden text-xs text-[#777] sm:block">All fields required</span>
+                <span className="hidden text-xs text-muted-mid sm:block">All fields required</span>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <Field label="Name" name="name" autoComplete="name" value={contact.name} error={errors.name} onChange={(value) => setContact({ ...contact, name: value })} />
@@ -153,7 +153,7 @@ function FormSection({ number, title, description, children }: { number: string;
     <fieldset className="mb-10 border-0 border-t border-ink/15 p-0 pt-7">
       <legend className="sr-only">{title}</legend>
       <div className="mb-6 grid grid-cols-[34px_1fr] gap-3">
-        <span className="pt-1 text-xs font-semibold tracking-[0.12em] text-accent" aria-hidden="true">{number}</span>
+        <span className="pt-1 text-xs font-semibold tracking-label text-accent" aria-hidden="true">{number}</span>
         <div>
           <h3 className="m-0 text-xl font-semibold tracking-[-0.025em]">{title}</h3>
           <p className="mb-0 mt-1 text-sm text-muted">{description}</p>

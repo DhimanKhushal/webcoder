@@ -85,12 +85,12 @@ export function ProjectRoadmap() {
       <div className="mx-auto w-[min(1160px,calc(100%-48px))] max-sm:w-[calc(100%-32px)]">
         <div className="grid gap-7 border-b border-white/12 pb-10 lg:grid-cols-[1fr_0.65fr] lg:items-end">
           <div>
-            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.15em] text-accent">
+            <p className="mb-5 text-xs font-semibold uppercase tracking-label text-accent">
               How every project is born
             </p>
             <h2
               id="project-roadmap-title"
-              className="m-0 max-w-3xl text-[clamp(32px,4.2vw,52px)] font-semibold leading-[1.07] tracking-[-0.045em] text-balance"
+              className="m-0 max-w-3xl text-[clamp(32px,4.2vw,52px)] font-semibold leading-[1.07] tracking-display text-balance"
             >
               From a raw idea to a system that keeps growing.
             </h2>
@@ -136,7 +136,7 @@ export function ProjectRoadmap() {
               <RoadmapMilestone key={step.title} step={step} index={index} reduceMotion={Boolean(reduceMotion)} />
             ))}
           </ol>
-          <p className="mb-0 mt-3 text-center text-xs font-semibold uppercase tracking-[0.12em] text-white/32 lg:hidden">
+          <p className="mb-0 mt-3 text-center text-xs font-semibold uppercase tracking-label text-white/32 lg:hidden">
             Swipe through the journey →
           </p>
         </div>

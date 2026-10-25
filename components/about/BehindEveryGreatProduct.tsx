@@ -146,17 +146,17 @@ export function BehindEveryGreatProduct() {
             transition={{ duration: reduceMotion ? 0 : 0.75, ease: [0.22, 1, 0.36, 1] }}
             className="lg:sticky lg:top-32 lg:pt-10"
           >
-            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.15em] text-accent">
+            <p className="mb-6 text-xs font-semibold uppercase tracking-label text-accent">
               Behind every great product
             </p>
-            <h2 id="behind-product-title" className="m-0 max-w-xl text-[clamp(36px,4.6vw,62px)] font-semibold leading-[1.04] tracking-[-0.052em] text-balance">
+            <h2 id="behind-product-title" className="m-0 max-w-xl text-[clamp(36px,4.6vw,62px)] font-semibold leading-[1.04] tracking-display text-balance">
               Great products aren&apos;t designed.
               <span className="mt-2 block text-muted">They&apos;re carefully constructed.</span>
             </h2>
             <p className="mb-0 mt-8 max-w-[52ch] text-[clamp(15px,1.35vw,18px)] leading-[1.7] text-muted">
               Every successful digital product is the result of hundreds of thoughtful decisions—about people, purpose, performance and scale. Never luck.
             </p>
-            <div className="mt-10 flex items-center gap-4 border-t border-ink/12 pt-5 text-xs font-semibold uppercase tracking-[0.12em] text-[#777]">
+            <div className="mt-10 flex items-center gap-4 border-t border-ink/12 pt-5 text-xs font-semibold uppercase tracking-label text-muted-mid">
               <span className="size-2 rounded-full bg-accent animate-pulse motion-reduce:animate-none" />
               Live thinking canvas · v3.8
             </div>
@@ -193,7 +193,7 @@ export function BehindEveryGreatProduct() {
               </div>
             </motion.div>
 
-            <div className="mt-4 flex items-center justify-between gap-5 text-xs font-semibold uppercase tracking-[0.11em] text-[#777]">
+            <div className="mt-4 flex items-center justify-between gap-5 text-xs font-semibold uppercase tracking-label text-muted-mid">
               <span>Move cursor to explore depth</span>
               <span>Scroll to refine · 08 layers</span>
             </div>
@@ -207,7 +207,7 @@ export function BehindEveryGreatProduct() {
           transition={{ duration: reduceMotion ? 0 : 0.7 }}
           className="border-t border-ink/14 pt-[clamp(58px,7vw,88px)] text-center"
         >
-          <p className="m-0 text-[clamp(28px,4vw,48px)] font-semibold leading-tight tracking-[-0.045em]">Every pixel has a reason.</p>
+          <p className="m-0 text-[clamp(28px,4vw,48px)] font-semibold leading-tight tracking-display">Every pixel has a reason.</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-5">
             <MagneticButton reducedMotion={Boolean(reduceMotion)} />
             <Link href="#how-we-work" className="group inline-flex min-h-12 items-center gap-2 px-2 text-sm font-semibold text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
@@ -222,7 +222,7 @@ export function BehindEveryGreatProduct() {
 
 function CanvasChrome() {
   return (
-    <div className="absolute inset-x-0 top-0 z-30 flex h-10 items-center justify-between border-b border-ink/10 px-4 text-xs font-semibold uppercase tracking-[0.12em] text-[#777]">
+    <div className="absolute inset-x-0 top-0 z-30 flex h-10 items-center justify-between border-b border-ink/10 px-4 text-xs font-semibold uppercase tracking-label text-muted-mid">
       <span>Webcodder / Product Lab</span>
       <span className="flex items-center gap-2"><i className="size-1.5 rounded-full bg-accent" /> Auto-layout</span>
     </div>
@@ -233,17 +233,17 @@ function LooseThinkingLayer() {
   return (
     <>
       <div data-thinking-note className="absolute left-[10%] top-[16%] w-[28%] -rotate-2 border border-ink/14 bg-paper-deep p-3 shadow-[0_10px_24px_rgba(18,18,18,0.08)] sm:p-4">
-        <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[#777]">Research note · 04</span>
+        <span className="text-xs font-semibold uppercase tracking-label text-muted-mid">Research note · 04</span>
         <p className="mb-0 mt-2 text-xs font-semibold leading-[1.35] sm:text-xs">What should feel effortless for the user?</p>
       </div>
 
       <div data-thinking-note className="absolute right-[9%] top-[15%] w-[26%] rotate-2 bg-accent p-3 text-ink shadow-[0_12px_26px_rgba(18,18,18,0.12)] sm:p-4">
-        <span className="text-xs font-bold uppercase tracking-[0.12em]">Core idea</span>
+        <span className="text-xs font-bold uppercase tracking-label">Core idea</span>
         <p className="mb-0 mt-2 text-xs font-semibold leading-[1.35] sm:text-xs">Clarity before decoration.</p>
       </div>
 
       <div data-thinking-note className="absolute left-[8%] top-[40%] h-[28%] w-[42%] -rotate-1 border border-ink/18 bg-white p-3 shadow-[0_14px_30px_rgba(18,18,18,0.09)] sm:p-4">
-        <div className="flex items-center justify-between border-b border-ink/10 pb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#777]">
+        <div className="flex items-center justify-between border-b border-ink/10 pb-2 text-xs font-semibold uppercase tracking-label text-muted-mid">
           <span>Wireframe / Home</span><span>12 cols</span>
         </div>
         <div className="mt-3 grid grid-cols-[0.68fr_0.32fr] gap-2">
@@ -252,7 +252,7 @@ function LooseThinkingLayer() {
             <span className="mt-2 block h-2 w-3/5 bg-ink/10" />
             <span className="mt-3 block h-5 w-14 border border-ink/20" />
           </div>
-          <div className="grid place-items-center border border-dashed border-ink/20 text-xs text-[#777]">MEDIA</div>
+          <div className="grid place-items-center border border-dashed border-ink/20 text-xs text-muted-mid">MEDIA</div>
         </div>
         <div className="mt-3 grid grid-cols-3 gap-1.5">
           {[0, 1, 2].map((item) => <span key={item} className="h-9 border border-ink/12" />)}
@@ -261,8 +261,8 @@ function LooseThinkingLayer() {
       </div>
 
       <div data-thinking-note className="absolute right-[7%] top-[39%] w-[34%] rotate-1 border border-ink/14 bg-paper p-3 shadow-[0_12px_28px_rgba(18,18,18,0.09)] sm:p-4">
-        <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[#777]">Type scale</span>
-        <span className="mt-2 block text-[clamp(17px,2.2vw,29px)] font-semibold leading-none tracking-[-0.05em]">Aa</span>
+        <span className="text-xs font-semibold uppercase tracking-label text-muted-mid">Type scale</span>
+        <span className="mt-2 block text-[clamp(17px,2.2vw,29px)] font-semibold leading-none tracking-display">Aa</span>
         <div className="mt-3 flex items-end gap-2 text-ink">
           <b className="text-[14px]">H1</b><b className="text-xs">H2</b><span className="text-xs">Body / 16</span>
         </div>
@@ -282,7 +282,7 @@ function LooseThinkingLayer() {
         <path className="stroke-accent" d="M553 263 L562 270 L553 275" strokeWidth="1.5" />
       </svg>
 
-      <span className="absolute left-[4%] top-[32%] text-xs font-semibold uppercase tracking-[0.1em] text-[#777] [writing-mode:vertical-rl]">640px canvas</span>
+      <span className="absolute left-[4%] top-[32%] text-xs font-semibold uppercase tracking-label text-muted-mid [writing-mode:vertical-rl]">640px canvas</span>
       <span className="absolute right-[3%] top-[31%] h-[30%] border-l border-dashed border-ink/18" />
     </>
   );
@@ -312,26 +312,26 @@ function CodeNote() {
 function PolishedInterface() {
   return (
     <div className="h-full overflow-hidden rounded-2xl border border-ink/14 bg-paper shadow-[0_24px_60px_rgba(18,18,18,0.14)]">
-      <div className="flex h-9 items-center justify-between border-b border-ink/10 bg-white px-4 text-xs font-semibold uppercase tracking-[0.1em]">
-        <span>webcodder.</span><span className="flex gap-3 text-[#777]"><i>Work</i><i>Studio</i><b className="text-ink">Start</b></span>
+      <div className="flex h-9 items-center justify-between border-b border-ink/10 bg-white px-4 text-xs font-semibold uppercase tracking-label">
+        <span>webcodder.</span><span className="flex gap-3 text-muted-mid"><i>Work</i><i>Studio</i><b className="text-ink">Start</b></span>
       </div>
       <div className="grid h-[calc(100%-36px)] grid-rows-[1fr_auto] p-[clamp(14px,3vw,28px)]">
         <div className="grid items-center gap-5 sm:grid-cols-[1.08fr_0.92fr]">
           <div>
-            <span data-polish-mark className="block translate-y-2 text-xs font-semibold uppercase tracking-[0.13em] text-accent opacity-0">Independent product studio</span>
-            <h3 data-polish-mark className="mb-0 mt-3 translate-y-2 text-[clamp(21px,3.5vw,40px)] font-semibold leading-[0.98] tracking-[-0.055em] opacity-0">Ideas shaped<br />into impact.</h3>
-            <p data-polish-mark className="mb-0 mt-3 max-w-[28ch] translate-y-2 text-xs leading-[1.6] text-[#777] opacity-0 sm:text-xs">Strategy, design and engineering aligned around one clear business outcome.</p>
+            <span data-polish-mark className="block translate-y-2 text-xs font-semibold uppercase tracking-label text-accent opacity-0">Independent product studio</span>
+            <h3 data-polish-mark className="mb-0 mt-3 translate-y-2 text-[clamp(21px,3.5vw,40px)] font-semibold leading-[0.98] tracking-display opacity-0">Ideas shaped<br />into impact.</h3>
+            <p data-polish-mark className="mb-0 mt-3 max-w-[28ch] translate-y-2 text-xs leading-[1.6] text-muted-mid opacity-0 sm:text-xs">Strategy, design and engineering aligned around one clear business outcome.</p>
             <span data-polish-mark className="mt-4 inline-flex translate-y-2 rounded-full bg-accent px-3 py-2 text-xs font-semibold opacity-0">Start a project ↗</span>
           </div>
           <div data-polish-mark className="relative aspect-square translate-y-2 overflow-hidden rounded-xl bg-ink p-4 text-white opacity-0">
-            <span className="text-xs uppercase tracking-[0.11em] text-white/40">System / 01</span>
+            <span className="text-xs uppercase tracking-label text-white/40">System / 01</span>
             <div className="absolute inset-x-4 bottom-4 grid grid-cols-3 gap-1">
               <i className="h-8 bg-white/8" /><i className="h-13 bg-accent" /><i className="h-18 bg-white/14" />
             </div>
             <span className="absolute right-4 top-4 size-2 rounded-full bg-accent animate-pulse motion-reduce:animate-none" />
           </div>
         </div>
-        <div className="mt-4 grid grid-cols-3 border-t border-ink/10 pt-3 text-xs font-semibold uppercase tracking-[0.08em] text-[#777]">
+        <div className="mt-4 grid grid-cols-3 border-t border-ink/10 pt-3 text-xs font-semibold uppercase tracking-label text-muted-mid">
           <span>Strategy</span><span className="text-center">Experience</span><span className="text-right">Engineering</span>
         </div>
       </div>

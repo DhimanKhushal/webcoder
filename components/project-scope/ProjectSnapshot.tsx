@@ -33,7 +33,7 @@ export function ProjectSnapshot({ estimate, selectedServices }: ProjectSnapshotP
         </div>
 
         <div className="px-6 py-7 sm:px-8">
-          <p className="m-0 text-xs font-semibold uppercase tracking-[0.13em] text-accent">Recommended solution</p>
+          <p className="m-0 text-xs font-semibold uppercase tracking-label text-accent">Recommended solution</p>
           <AnimatePresence mode="wait" initial={false}>
             <motion.p
               key={estimate.solution}
@@ -64,14 +64,14 @@ export function ProjectSnapshot({ estimate, selectedServices }: ProjectSnapshotP
           </div>
 
           <div className="mt-7 border-t border-white/10 pt-6">
-            <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-white/50">
+            <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-label text-white/50">
               <UsersRound size={14} aria-hidden="true" /> Recommended team
             </div>
             <p className="m-0 text-sm leading-6 text-white/85">{estimate.team.join(" · ")}</p>
           </div>
 
           <div className="mt-6">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-white/50">Selected services</p>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-label text-white/50">Selected services</p>
             <motion.div layout className="flex min-h-8 flex-wrap gap-2">
               <AnimatePresence mode="popLayout">
                 {selectedServices.length ? selectedServices.map((service, index) => (
@@ -96,7 +96,7 @@ export function ProjectSnapshot({ estimate, selectedServices }: ProjectSnapshotP
           </div>
 
           <div className="mt-7 rounded-2xl bg-ink-soft p-5">
-            <p className="m-0 text-xs font-semibold uppercase tracking-[0.12em] text-white/50">Expected outcomes</p>
+            <p className="m-0 text-xs font-semibold uppercase tracking-label text-white/50">Expected outcomes</p>
             <ul className="mb-0 mt-4 grid list-none gap-3 p-0">
               {estimate.outcomes.map((outcome) => (
                 <li key={outcome} className="flex items-start gap-2.5 text-sm leading-5 text-white/80">
@@ -135,7 +135,7 @@ function SnapshotStat({ icon: Icon, label, value }: { icon: typeof Clock3; label
   return (
     <div className="bg-ink-soft p-4">
       <Icon size={16} className="mb-4 text-accent" aria-hidden="true" />
-      <span className="block text-xs uppercase tracking-[0.1em] text-white/40">{label}</span>
+      <span className="block text-xs uppercase tracking-label text-white/40">{label}</span>
       <AnimatePresence mode="wait" initial={false}>
         <motion.strong
           key={value}
