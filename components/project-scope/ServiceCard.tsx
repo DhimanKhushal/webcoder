@@ -24,21 +24,21 @@ export function ServiceCard({ service, selected, onToggle }: ServiceCardProps) {
       transition={{ duration: 0.2, ease: "easeOut" }}
       className={`group relative min-h-44 rounded-2xl border p-5 text-left transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent ${
         selected
-          ? "border-accent bg-[#EAF2FF]"
-          : "border-[#121212]/12 bg-white hover:border-[#121212]/35"
+          ? "border-accent bg-accent-soft"
+          : "border-ink/12 bg-white hover:border-ink/35"
       }`}
     >
       <span
         className={`mb-8 grid size-10 place-items-center rounded-xl transition-colors ${
-          selected ? "bg-[#121212] text-white" : "bg-[#EEEEEE] text-[#121212]"
+          selected ? "bg-ink text-white" : "bg-paper-deep text-ink"
         }`}
       >
         <Icon size={19} strokeWidth={1.8} aria-hidden="true" />
       </span>
-      <span className="block pr-8 text-[17px] font-semibold leading-tight tracking-[-0.02em] text-[#121212]">
+      <span className="block pr-8 text-[17px] font-semibold leading-tight tracking-[-0.02em] text-ink">
         {service.title}
       </span>
-      <span className="mt-2 block text-sm leading-5 text-[#606060]">
+      <span className="mt-2 block text-sm leading-5 text-muted">
         {service.description}
       </span>
 
@@ -46,7 +46,7 @@ export function ServiceCard({ service, selected, onToggle }: ServiceCardProps) {
         initial={false}
         animate={{ scale: selected ? 1 : 0.55, opacity: selected ? 1 : 0 }}
         transition={reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 430, damping: 25 }}
-        className="absolute right-4 top-4 grid size-7 place-items-center rounded-full bg-accent text-[#121212]"
+        className="absolute right-4 top-4 grid size-7 place-items-center rounded-full bg-accent text-ink"
         aria-hidden="true"
       >
         <Check size={15} strokeWidth={3} />

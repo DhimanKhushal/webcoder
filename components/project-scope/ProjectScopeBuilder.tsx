@@ -92,16 +92,16 @@ export function ProjectScopeBuilder() {
   }
 
   return (
-    <section className="bg-[#F7F7F7] py-[clamp(82px,9vw,128px)]" data-home-section aria-labelledby="scope-builder-title">
+    <section className="bg-paper py-[clamp(82px,9vw,128px)]" data-home-section aria-labelledby="scope-builder-title">
       <div className="mx-auto w-[min(1240px,calc(100%-48px))] max-sm:w-[calc(100%-32px)]">
-        <div className="mb-12 grid gap-6 border-b border-[#121212]/15 pb-9 lg:grid-cols-[1fr_0.7fr] lg:items-end">
+        <div className="mb-12 grid gap-6 border-b border-ink/15 pb-9 lg:grid-cols-[1fr_0.7fr] lg:items-end">
           <div>
             <p className="eyebrow">Project scope builder</p>
-            <h2 id="scope-builder-title" className="m-0 max-w-2xl text-[clamp(30px,4vw,48px)] font-semibold leading-[1.08] tracking-[-0.04em] text-[#121212]">
+            <h2 id="scope-builder-title" className="m-0 max-w-2xl text-[clamp(30px,4vw,48px)] font-semibold leading-[1.08] tracking-[-0.04em] text-ink">
               Turn an ambitious idea into a clear starting point.
             </h2>
           </div>
-          <p className="m-0 max-w-lg text-[15px] leading-6 text-[#606060] lg:justify-self-end">
+          <p className="m-0 max-w-lg text-[15px] leading-6 text-muted lg:justify-self-end">
             Choose what you need. We&apos;ll shape the right delivery model, timeline and specialist team around your priorities.
           </p>
         </div>
@@ -125,7 +125,7 @@ export function ProjectScopeBuilder() {
               <GoalSelector options={goals} value={goal} onChange={setGoal} />
             </FormSection>
 
-            <div className="border-t border-[#121212]/15 pt-8">
+            <div className="border-t border-ink/15 pt-8">
               <div className="mb-6 flex items-baseline justify-between gap-4">
                 <h3 className="m-0 text-xl font-semibold tracking-[-0.025em]">Where should we send the roadmap?</h3>
                 <span className="hidden text-xs text-[#777] sm:block">All fields required</span>
@@ -150,13 +150,13 @@ export function ProjectScopeBuilder() {
 
 function FormSection({ number, title, description, children }: { number: string; title: string; description: string; children: React.ReactNode }) {
   return (
-    <fieldset className="mb-10 border-0 border-t border-[#121212]/15 p-0 pt-7">
+    <fieldset className="mb-10 border-0 border-t border-ink/15 p-0 pt-7">
       <legend className="sr-only">{title}</legend>
       <div className="mb-6 grid grid-cols-[34px_1fr] gap-3">
         <span className="pt-1 text-xs font-semibold tracking-[0.12em] text-accent" aria-hidden="true">{number}</span>
         <div>
           <h3 className="m-0 text-xl font-semibold tracking-[-0.025em]">{title}</h3>
-          <p className="mb-0 mt-1 text-sm text-[#606060]">{description}</p>
+          <p className="mb-0 mt-1 text-sm text-muted">{description}</p>
         </div>
       </div>
       {children}
@@ -177,7 +177,7 @@ function Field({ label, name, type = "text", autoComplete, value, error, onChang
         onChange={(event) => onChange(event.target.value)}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? errorId : undefined}
-        className={`mt-2 block min-h-13 w-full rounded-xl border bg-white px-4 text-[15px] text-[#121212] outline-none transition-colors placeholder:text-[#999] focus:border-accent focus:ring-2 focus:ring-accent/15 ${error ? "border-danger" : "border-[#121212]/15"}`}
+        className={`mt-2 block min-h-13 w-full rounded-xl border bg-white px-4 text-[15px] text-ink outline-none transition-colors placeholder:text-[#999] focus:border-accent focus:ring-2 focus:ring-accent/15 ${error ? "border-danger" : "border-ink/15"}`}
       />
       {error && <span id={errorId} role="alert" className="mt-1.5 block text-xs font-medium text-danger">{error}</span>}
     </label>

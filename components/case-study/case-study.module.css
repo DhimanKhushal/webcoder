@@ -102,7 +102,7 @@
 
 .heroFacts dt {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -146,7 +146,7 @@
 .browserBar span {
   margin-left: 12px;
   color: rgba(255, 255, 255, 0.4);
-  font-size: 11.5px;
+  font-size: 12px;
 }
 
 .artworkFrame {
@@ -452,7 +452,7 @@
 
 .nextCard small {
   color: var(--muted);
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;

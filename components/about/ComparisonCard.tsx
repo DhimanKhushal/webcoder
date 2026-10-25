@@ -30,8 +30,8 @@ export function ComparisonCard({ item, variant, index }: ComparisonCardProps) {
       whileHover={reduceMotion ? undefined : { y: -4, scale: isWebcodder ? 1.008 : 1 }}
       className={`group relative min-h-40 shrink-0 snap-center overflow-hidden rounded-2xl border p-5 sm:min-h-0 sm:p-6 ${
         isWebcodder
-          ? "w-[84vw] border-[#121212]/12 bg-[#F7F7F7] text-[#121212] transition-[border-color,box-shadow] duration-300 hover:border-accent hover:shadow-[0_18px_45px_rgba(18,18,18,0.09)] sm:w-auto"
-          : "w-[84vw] border-white/12 bg-[#1D1D1D] text-white opacity-75 sm:w-auto"
+          ? "w-[84vw] border-ink/12 bg-paper text-ink transition-[border-color,box-shadow] duration-300 hover:border-accent hover:shadow-[0_18px_45px_rgba(18,18,18,0.09)] sm:w-auto"
+          : "w-[84vw] border-white/12 bg-ink-soft text-white opacity-75 sm:w-auto"
       }`}
     >
       <div className="flex items-start justify-between gap-5">
@@ -51,10 +51,10 @@ export function ComparisonCard({ item, variant, index }: ComparisonCardProps) {
           />
         )}
       </div>
-      <h4 className={`mb-0 mt-8 text-lg font-semibold leading-tight tracking-[-0.025em] transition-transform duration-300 group-hover:scale-[1.01] ${isWebcodder ? "text-[#121212]" : "text-white/75"}`}>
+      <h4 className={`mb-0 mt-8 text-lg font-semibold leading-tight tracking-[-0.025em] transition-transform duration-300 group-hover:scale-[1.01] ${isWebcodder ? "text-ink" : "text-white/75"}`}>
         {item.title}
       </h4>
-      <p className={`mb-0 mt-2 text-sm leading-[1.55] ${isWebcodder ? "text-[#606060]" : "text-white/38"}`}>
+      <p className={`mb-0 mt-2 text-sm leading-[1.55] ${isWebcodder ? "text-muted" : "text-white/38"}`}>
         {item.description}
       </p>
       {isWebcodder && (

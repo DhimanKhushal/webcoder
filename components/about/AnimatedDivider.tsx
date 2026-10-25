@@ -65,7 +65,7 @@ export function AnimatedDivider() {
 
   return (
     <div ref={rootRef} className="relative h-24 w-full lg:h-auto lg:min-h-full lg:w-[72px]" aria-hidden="true">
-      <div className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-[#121212]/10 lg:left-1/2 lg:top-0 lg:h-full lg:w-px lg:-translate-x-1/2 lg:translate-y-0" />
+      <div className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-ink/10 lg:left-1/2 lg:top-0 lg:h-full lg:w-px lg:-translate-x-1/2 lg:translate-y-0" />
       <div
         data-comparison-line
         className="absolute left-0 top-1/2 h-0.5 w-full origin-left -translate-y-1/2 bg-accent shadow-[0_0_16px_rgba(79,140,255,0.42)] lg:left-1/2 lg:top-0 lg:h-full lg:w-0.5 lg:origin-top lg:-translate-x-1/2 lg:translate-y-0"

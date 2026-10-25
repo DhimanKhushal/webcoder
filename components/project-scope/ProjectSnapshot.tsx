@@ -21,7 +21,7 @@ export function ProjectSnapshot({ estimate, selectedServices }: ProjectSnapshotP
 
   return (
     <aside className="xl:sticky xl:top-28">
-      <div className="overflow-hidden rounded-[26px] bg-[#121212] text-white">
+      <div className="overflow-hidden rounded-[26px] bg-ink text-white">
         <div className="border-b border-white/10 px-6 py-6 sm:px-8">
           <div className="flex items-center justify-between gap-4">
             <p className="m-0 text-xs font-semibold uppercase tracking-[0.14em] text-white/50">Live scope</p>
@@ -82,7 +82,7 @@ export function ProjectSnapshot({ estimate, selectedServices }: ProjectSnapshotP
                     animate={{ opacity: 1, y: 0 }}
                     exit={reduceMotion ? undefined : { opacity: 0, scale: 0.9 }}
                     transition={{ delay: reduceMotion ? 0 : index * 0.04 }}
-                    className="rounded-full border border-white/12 bg-[#1D1D1D] px-3 py-1.5 text-xs text-white/80"
+                    className="rounded-full border border-white/12 bg-ink-soft px-3 py-1.5 text-xs text-white/80"
                   >
                     {service.title}
                   </motion.span>
@@ -95,7 +95,7 @@ export function ProjectSnapshot({ estimate, selectedServices }: ProjectSnapshotP
             </motion.div>
           </div>
 
-          <div className="mt-7 rounded-2xl bg-[#1D1D1D] p-5">
+          <div className="mt-7 rounded-2xl bg-ink-soft p-5">
             <p className="m-0 text-xs font-semibold uppercase tracking-[0.12em] text-white/50">Expected outcomes</p>
             <ul className="mb-0 mt-4 grid list-none gap-3 p-0">
               {estimate.outcomes.map((outcome) => (
@@ -118,11 +118,11 @@ export function ProjectSnapshot({ estimate, selectedServices }: ProjectSnapshotP
           <button
             type="submit"
             form="project-scope-form"
-            className="mt-7 flex min-h-14 w-full items-center justify-center gap-2 rounded-xl border border-accent bg-accent px-5 text-[15px] font-semibold text-[#121212] transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+            className="mt-7 flex min-h-14 w-full items-center justify-center gap-2 rounded-xl border border-accent bg-accent px-5 text-[15px] font-semibold text-ink transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
           >
             Get My Free Project Roadmap <ArrowUpRight size={18} aria-hidden="true" />
           </button>
-          <p className="mb-0 mt-3 text-center text-[11px] leading-4 text-white/45">
+          <p className="mb-0 mt-3 text-center text-xs leading-4 text-white/45">
             No obligation. Our team will review your requirements and contact you within one business day.
           </p>
         </div>
@@ -133,9 +133,9 @@ export function ProjectSnapshot({ estimate, selectedServices }: ProjectSnapshotP
 
 function SnapshotStat({ icon: Icon, label, value }: { icon: typeof Clock3; label: string; value: string }) {
   return (
-    <div className="bg-[#1D1D1D] p-4">
+    <div className="bg-ink-soft p-4">
       <Icon size={16} className="mb-4 text-accent" aria-hidden="true" />
-      <span className="block text-[11px] uppercase tracking-[0.1em] text-white/40">{label}</span>
+      <span className="block text-xs uppercase tracking-[0.1em] text-white/40">{label}</span>
       <AnimatePresence mode="wait" initial={false}>
         <motion.strong
           key={value}
