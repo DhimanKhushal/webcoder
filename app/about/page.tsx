@@ -8,6 +8,7 @@ import { BehindEveryGreatProduct } from "@/components/about/BehindEveryGreatProd
 export const metadata: Metadata = {
   title: "About",
   description: "Meet Webcodder, a digital product agency built around clarity, craft and useful outcomes.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

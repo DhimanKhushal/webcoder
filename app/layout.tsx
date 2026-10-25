@@ -26,6 +26,9 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description:
       "A Chandigarh-based IT agency creating high-converting websites, software products, UI/UX, branding and digital experiences.",
+    // Home page canonical. Each child route sets its own, so this is not
+    // inherited anywhere it would be wrong.
+    alternates: { canonical: "/" },
     openGraph: {
       type: "website",
       title: "Webcodder — Ideas, coded into impact.",

@@ -6,6 +6,7 @@ import { projects } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Projects",
   description: "Selected Webcodder work across healthcare, digital, consulting and luxury services.",
+  alternates: { canonical: "/projects" },
 };
 
 export default function ProjectsPage() {
