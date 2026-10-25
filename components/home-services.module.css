@@ -79,7 +79,7 @@
   justify-content: center;
   border-radius: 12px;
   background: var(--lime-soft);
-  color: #2457ae;
+  color: var(--color-accent-deep);
 }
 
 .card h3 {
@@ -117,7 +117,7 @@
 .list li a:hover,
 .list li a:focus-visible {
   padding-left: 4px;
-  color: #2457ae;
+  color: var(--color-accent-deep);
 }
 
 .cardLink {
@@ -133,7 +133,7 @@
 
 .cardLink:hover {
   gap: 13px;
-  color: #2457ae;
+  color: var(--color-accent-deep);
 }
 
 @media (max-width: 1100px) {

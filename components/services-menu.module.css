@@ -109,7 +109,7 @@
   justify-content: center;
   border-radius: 9px;
   background: var(--lime-soft);
-  color: #2457ae;
+  color: var(--color-accent-deep);
 }
 
 .columnHead h2 {
@@ -159,14 +159,14 @@
 .list li a svg {
   flex-shrink: 0;
   opacity: 0;
-  color: #2457ae;
+  color: var(--color-accent-deep);
   transition: transform 180ms ease, opacity 180ms ease;
 }
 
 .list li a:hover,
 .list li a:focus-visible {
   padding-left: 4px;
-  color: #2457ae;
+  color: var(--color-accent-deep);
 }
 
 .list li a:hover svg,

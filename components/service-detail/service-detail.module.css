@@ -179,7 +179,7 @@
   justify-content: center;
   border-radius: 10px;
   background: var(--lime-soft);
-  color: #2457ae;
+  color: var(--color-accent-deep);
   font-size: 12px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
@@ -238,7 +238,7 @@
 
 .deliverables li svg {
   flex-shrink: 0;
-  color: #2457ae;
+  color: var(--color-accent-deep);
 }
 
 .stackCard {
@@ -280,7 +280,7 @@
 
 .stackLink:hover {
   gap: 14px;
-  color: #2457ae;
+  color: var(--color-accent-deep);
 }
 
 /* Process */
@@ -453,7 +453,7 @@
   align-items: center;
   gap: 8px;
   margin-top: auto;
-  color: #2457ae;
+  color: var(--color-accent-deep);
   font-size: 13px;
   font-weight: 600;
 }

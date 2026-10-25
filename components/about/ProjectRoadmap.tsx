@@ -85,7 +85,7 @@ export function ProjectRoadmap() {
       <div className="mx-auto w-[min(1160px,calc(100%-48px))] max-sm:w-[calc(100%-32px)]">
         <div className="grid gap-7 border-b border-white/12 pb-10 lg:grid-cols-[1fr_0.65fr] lg:items-end">
           <div>
-            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.15em] text-[#4F8CFF]">
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.15em] text-accent">
               How every project is born
             </p>
             <h2
@@ -126,7 +126,7 @@ export function ProjectRoadmap() {
 
           <div className="absolute left-0 right-0 top-[25px] h-px bg-white/12 lg:hidden" aria-hidden="true" />
           <motion.div
-            className="absolute left-0 right-0 top-6 h-[3px] origin-left rounded-full bg-[#4F8CFF] lg:hidden"
+            className="absolute left-0 right-0 top-6 h-[3px] origin-left rounded-full bg-accent lg:hidden"
             style={{ scaleX: reduceMotion ? 1 : progress }}
             aria-hidden="true"
           />
@@ -160,10 +160,10 @@ function RoadmapMilestone({ step, index, reduceMotion }: { step: RoadmapStep; in
       style={{ gridColumn, gridRow }}
     >
       <div
-        className="relative min-h-[205px] rounded-2xl border border-white/12 bg-[#1D1D1D] p-5 transition-[border-color,transform] duration-300 hover:-translate-y-1 hover:border-[#4F8CFF]/75"
+        className="relative min-h-[205px] rounded-2xl border border-white/12 bg-[#1D1D1D] p-5 transition-[border-color,transform] duration-300 hover:-translate-y-1 hover:border-accent/75"
       >
         <div className="flex items-start justify-between gap-5">
-          <span className="grid size-10 place-items-center rounded-xl bg-white/[0.055] text-[#4F8CFF]">
+          <span className="grid size-10 place-items-center rounded-xl bg-white/[0.055] text-accent">
             <Icon size={19} strokeWidth={1.8} aria-hidden="true" />
           </span>
           <span className="text-xs font-semibold tracking-[0.14em] text-white/25">{String(index + 1).padStart(2, "0")}</span>
@@ -177,7 +177,7 @@ function RoadmapMilestone({ step, index, reduceMotion }: { step: RoadmapStep; in
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true, amount: 0.7 }}
         transition={reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 340, damping: 22, delay: 0.1 }}
-        className="absolute left-1/2 top-2 z-10 grid size-11 -translate-x-1/2 place-items-center rounded-full border border-[#4F8CFF] bg-[#121212] text-[11px] font-semibold text-[#4F8CFF] shadow-[0_0_0_7px_rgba(79,140,255,0.08)]"
+        className="absolute left-1/2 top-2 z-10 grid size-11 -translate-x-1/2 place-items-center rounded-full border border-accent bg-[#121212] text-[11px] font-semibold text-accent shadow-[0_0_0_7px_rgba(79,140,255,0.08)]"
         aria-hidden="true"
       >
         {index + 1}

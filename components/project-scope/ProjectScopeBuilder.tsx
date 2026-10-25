@@ -114,7 +114,7 @@ export function ProjectScopeBuilder() {
                   <ServiceCard key={service.id} service={service} selected={selectedIds.includes(service.id)} onToggle={toggleService} />
                 ))}
               </div>
-              {errors.services && <p role="alert" className="mb-0 mt-3 text-sm font-medium text-[#B63E18]">{errors.services}</p>}
+              {errors.services && <p role="alert" className="mb-0 mt-3 text-sm font-medium text-danger">{errors.services}</p>}
             </FormSection>
 
             <FormSection number="02" title="Business stage" description="This helps us calibrate pace, risk and scale.">
@@ -153,7 +153,7 @@ function FormSection({ number, title, description, children }: { number: string;
     <fieldset className="mb-10 border-0 border-t border-[#121212]/15 p-0 pt-7">
       <legend className="sr-only">{title}</legend>
       <div className="mb-6 grid grid-cols-[34px_1fr] gap-3">
-        <span className="pt-1 text-xs font-semibold tracking-[0.12em] text-[#4F8CFF]" aria-hidden="true">{number}</span>
+        <span className="pt-1 text-xs font-semibold tracking-[0.12em] text-accent" aria-hidden="true">{number}</span>
         <div>
           <h3 className="m-0 text-xl font-semibold tracking-[-0.025em]">{title}</h3>
           <p className="mb-0 mt-1 text-sm text-[#606060]">{description}</p>
@@ -177,9 +177,9 @@ function Field({ label, name, type = "text", autoComplete, value, error, onChang
         onChange={(event) => onChange(event.target.value)}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? errorId : undefined}
-        className={`mt-2 block min-h-13 w-full rounded-xl border bg-white px-4 text-[15px] text-[#121212] outline-none transition-colors placeholder:text-[#999] focus:border-[#4F8CFF] focus:ring-2 focus:ring-[#4F8CFF]/15 ${error ? "border-[#B63E18]" : "border-[#121212]/15"}`}
+        className={`mt-2 block min-h-13 w-full rounded-xl border bg-white px-4 text-[15px] text-[#121212] outline-none transition-colors placeholder:text-[#999] focus:border-accent focus:ring-2 focus:ring-accent/15 ${error ? "border-danger" : "border-[#121212]/15"}`}
       />
-      {error && <span id={errorId} role="alert" className="mt-1.5 block text-xs font-medium text-[#B63E18]">{error}</span>}
+      {error && <span id={errorId} role="alert" className="mt-1.5 block text-xs font-medium text-danger">{error}</span>}
     </label>
   );
 }

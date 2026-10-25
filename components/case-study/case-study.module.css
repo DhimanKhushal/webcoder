@@ -279,7 +279,7 @@
 
 .delivered li svg {
   flex-shrink: 0;
-  color: #2457ae;
+  color: var(--color-accent-deep);
 }
 
 .servicesCard {
@@ -318,14 +318,14 @@
 .servicesCard li a svg {
   flex-shrink: 0;
   opacity: 0;
-  color: #2457ae;
+  color: var(--color-accent-deep);
   transition: opacity 180ms ease, transform 180ms ease;
 }
 
 .servicesCard li a:hover,
 .servicesCard li a:focus-visible {
   padding-left: 4px;
-  color: #2457ae;
+  color: var(--color-accent-deep);
 }
 
 .servicesCard li a:hover svg,
@@ -347,7 +347,7 @@
 
 .asideLink:hover {
   gap: 14px;
-  color: #2457ae;
+  color: var(--color-accent-deep);
 }
 
 /* Results */
@@ -474,7 +474,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: #2457ae;
+  color: var(--color-accent-deep);
   font-size: 14px;
   font-weight: 600;
 }

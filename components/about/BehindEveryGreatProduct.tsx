@@ -146,7 +146,7 @@ export function BehindEveryGreatProduct() {
             transition={{ duration: reduceMotion ? 0 : 0.75, ease: [0.22, 1, 0.36, 1] }}
             className="lg:sticky lg:top-32 lg:pt-10"
           >
-            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.15em] text-[#FF5A1F]">
+            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.15em] text-accent">
               Behind every great product
             </p>
             <h2 id="behind-product-title" className="m-0 max-w-xl text-[clamp(36px,4.6vw,62px)] font-semibold leading-[1.04] tracking-[-0.052em] text-balance">
@@ -157,7 +157,7 @@ export function BehindEveryGreatProduct() {
               Every successful digital product is the result of hundreds of thoughtful decisions—about people, purpose, performance and scale. Never luck.
             </p>
             <div className="mt-10 flex items-center gap-4 border-t border-[#121212]/12 pt-5 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#777]">
-              <span className="size-2 rounded-full bg-[#FF5A1F] animate-pulse motion-reduce:animate-none" />
+              <span className="size-2 rounded-full bg-accent animate-pulse motion-reduce:animate-none" />
               Live thinking canvas · v3.8
             </div>
           </motion.div>
@@ -210,7 +210,7 @@ export function BehindEveryGreatProduct() {
           <p className="m-0 text-[clamp(28px,4vw,48px)] font-semibold leading-tight tracking-[-0.045em]">Every pixel has a reason.</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-5">
             <MagneticButton reducedMotion={Boolean(reduceMotion)} />
-            <Link href="#how-we-work" className="group inline-flex min-h-12 items-center gap-2 px-2 text-sm font-semibold text-[#121212] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF5A1F]">
+            <Link href="#how-we-work" className="group inline-flex min-h-12 items-center gap-2 px-2 text-sm font-semibold text-[#121212] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
               See Our Process <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </Link>
           </div>
@@ -224,7 +224,7 @@ function CanvasChrome() {
   return (
     <div className="absolute inset-x-0 top-0 z-30 flex h-10 items-center justify-between border-b border-[#121212]/10 px-4 text-[8px] font-semibold uppercase tracking-[0.12em] text-[#777]">
       <span>Webcodder / Product Lab</span>
-      <span className="flex items-center gap-2"><i className="size-1.5 rounded-full bg-[#FF5A1F]" /> Auto-layout</span>
+      <span className="flex items-center gap-2"><i className="size-1.5 rounded-full bg-accent" /> Auto-layout</span>
     </div>
   );
 }
@@ -237,7 +237,7 @@ function LooseThinkingLayer() {
         <p className="mb-0 mt-2 text-[10px] font-semibold leading-[1.35] sm:text-xs">What should feel effortless for the user?</p>
       </div>
 
-      <div data-thinking-note className="absolute right-[9%] top-[15%] w-[26%] rotate-2 bg-[#FF5A1F] p-3 text-[#121212] shadow-[0_12px_26px_rgba(18,18,18,0.12)] sm:p-4">
+      <div data-thinking-note className="absolute right-[9%] top-[15%] w-[26%] rotate-2 bg-accent p-3 text-[#121212] shadow-[0_12px_26px_rgba(18,18,18,0.12)] sm:p-4">
         <span className="text-[8px] font-bold uppercase tracking-[0.12em]">Core idea</span>
         <p className="mb-0 mt-2 text-[10px] font-semibold leading-[1.35] sm:text-xs">Clarity before decoration.</p>
       </div>
@@ -257,7 +257,7 @@ function LooseThinkingLayer() {
         <div className="mt-3 grid grid-cols-3 gap-1.5">
           {[0, 1, 2].map((item) => <span key={item} className="h-9 border border-[#121212]/12" />)}
         </div>
-        <span className="absolute -bottom-4 left-1/2 text-[7px] font-semibold text-[#FF5A1F]">24px gap</span>
+        <span className="absolute -bottom-4 left-1/2 text-[7px] font-semibold text-accent">24px gap</span>
       </div>
 
       <div data-thinking-note className="absolute right-[7%] top-[39%] w-[34%] rotate-1 border border-[#121212]/14 bg-[#F7F7F7] p-3 shadow-[0_12px_28px_rgba(18,18,18,0.09)] sm:p-4">
@@ -267,19 +267,19 @@ function LooseThinkingLayer() {
           <b className="text-[14px]">H1</b><b className="text-[11px]">H2</b><span className="text-[8px]">Body / 16</span>
         </div>
         <div className="mt-3 flex gap-1.5" aria-label="Webcodder colour tokens">
-          {["#121212", "#242424", "#EEEEEE", "#FF5A1F"].map((color) => <i key={color} className="size-4 rounded-full border border-[#121212]/10" style={{ backgroundColor: color }} />)}
+          {["bg-ink", "bg-[#242424]", "bg-paper-deep", "bg-accent"].map((swatch) => <i key={swatch} className={`size-4 rounded-full border border-ink/10 ${swatch}`} />)}
         </div>
       </div>
 
       <CodeNote />
 
       <div data-thinking-note className="absolute bottom-[14%] left-[10%] flex items-center gap-2 rounded-full border border-[#121212]/12 bg-white px-3 py-2 text-[8px] font-semibold shadow-[0_8px_20px_rgba(18,18,18,0.08)]">
-        <Sparkles size={12} className="text-[#FF5A1F]" /> AI idea · contextual onboarding
+        <Sparkles size={12} className="text-accent" /> AI idea · contextual onboarding
       </div>
 
       <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 700 650" fill="none" aria-hidden="true">
-        <path data-flow-path d="M270 215 C330 190 350 258 403 236 S520 205 558 270" stroke="#FF5A1F" strokeWidth="1.5" strokeDasharray="460" strokeDashoffset="460" />
-        <path d="M553 263 L562 270 L553 275" stroke="#FF5A1F" strokeWidth="1.5" />
+        <path data-flow-path className="stroke-accent" d="M270 215 C330 190 350 258 403 236 S520 205 558 270" strokeWidth="1.5" strokeDasharray="460" strokeDashoffset="460" />
+        <path className="stroke-accent" d="M553 263 L562 270 L553 275" strokeWidth="1.5" />
       </svg>
 
       <span className="absolute left-[4%] top-[32%] text-[7px] font-semibold uppercase tracking-[0.1em] text-[#777] [writing-mode:vertical-rl]">640px canvas</span>
@@ -303,8 +303,8 @@ function CodeNote() {
   const visibleCode = reduceMotion ? codeSample : codeSample.slice(0, characterCount);
   return (
     <div data-thinking-note className="absolute bottom-[10%] right-[7%] w-[38%] -rotate-1 bg-[#121212] p-3 text-white shadow-[0_14px_30px_rgba(18,18,18,0.18)] sm:p-4">
-      <div className="mb-2 flex gap-1"><i className="size-1.5 rounded-full bg-[#FF5A1F]" /><i className="size-1.5 rounded-full bg-white/20" /></div>
-      <pre className="m-0 min-h-20 whitespace-pre-wrap font-mono text-[7px] leading-[1.55] text-white/68 sm:text-[8px]">{visibleCode}<i className="ml-0.5 inline-block h-2.5 w-px animate-pulse bg-[#FF5A1F] motion-reduce:hidden" /></pre>
+      <div className="mb-2 flex gap-1"><i className="size-1.5 rounded-full bg-accent" /><i className="size-1.5 rounded-full bg-white/20" /></div>
+      <pre className="m-0 min-h-20 whitespace-pre-wrap font-mono text-[7px] leading-[1.55] text-white/68 sm:text-[8px]">{visibleCode}<i className="ml-0.5 inline-block h-2.5 w-px animate-pulse bg-accent motion-reduce:hidden" /></pre>
     </div>
   );
 }
@@ -318,17 +318,17 @@ function PolishedInterface() {
       <div className="grid h-[calc(100%-36px)] grid-rows-[1fr_auto] p-[clamp(14px,3vw,28px)]">
         <div className="grid items-center gap-5 sm:grid-cols-[1.08fr_0.92fr]">
           <div>
-            <span data-polish-mark className="block translate-y-2 text-[7px] font-semibold uppercase tracking-[0.13em] text-[#FF5A1F] opacity-0">Independent product studio</span>
+            <span data-polish-mark className="block translate-y-2 text-[7px] font-semibold uppercase tracking-[0.13em] text-accent opacity-0">Independent product studio</span>
             <h3 data-polish-mark className="mb-0 mt-3 translate-y-2 text-[clamp(21px,3.5vw,40px)] font-semibold leading-[0.98] tracking-[-0.055em] opacity-0">Ideas shaped<br />into impact.</h3>
             <p data-polish-mark className="mb-0 mt-3 max-w-[28ch] translate-y-2 text-[8px] leading-[1.6] text-[#777] opacity-0 sm:text-[9px]">Strategy, design and engineering aligned around one clear business outcome.</p>
-            <span data-polish-mark className="mt-4 inline-flex translate-y-2 rounded-full bg-[#FF5A1F] px-3 py-2 text-[7px] font-semibold opacity-0">Start a project ↗</span>
+            <span data-polish-mark className="mt-4 inline-flex translate-y-2 rounded-full bg-accent px-3 py-2 text-[7px] font-semibold opacity-0">Start a project ↗</span>
           </div>
           <div data-polish-mark className="relative aspect-square translate-y-2 overflow-hidden rounded-xl bg-[#121212] p-4 text-white opacity-0">
             <span className="text-[7px] uppercase tracking-[0.11em] text-white/40">System / 01</span>
             <div className="absolute inset-x-4 bottom-4 grid grid-cols-3 gap-1">
-              <i className="h-8 bg-white/8" /><i className="h-13 bg-[#FF5A1F]" /><i className="h-18 bg-white/14" />
+              <i className="h-8 bg-white/8" /><i className="h-13 bg-accent" /><i className="h-18 bg-white/14" />
             </div>
-            <span className="absolute right-4 top-4 size-2 rounded-full bg-[#FF5A1F] animate-pulse motion-reduce:animate-none" />
+            <span className="absolute right-4 top-4 size-2 rounded-full bg-accent animate-pulse motion-reduce:animate-none" />
           </div>
         </div>
         <div className="mt-4 grid grid-cols-3 border-t border-[#121212]/10 pt-3 text-[7px] font-semibold uppercase tracking-[0.08em] text-[#777]">
@@ -341,7 +341,7 @@ function PolishedInterface() {
 
 function DesignNote({ label, tooltip, position }: { label: string; tooltip: string; position: string }) {
   return (
-    <button type="button" aria-label={tooltip} className={`group absolute z-50 grid size-8 place-items-center rounded-full border border-[#121212]/14 bg-white text-[7px] font-bold text-[#121212] shadow-[0_7px_18px_rgba(18,18,18,0.1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#FF5A1F] ${position}`}>
+    <button type="button" aria-label={tooltip} className={`group absolute z-50 grid size-8 place-items-center rounded-full border border-[#121212]/14 bg-white text-[7px] font-bold text-[#121212] shadow-[0_7px_18px_rgba(18,18,18,0.1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent ${position}`}>
       {label}
       <span role="tooltip" className="pointer-events-none absolute bottom-[calc(100%+8px)] left-1/2 w-max -translate-x-1/2 translate-y-1 rounded-md bg-[#121212] px-2.5 py-1.5 text-[8px] font-semibold tracking-normal text-white opacity-0 transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
         {tooltip}
@@ -371,7 +371,7 @@ function MagneticButton({ reducedMotion }: { reducedMotion: boolean }) {
   return (
     <div onPointerMove={attract} onPointerLeave={release} className="p-2">
       <motion.div style={reducedMotion ? undefined : { x, y }}>
-        <Link href="/contact" className="inline-flex min-h-14 items-center gap-2 rounded-full bg-[#FF5A1F] px-7 text-sm font-semibold text-[#121212] shadow-[0_12px_30px_rgba(255,90,31,0.2)] transition-transform hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF5A1F]">
+        <Link href="/contact" className="inline-flex min-h-14 items-center gap-2 rounded-full bg-accent px-7 text-sm font-semibold text-[#121212] shadow-[0_12px_30px_rgba(79,140,255,0.2)] transition-transform hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
           Build With Webcodder <ArrowUpRight size={17} />
         </Link>
       </motion.div>

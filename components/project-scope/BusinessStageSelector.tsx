@@ -24,7 +24,7 @@ export function BusinessStageSelector({ options, value, onChange }: BusinessStag
             role="radio"
             aria-checked={active}
             onClick={() => onChange(option.id)}
-            className={`rounded-xl px-4 py-4 text-left transition-colors focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] ${
+            className={`rounded-xl px-4 py-4 text-left transition-colors focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent ${
               active ? "bg-[#121212] text-white" : "text-[#121212] hover:bg-white/70"
             }`}
           >

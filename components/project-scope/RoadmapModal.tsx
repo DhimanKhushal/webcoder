@@ -57,14 +57,14 @@ export function RoadmapModal({ open, name, onClose }: RoadmapModalProps) {
               type="button"
               onClick={onClose}
               aria-label="Close confirmation"
-              className="absolute right-5 top-5 grid size-10 place-items-center rounded-full border border-[#121212]/12 bg-white transition-colors hover:bg-[#EEEEEE] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF]"
+              className="absolute right-5 top-5 grid size-10 place-items-center rounded-full border border-[#121212]/12 bg-white transition-colors hover:bg-[#EEEEEE] focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
             >
               <X size={18} aria-hidden="true" />
             </button>
-            <div className="grid size-14 place-items-center rounded-2xl bg-[#4F8CFF]">
+            <div className="grid size-14 place-items-center rounded-2xl bg-accent">
               <Check size={28} strokeWidth={2.5} aria-hidden="true" />
             </div>
-            <p className="mb-0 mt-8 text-xs font-semibold uppercase tracking-[0.14em] text-[#4F8CFF]">Scope received</p>
+            <p className="mb-0 mt-8 text-xs font-semibold uppercase tracking-[0.14em] text-accent">Scope received</p>
             <h3 id="roadmap-success-title" className="mb-0 mt-3 text-[clamp(28px,5vw,38px)] font-semibold leading-[1.08] tracking-[-0.04em]">
               Your roadmap is taking shape{name ? `, ${name.split(" ")[0]}` : ""}.
             </h3>
@@ -74,7 +74,7 @@ export function RoadmapModal({ open, name, onClose }: RoadmapModalProps) {
             <button
               type="button"
               onClick={onClose}
-              className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#121212] px-5 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4F8CFF]"
+              className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#121212] px-5 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
             >
               Back to Webcodder <ArrowRight size={17} aria-hidden="true" />
             </button>

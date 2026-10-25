@@ -37,6 +37,10 @@
   /* Hairlines */
   --color-line: rgba(18, 18, 18, 0.12);
   --color-line-dark: rgba(255, 255, 255, 0.13);
+
+  /* Form validation. Deliberately not part of the accent ramp: an invalid
+     field must not read as a brand highlight. */
+  --color-danger: #b63e18;
 }
 
 :root {
@@ -2417,11 +2421,11 @@ a {
   right: -190px;
   width: 570px;
   height: 570px;
-  border: 1px solid rgba(255, 106, 43, 0.16);
+  border: 1px solid rgba(79, 140, 255, 0.16);
   border-radius: 50%;
   box-shadow:
-    0 0 0 66px rgba(255, 106, 43, 0.035),
-    0 0 0 132px rgba(255, 106, 43, 0.018);
+    0 0 0 66px rgba(79, 140, 255, 0.035),
+    0 0 0 132px rgba(79, 140, 255, 0.018);
   pointer-events: none;
 }
 
@@ -2433,7 +2437,7 @@ a {
   height: 9px;
   border-radius: 50%;
   background: var(--orange);
-  box-shadow: 0 0 0 6px rgba(255, 106, 43, 0.1);
+  box-shadow: 0 0 0 6px rgba(79, 140, 255, 0.1);
 }
 
 .footer-main {
@@ -2491,7 +2495,7 @@ a {
 }
 
 .footer-contact-item:hover {
-  border-color: rgba(255, 106, 43, 0.34);
+  border-color: rgba(79, 140, 255, 0.34);
   box-shadow: 0 12px 30px rgba(18, 18, 18, 0.06);
   transform: translateY(-2px);
 }
@@ -2622,7 +2626,7 @@ a {
 
 .footer-newsletter input:focus {
   border-color: var(--orange);
-  box-shadow: 0 0 0 4px rgba(255, 106, 43, 0.1);
+  box-shadow: 0 0 0 4px rgba(79, 140, 255, 0.1);
 }
 
 .footer-newsletter button {
@@ -2642,7 +2646,7 @@ a {
 }
 
 .footer-newsletter button:hover {
-  box-shadow: 0 9px 22px rgba(255, 106, 43, 0.24);
+  box-shadow: 0 9px 22px rgba(79, 140, 255, 0.24);
   transform: rotate(-8deg) scale(1.03);
 }
 
@@ -2711,7 +2715,7 @@ a {
   height: 86px;
   background-image: radial-gradient(
     circle,
-    rgba(255, 106, 43, 0.55) 1.4px,
+    rgba(79, 140, 255, 0.55) 1.4px,
     transparent 1.6px
   );
   background-size: 11px 11px;
@@ -2775,7 +2779,7 @@ a {
 }
 
 .footer-tech-badge:hover {
-  border-color: rgba(255, 106, 43, 0.35);
+  border-color: rgba(79, 140, 255, 0.35);
   color: var(--ink);
   transform: translateY(-2px);
 }
@@ -4333,7 +4337,7 @@ a {
 }
 
 .benefit-card:hover {
-  border-color: rgba(255, 106, 43, 0.35);
+  border-color: rgba(79, 140, 255, 0.35);
   box-shadow: var(--shadow-sm);
   transform: translateY(-3px);
 }
@@ -4662,7 +4666,7 @@ a {
 }
 
 .technology-marquee-row span.matched {
-  border-color: rgba(255, 106, 43, 0.34);
+  border-color: rgba(79, 140, 255, 0.34);
 }
 
 @keyframes services-tech-marquee {
@@ -4848,7 +4852,7 @@ a {
 }
 
 .comparison-slider:focus-within {
-  box-shadow: 0 0 0 4px rgba(255, 106, 43, 0.2);
+  box-shadow: 0 0 0 4px rgba(79, 140, 255, 0.2);
 }
 
 .transformation-metrics {
@@ -4921,12 +4925,12 @@ a {
 }
 
 .services-primary-cta {
-  box-shadow: 0 0 0 1px rgba(255, 106, 43, 0.32);
+  box-shadow: 0 0 0 1px rgba(79, 140, 255, 0.32);
   animation: services-cta-border 2.8s ease-in-out infinite;
 }
 
 @keyframes services-cta-border {
-  50% { box-shadow: 0 0 0 5px rgba(255, 106, 43, 0.1); }
+  50% { box-shadow: 0 0 0 5px rgba(79, 140, 255, 0.1); }
 }
 
 @media (max-width: 1100px) {

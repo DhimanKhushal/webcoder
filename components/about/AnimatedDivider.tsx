@@ -68,15 +68,15 @@ export function AnimatedDivider() {
       <div className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-[#121212]/10 lg:left-1/2 lg:top-0 lg:h-full lg:w-px lg:-translate-x-1/2 lg:translate-y-0" />
       <div
         data-comparison-line
-        className="absolute left-0 top-1/2 h-0.5 w-full origin-left -translate-y-1/2 bg-[#4F8CFF] shadow-[0_0_16px_rgba(79,140,255,0.42)] lg:left-1/2 lg:top-0 lg:h-full lg:w-0.5 lg:origin-top lg:-translate-x-1/2 lg:translate-y-0"
+        className="absolute left-0 top-1/2 h-0.5 w-full origin-left -translate-y-1/2 bg-accent shadow-[0_0_16px_rgba(79,140,255,0.42)] lg:left-1/2 lg:top-0 lg:h-full lg:w-0.5 lg:origin-top lg:-translate-x-1/2 lg:translate-y-0"
       />
       <div
         data-comparison-badge
-        className="absolute left-1/2 top-1/2 z-10 grid size-18 -translate-x-1/2 -translate-y-1/2 place-items-center overflow-hidden rounded-full border-2 border-[#4F8CFF] bg-white shadow-[0_0_0_8px_rgba(79,140,255,0.11)] sm:size-20"
+        className="absolute left-1/2 top-1/2 z-10 grid size-18 -translate-x-1/2 -translate-y-1/2 place-items-center overflow-hidden rounded-full border-2 border-accent bg-white shadow-[0_0_0_8px_rgba(79,140,255,0.11)] sm:size-20"
       >
         <Image src="/webcodder-logo.png" alt="" width={82} height={21} unoptimized className="h-auto w-14 object-contain sm:w-16" />
       </div>
-      <span className="absolute left-1/2 top-1/2 size-20 -translate-x-1/2 -translate-y-1/2 animate-[ping_2.6s_ease-in-out_infinite] rounded-full border border-[#4F8CFF]/30 motion-reduce:animate-none sm:size-22" />
+      <span className="absolute left-1/2 top-1/2 size-20 -translate-x-1/2 -translate-y-1/2 animate-[ping_2.6s_ease-in-out_infinite] rounded-full border border-accent/30 motion-reduce:animate-none sm:size-22" />
     </div>
   );
 }

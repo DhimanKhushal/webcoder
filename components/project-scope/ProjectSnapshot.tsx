@@ -25,7 +25,7 @@ export function ProjectSnapshot({ estimate, selectedServices }: ProjectSnapshotP
         <div className="border-b border-white/10 px-6 py-6 sm:px-8">
           <div className="flex items-center justify-between gap-4">
             <p className="m-0 text-xs font-semibold uppercase tracking-[0.14em] text-white/50">Live scope</p>
-            <span className="size-2.5 rounded-full bg-[#4F8CFF] shadow-[0_0_0_6px_rgba(79,140,255,0.12)]" />
+            <span className="size-2.5 rounded-full bg-accent shadow-[0_0_0_6px_rgba(79,140,255,0.12)]" />
           </div>
           <h3 className="mt-4 text-[clamp(26px,3vw,34px)] font-semibold leading-tight tracking-[-0.035em]">
             Your Project Snapshot
@@ -33,7 +33,7 @@ export function ProjectSnapshot({ estimate, selectedServices }: ProjectSnapshotP
         </div>
 
         <div className="px-6 py-7 sm:px-8">
-          <p className="m-0 text-xs font-semibold uppercase tracking-[0.13em] text-[#4F8CFF]">Recommended solution</p>
+          <p className="m-0 text-xs font-semibold uppercase tracking-[0.13em] text-accent">Recommended solution</p>
           <AnimatePresence mode="wait" initial={false}>
             <motion.p
               key={estimate.solution}
@@ -54,7 +54,7 @@ export function ProjectSnapshot({ estimate, selectedServices }: ProjectSnapshotP
           <div className="mt-5">
             <div className="h-1.5 overflow-hidden rounded-full bg-white/10" aria-hidden="true">
               <motion.div
-                className="h-full rounded-full bg-[#4F8CFF]"
+                className="h-full rounded-full bg-accent"
                 initial={false}
                 animate={{ width: `${estimate.complexity}%` }}
                 transition={reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 90, damping: 20 }}
@@ -100,7 +100,7 @@ export function ProjectSnapshot({ estimate, selectedServices }: ProjectSnapshotP
             <ul className="mb-0 mt-4 grid list-none gap-3 p-0">
               {estimate.outcomes.map((outcome) => (
                 <li key={outcome} className="flex items-start gap-2.5 text-sm leading-5 text-white/80">
-                  <Check className="mt-0.5 shrink-0 text-[#4F8CFF]" size={15} strokeWidth={2.5} aria-hidden="true" />
+                  <Check className="mt-0.5 shrink-0 text-accent" size={15} strokeWidth={2.5} aria-hidden="true" />
                   {outcome}
                 </li>
               ))}
@@ -110,7 +110,7 @@ export function ProjectSnapshot({ estimate, selectedServices }: ProjectSnapshotP
           <ul className="mb-0 mt-6 grid list-none gap-2 p-0 sm:grid-cols-2">
             {trustIndicators.map((item) => (
               <li key={item} className="flex items-center gap-2 text-xs text-white/60">
-                <Check size={13} className="text-[#4F8CFF]" aria-hidden="true" /> {item}
+                <Check size={13} className="text-accent" aria-hidden="true" /> {item}
               </li>
             ))}
           </ul>
@@ -118,7 +118,7 @@ export function ProjectSnapshot({ estimate, selectedServices }: ProjectSnapshotP
           <button
             type="submit"
             form="project-scope-form"
-            className="mt-7 flex min-h-14 w-full items-center justify-center gap-2 rounded-xl border border-[#4F8CFF] bg-[#4F8CFF] px-5 text-[15px] font-semibold text-[#121212] transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4F8CFF]"
+            className="mt-7 flex min-h-14 w-full items-center justify-center gap-2 rounded-xl border border-accent bg-accent px-5 text-[15px] font-semibold text-[#121212] transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
           >
             Get My Free Project Roadmap <ArrowUpRight size={18} aria-hidden="true" />
           </button>
@@ -134,7 +134,7 @@ export function ProjectSnapshot({ estimate, selectedServices }: ProjectSnapshotP
 function SnapshotStat({ icon: Icon, label, value }: { icon: typeof Clock3; label: string; value: string }) {
   return (
     <div className="bg-[#1D1D1D] p-4">
-      <Icon size={16} className="mb-4 text-[#4F8CFF]" aria-hidden="true" />
+      <Icon size={16} className="mb-4 text-accent" aria-hidden="true" />
       <span className="block text-[11px] uppercase tracking-[0.1em] text-white/40">{label}</span>
       <AnimatePresence mode="wait" initial={false}>
         <motion.strong

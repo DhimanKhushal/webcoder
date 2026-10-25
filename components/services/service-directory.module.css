@@ -74,14 +74,14 @@
 .column li a svg {
   flex-shrink: 0;
   opacity: 0;
-  color: #2457ae;
+  color: var(--color-accent-deep);
   transition: opacity 180ms ease, transform 180ms ease;
 }
 
 .column li a:hover,
 .column li a:focus-visible {
   padding-left: 4px;
-  color: #2457ae;
+  color: var(--color-accent-deep);
 }
 
 .column li a:hover svg,
