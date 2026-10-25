@@ -110,7 +110,7 @@ export function ServicesHero() {
                 <Icon size={20} strokeWidth={1.5} />
                 <div>
                   <small>{label}</small>
-                  <h3>{title}</h3>
+                  <p className="ecosystem-card-title">{title}</p>
                 </div>
               </motion.article>
             ))}

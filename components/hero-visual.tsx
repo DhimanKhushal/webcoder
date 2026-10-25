@@ -122,7 +122,7 @@ export function BrowserMockup({
 
           <div className="mock-hero">
             <p>Independent digital studio</p>
-            <h3>We shape digital ideas into real growth.</h3>
+            <p className="mock-hero-title">We shape digital ideas into real growth.</p>
             <button type="button">
               Start a project <ArrowUpRight size={11} />
             </button>

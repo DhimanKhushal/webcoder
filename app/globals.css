@@ -596,7 +596,7 @@ a {
   text-transform: uppercase;
 }
 
-.mock-hero h3 {
+.mock-hero .mock-hero-title {
   max-width: 330px;
   margin: 0;
   font: 700 clamp(25px, 3vw, 34px)/1.02 var(--display);
@@ -1173,7 +1173,7 @@ a {
   padding: 20px 10px 12px;
 }
 
-.project-meta h3 {
+.project-meta :is(h2, h3) {
   margin: 0 0 7px;
   font: 600 clamp(22px, 2vw, 26px)/1.28 var(--display);
   letter-spacing: -0.015em;
@@ -3314,7 +3314,7 @@ a {
     padding: 25px 0 22px;
   }
 
-  .mock-hero h3 {
+  .mock-hero .mock-hero-title {
     max-width: 260px;
     font-size: 25px;
   }
@@ -3848,7 +3848,7 @@ a {
   text-transform: uppercase;
 }
 
-.ecosystem-card h3 {
+.ecosystem-card .ecosystem-card-title {
   margin: 5px 0 0;
   font: 600 17px/1.2 var(--display);
 }
@@ -5099,7 +5099,7 @@ a {
     padding: 14px;
   }
 
-  .ecosystem-card h3 {
+  .ecosystem-card .ecosystem-card-title {
     font-size: 14px;
   }
 

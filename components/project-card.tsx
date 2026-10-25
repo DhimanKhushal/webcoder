@@ -11,7 +11,12 @@ export type Project = {
   badge: string;
 };
 
-export function ProjectCard({ project }: { project: Project }) {
+/**
+ * `headingLevel` follows the page: the grid sits under an h2 on the home page
+ * but directly under the h1 on /projects, where an h3 would skip a level.
+ */
+export function ProjectCard({ project, headingLevel = 3 }: { project: Project; headingLevel?: 2 | 3 }) {
+  const Heading = `h${headingLevel}` as "h2" | "h3";
   return (
     <Link className="project-card" href={getCaseStudyPath(project.slug)} data-reveal data-reveal-card>
       <div className="project-image">
@@ -26,7 +31,7 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
       <div className="project-meta">
         <div>
-          <h3>{project.title}</h3>
+          <Heading>{project.title}</Heading>
           <p>{project.category}</p>
         </div>
         <ArrowUpRight size={25} />

@@ -26,7 +26,7 @@ export default function ProjectsPage() {
       </section>
       <section className="dark-section">
         <div className="container projects-page-grid">
-          {projects.map((project) => <ProjectCard key={project.title} project={project} />)}
+          {projects.map((project) => <ProjectCard key={project.title} project={project} headingLevel={2} />)}
         </div>
       </section>
       <CTA />
