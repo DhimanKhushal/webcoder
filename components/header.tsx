@@ -41,8 +41,8 @@ function HeaderNavigation({ pathname }: { pathname: string }) {
               className="brand-logo-image"
               src="/webcodder-logo.png"
               alt="Webcodder Digital Marketing Agency"
-              width={2508}
-              height={627}
+              width={1000}
+              height={250}
               priority
             />
           </Link>

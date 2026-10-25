@@ -136,8 +136,8 @@ export function Footer() {
               className="footer-brand-logo"
               src="/webcodder-logo.png"
               alt="Webcodder Digital Marketing Agency"
-              width={2508}
-              height={627}
+              width={1000}
+              height={250}
             />
             <h2 id="footer-brand-title" className="sr-only">
               Webcodder Digital Marketing Agency

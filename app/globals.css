@@ -763,8 +763,10 @@ a {
 }
 
 .growth-card {
-  right: -3px;
-  bottom: 48px;
+  /* Overlaps only the corner of the project tile behind it: at -3px/48px it
+     covered the tile's label and heading outright. */
+  right: -52px;
+  bottom: 6px;
   display: flex;
   min-width: 178px;
   align-items: flex-end;
@@ -809,18 +811,23 @@ a {
 }
 
 .technology-pill {
-  bottom: 18px;
-  left: 36px;
+  /* Sits below the project tile rather than across its heading. */
+  bottom: -8px;
+  left: 24px;
 }
 
 .design-pill {
   top: 92px;
-  right: -8px;
+  /* Hangs off the mock-up's right edge. At -8px it sat on the mock's own
+     "Let's talk" button and hid it almost entirely. */
+  right: -74px;
 }
 
 .project-live-card {
   top: 205px;
-  left: -12px;
+  /* Clear of the mock-up's headline: at -12px the chip sat over the first two
+     lines, so "IDEAS" rendered clipped. */
+  left: -68px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -2091,6 +2098,16 @@ a {
   background-size: 48px 48px;
   box-shadow: 0 32px 80px rgba(18, 18, 18, 0.2);
 }
+
+/*
+ * The About panel clips (overflow: hidden), unlike the home hero, so the chips
+ * keep their original tighter offsets here. Widening them to clear the mock-up's
+ * text, as the home hero does, would slice them at the panel's edge instead.
+ */
+.about-command-panel .project-live-card { left: -12px; }
+.about-command-panel .design-pill { right: -8px; }
+.about-command-panel .growth-card { right: -3px; bottom: 48px; }
+.about-command-panel .technology-pill { bottom: 18px; left: 36px; }
 
 .about-command-panel .hero-command-center {
   position: absolute;
