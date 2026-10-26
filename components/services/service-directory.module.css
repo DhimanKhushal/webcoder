@@ -8,8 +8,8 @@
 
 .head h2 {
   margin: 0;
-  font: 600 clamp(26px, 3vw, 40px)/1.15 var(--display), sans-serif;
-  letter-spacing: -0.035em;
+  font: 400 clamp(26px, 3vw, 40px)/1.15 var(--font-display), sans-serif;
+  letter-spacing: -0.01em;
 }
 
 .head > p {

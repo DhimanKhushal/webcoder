@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start a website, software, UI/UX or branding project with Webcodder in Chandigarh.",
+    "Start an AI, website, software, design or marketing project with Webcodder in Chandigarh.",
   alternates: { canonical: "/contact" },
 };
 

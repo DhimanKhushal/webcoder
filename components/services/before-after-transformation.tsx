@@ -22,7 +22,7 @@ export function BeforeAfterTransformation() {
           <div className="comparison-side after-side">
             <span>After Webcodder Redesign</span>
             <div className="after-mock-nav"><b>webcodder.</b><i>Start a project</i></div>
-            <h3>Ideas shaped into digital impact.</h3>
+            <h3>Clear message. Clear next step.</h3>
             <div className="after-mock-grid"><i /><i /></div>
           </div>
           <div className="comparison-handle" aria-hidden="true">
@@ -38,12 +38,6 @@ export function BeforeAfterTransformation() {
             aria-label="Compare website before and after redesign"
           />
         </div>
-        <div className="transformation-metrics">
-          <div><strong>+65%</strong><span>Engagement</span></div>
-          <div><strong>2.1s</strong><span>Faster Loading</span></div>
-          <div><strong>+38%</strong><span>More Enquiries</span></div>
-        </div>
-        <p className="transformation-disclaimer">Illustrative transformation metrics. Replace with verified project results.</p>
       </div>
     </section>
   );

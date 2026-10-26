@@ -148,6 +148,11 @@
   .grid {
     grid-template-columns: minmax(0, 1fr);
   }
+
+  /* Two services per category is enough on a phone; the card link covers the rest. */
+  .desktopOnly {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

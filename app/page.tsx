@@ -16,18 +16,18 @@ export default function Home() {
         <div className="container">
           <div className="hero-grid">
             <div>
-              <p className="eyebrow" data-hero>Independent digital agency · Chandigarh</p>
-              <h1 data-hero>Ideas, coded <em>into impact.</em></h1>
+              <p className="eyebrow" data-hero>AI &amp; digital agency · Chandigarh</p>
+              <h1 data-hero>Websites and AI that work <em>while you don&apos;t.</em></h1>
               <p className="hero-lede" data-hero>
-                We turn ambitious ideas into high-performing brands, websites
-                and digital products people actually enjoy using.
+                From fast websites to chatbots and automated follow-ups, we build
+                systems that save your team hours and win more customers.
               </p>
               <div className="hero-actions" data-hero>
                 <Link href="/projects" className="button">
-                  Explore our work <ArrowUpRight size={18} />
+                  See our work <ArrowUpRight size={18} />
                 </Link>
-                <Link href="/contact" className="button button-outline">
-                  Start a conversation
+                <Link href="/services/ai-automation" className="button button-outline">
+                  Explore AI services
                 </Link>
               </div>
             </div>
@@ -37,36 +37,26 @@ export default function Home() {
             <div className="stat"><strong>40+</strong><span>Projects delivered</span></div>
             <div className="stat"><strong>8+</strong><span>Years of craft</span></div>
             <div className="stat"><strong>15+</strong><span>Industries explored</span></div>
-            <div className="stat"><strong>100%</strong><span>Built with care</span></div>
+            <div className="stat"><strong>4</strong><span>Disciplines under one roof</span></div>
           </div>
         </div>
       </section>
 
-      <div className="marquee" aria-hidden="true" data-home-section>
-        <div className="marquee-track">
-          {[...Array(2)].flatMap((_, group) =>
-            ["Strategy", "UI/UX", "Web Development", "Branding", "Software"].map((item) => (
-              <span key={`${group}-${item}`}>{item}</span>
-            ))
-          )}
-        </div>
-      </div>
-
       <section className="section" data-home-section>
         <div className="container intro-grid">
           <div className="intro-note" data-reveal-card>
-            <strong>Digital, but deeply human.</strong>
-            <p>Small senior team. Big attention to every interaction.</p>
+            <strong>AI-assisted. Human-led.</strong>
+            <p>Small senior team. Every build is checked by people, not just prompts.</p>
           </div>
           <div data-reveal-card>
             <p className="eyebrow">Hello, we&apos;re Webcodder</p>
             <h2 className="section-title">
-              We build digital experiences that work as good as they look.
+              We build the website, then the AI that runs behind it.
             </h2>
             <p className="section-copy">
-              From the first messy sketch to a polished launch, we bring
-              strategy, design and engineering together under one roof. Less
-              handoff, more clarity, better results.
+              Design, development, marketing and automation from one team, so your
+              site, your ads and the systems that answer customers all work
+              together.
             </p>
           </div>
         </div>
@@ -74,15 +64,13 @@ export default function Home() {
 
       <HomeServices />
 
-      <ProjectScopeBuilder />
-
       <section className="section dark-section">
         <div className="container">
           <div data-home-section>
             <div className="work-head">
               <div>
                 <p className="eyebrow">Selected work</p>
-                <h2 className="section-title">Proof lives in the product.</h2>
+                <h2 className="section-title">Recent work for real businesses.</h2>
               </div>
               <Link href="/projects" className="button">
                 View all projects <ArrowUpRight size={18} />
@@ -96,14 +84,14 @@ export default function Home() {
             <div data-reveal-card>
               <p className="eyebrow">Technology stack</p>
               <h2 className="section-title" style={{ fontSize: "clamp(42px, 5vw, 68px)" }}>
-                The right tools. No tech theatre.
+                Proven tools, including the AI we build on.
               </h2>
               <p className="section-copy">
-                We choose the stack that best serves your product, users and team.
+                We pick the stack that suits your business, not the one that is fashionable.
               </p>
             </div>
             <div className="tech-cloud">
-              {["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "GSAP", "Figma", "WordPress", "Shopify", "Laravel"].map((tech, index) => (
+              {["OpenAI", "Claude", "n8n", "Next.js", "React", "TypeScript", "Node.js", "Figma", "WordPress", "Shopify"].map((tech, index) => (
                 <span className={`tech-pill ${index < 3 ? "accent" : ""}`} key={tech} data-reveal-card>{tech}</span>
               ))}
             </div>
@@ -111,12 +99,10 @@ export default function Home() {
         </div>
       </section>
 
-      <IndustriesSection />
-
       <section className="section" data-home-section>
         <div className="container">
           <p className="eyebrow" data-reveal>Client notes</p>
-          <h2 className="section-title" data-reveal>Good work gets talked about.</h2>
+          <h2 className="section-title" data-reveal>What our clients say.</h2>
           <div className="reviews-grid">
             {[
               ["They understood the business before touching the design. The final website feels exactly like us—only sharper.", "Seema D.", "Amazing Aesthetics"],
@@ -136,11 +122,15 @@ export default function Home() {
         </div>
       </section>
 
+      <ProjectScopeBuilder />
+
+      <IndustriesSection />
+
       <section className="section" style={{ paddingTop: 0 }} data-home-section>
         <div className="container">
           <p className="eyebrow" data-reveal>FAQs</p>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", gap: 30 }}>
-            <h2 className="section-title" data-reveal>Questions, answered.</h2>
+            <h2 className="section-title" data-reveal>Common questions.</h2>
             <ArrowDownRight size={42} />
           </div>
           <FAQ />

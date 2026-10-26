@@ -62,7 +62,6 @@ function ServiceDetailPanel({ service }: { service: Service }) {
             <small>{service.project.category}</small>
             <strong>{service.project.title}</strong>
           </div>
-          <span>{service.project.metric}</span>
         </div>
       </div>
 

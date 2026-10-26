@@ -2,17 +2,10 @@
 
 import Link from "next/link";
 import { ArrowUpRight, Check, ChevronRight } from "lucide-react";
-import {
-  motion,
-  type MotionValue,
-  useMotionValue,
-  useReducedMotion,
-  useSpring,
-  useTransform,
-} from "framer-motion";
-import { useCallback, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { useState } from "react";
 
-const services = ["Website", "Branding", "Marketing"] as const;
+const services = ["AI", "Website", "Branding", "Marketing"] as const;
 const timelines = ["ASAP", "1–2 Months"] as const;
 
 function ChoiceChip({
@@ -37,50 +30,11 @@ function ChoiceChip({
   );
 }
 
-function DecorativeOrbit({
-  x,
-  y,
-}: {
-  x: MotionValue<number>;
-  y: MotionValue<number>;
-}) {
-  const orbitX = useTransform(x, [-0.5, 0.5], [-8, 8]);
-  const orbitY = useTransform(y, [-0.5, 0.5], [-6, 6]);
-  const textX = useTransform(x, [-0.5, 0.5], [6, -6]);
-
-  return (
-    <>
-      <motion.span
-        aria-hidden="true"
-        className="cta-outline-text"
-        style={{ x: textX }}
-      >
-        LET&apos;S TALK
-      </motion.span>
-      <motion.div
-        aria-hidden="true"
-        className="cta-orbits"
-        style={{ x: orbitX, y: orbitY }}
-      >
-        <span className="cta-orbit-dot" />
-      </motion.div>
-    </>
-  );
-}
-
-function ProjectBriefCard({
-  x,
-  y,
-}: {
-  x: MotionValue<number>;
-  y: MotionValue<number>;
-}) {
+function ProjectBriefCard() {
   const reduceMotion = useReducedMotion();
-  const [service, setService] = useState<(typeof services)[number]>("Website");
+  const [service, setService] = useState<(typeof services)[number]>("AI");
   const [timeline, setTimeline] = useState<(typeof timelines)[number]>("ASAP");
   const [budget, setBudget] = useState(15);
-  const rotateX = useTransform(y, [-0.5, 0.5], [2, -2]);
-  const rotateY = useTransform(x, [-0.5, 0.5], [-2, 2]);
 
   return (
     <motion.div
@@ -97,7 +51,6 @@ function ProjectBriefCard({
               y: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
             }
       }
-      style={{ rotateX, rotateY }}
     >
       <div className="brief-card-head">
         <div>
@@ -170,44 +123,16 @@ function ProjectBriefCard({
 
 export function CTA() {
   const reduceMotion = useReducedMotion();
-  const pointerX = useMotionValue(0);
-  const pointerY = useMotionValue(0);
-  const springX = useSpring(pointerX, { stiffness: 90, damping: 24 });
-  const springY = useSpring(pointerY, { stiffness: 90, damping: 24 });
-
-  const handlePointerMove = useCallback(
-    (event: React.PointerEvent<HTMLDivElement>) => {
-      if (
-        reduceMotion ||
-        event.pointerType === "touch" ||
-        !window.matchMedia("(pointer: fine)").matches
-      ) {
-        return;
-      }
-
-      const bounds = event.currentTarget.getBoundingClientRect();
-      pointerX.set((event.clientX - bounds.left) / bounds.width - 0.5);
-      pointerY.set((event.clientY - bounds.top) / bounds.height - 0.5);
-    },
-    [pointerX, pointerY, reduceMotion]
-  );
-
-  const resetPointer = useCallback(() => {
-    pointerX.set(0);
-    pointerY.set(0);
-  }, [pointerX, pointerY]);
 
   return (
     <section className="cta-wrap">
       <div className="container">
         <motion.div
           className="cta-panel"
-          initial={{ opacity: 0, y: 54 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 54 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.18 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          onPointerMove={handlePointerMove}
-          onPointerLeave={resetPointer}
         >
           <div className="cta-copy">
             <p className="eyebrow">Let&apos;s build together</p>
@@ -217,8 +142,8 @@ export function CTA() {
               Let&apos;s turn it into something real.
             </h2>
             <p className="cta-description">
-              Tell us what you&apos;re planning — we&apos;ll help with strategy,
-              design and development.
+              Tell us what you&apos;re planning. We&apos;ll help with AI, design,
+              development and marketing.
             </p>
             <div className="cta-actions">
               <Link className="button button-dark cta-primary" href="/contact">
@@ -231,20 +156,9 @@ export function CTA() {
           </div>
 
           <div className="cta-visual">
-            <DecorativeOrbit x={springX} y={springY} />
-            <ProjectBriefCard x={springX} y={springY} />
+            <ProjectBriefCard />
           </div>
 
-          <div className="cta-service-marquee" aria-label="Webcodder services">
-            <div className="cta-service-track">
-              {[0, 1].map((group) => (
-                <span key={group} aria-hidden={group === 1}>
-                  WEB DEVELOPMENT <i>—</i> UI/UX <i>—</i> BRANDING <i>—</i>{" "}
-                  DIGITAL MARKETING <i>—</i>
-                </span>
-              ))}
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>

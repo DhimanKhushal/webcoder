@@ -7,7 +7,7 @@ import { BehindEveryGreatProduct } from "@/components/about/BehindEveryGreatProd
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Meet Webcodder, a digital product agency built around clarity, craft and useful outcomes.",
+  description: "Meet Webcodder, a small senior AI & digital agency in Chandigarh building websites, chatbots and automation.",
   alternates: { canonical: "/about" },
 };
 
@@ -20,9 +20,9 @@ export default function AboutPage() {
             <p className="eyebrow" data-hero>About Webcodder</p>
             <h1 data-hero>Small team.<br /><span>Serious craft.</span></h1>
             <p data-hero>
-              We are a Chandigarh-based independent agency helping ambitious
-              businesses look sharper, work smarter and grow through thoughtful
-              digital products.
+              We are a Chandigarh-based AI &amp; digital agency. We build the
+              websites businesses are judged on, and the AI and automation that
+              quietly save them hours behind the scenes.
             </p>
           </div>
           <div className="about-command-panel">

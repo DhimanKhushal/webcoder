@@ -23,7 +23,7 @@ export function HomeServices() {
         <div className={styles.head}>
           <div>
             <p className="eyebrow" data-reveal>What we do</p>
-            <h2 className="section-title" data-reveal>One team. Every digital touchpoint.</h2>
+            <h2 className="section-title" data-reveal>AI, design, development and marketing.</h2>
           </div>
           <Link className={styles.allLink} href="/services" data-reveal>
             All services <ArrowUpRight size={16} aria-hidden="true" />
@@ -42,8 +42,8 @@ export function HomeServices() {
                 <h3>{category.label}</h3>
                 <p>{category.summary}</p>
                 <ul className={styles.list}>
-                  {services.slice(0, 4).map((service) => (
-                    <li key={service.slug}>
+                  {services.slice(0, 4).map((service, serviceIndex) => (
+                    <li key={service.slug} className={serviceIndex >= 2 ? styles.desktopOnly : undefined}>
                       <Link href={getServicePath(service.slug)}>{service.navLabel}</Link>
                     </li>
                   ))}

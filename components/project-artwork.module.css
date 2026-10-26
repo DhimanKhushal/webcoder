@@ -19,8 +19,8 @@
 
 .placeholder span {
   color: rgba(255, 255, 255, 0.72);
-  font: 600 clamp(17px, 2.2vw, 26px)/1.22 var(--display), sans-serif;
-  letter-spacing: -0.03em;
+  font: 400 clamp(17px, 2.2vw, 26px)/1.22 var(--font-display), sans-serif;
+  letter-spacing: -0.01em;
 }
 
 .placeholder small {

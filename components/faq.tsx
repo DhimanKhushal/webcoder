@@ -6,7 +6,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "What kind of projects does Webcodder take on?",
-    a: "We work on marketing websites, e-commerce experiences, dashboards, web apps, brand identities and custom software. If it needs a sharp digital experience and dependable code, it is in our lane.",
+    a: "Websites, e-commerce, custom software and brand identities, plus AI work: chatbots trained on your content, workflow automation and AI features inside existing products. If it needs dependable code or saves your team time, it is in our lane.",
   },
   {
     q: "How long does a typical website take?",

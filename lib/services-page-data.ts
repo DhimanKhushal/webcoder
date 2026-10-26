@@ -13,7 +13,6 @@ export interface Service {
   project: {
     title: string;
     category: string;
-    metric: string;
     /**
      * The screenshot in `public/projects/`. Optional so ProjectArtwork can fall
      * back to its placeholder frame if a file is ever absent.
@@ -31,11 +30,6 @@ export interface ProcessStep {
 export interface Technology {
   name: string;
   category: "Frontend" | "Backend" | "Design" | "Marketing" | "CMS" | "Analytics";
-}
-
-export interface CaseStudyMetric {
-  value: string;
-  label: string;
 }
 
 export const serviceDetails: Service[] = [
@@ -63,7 +57,6 @@ export const serviceDetails: Service[] = [
     project: {
       title: "Kingsland Digital",
       category: "Agency platform",
-      metric: "+42% enquiries",
       image: "/projects/kingsland-digital.png",
     },
   },
@@ -91,7 +84,6 @@ export const serviceDetails: Service[] = [
     project: {
       title: "Amazing Aesthetics",
       category: "Healthcare experience",
-      metric: "98 UX score",
       image: "/projects/amazing-aesthetics.png",
     },
   },
@@ -119,7 +111,6 @@ export const serviceDetails: Service[] = [
     project: {
       title: "Franchise Advisor",
       category: "Growth platform",
-      metric: "2.5× engagement",
       image: "/projects/franchise-advisor.png",
     },
   },
@@ -147,7 +138,6 @@ export const serviceDetails: Service[] = [
     project: {
       title: "Wings Chauffeurs",
       category: "Luxury identity",
-      metric: "+65% recall",
       image: "/projects/wings-chauffeurs.png",
     },
   },
@@ -175,7 +165,6 @@ export const serviceDetails: Service[] = [
     project: {
       title: "Amazing Aesthetics",
       category: "Local search growth",
-      metric: "+38% visibility",
       image: "/projects/amazing-aesthetics.png",
     },
   },
@@ -197,11 +186,4 @@ export const technologies: Technology[] = [
   ...["Meta Ads", "Google Ads"].map((name) => ({ name, category: "Marketing" as const })),
   ...["WordPress", "Shopify", "Webflow"].map((name) => ({ name, category: "CMS" as const })),
   ...["Google Analytics", "Search Console"].map((name) => ({ name, category: "Analytics" as const })),
-];
-
-export const caseStudyMetrics: CaseStudyMetric[] = [
-  { value: "+42%", label: "Conversion Rate" },
-  { value: "98", label: "Performance Score" },
-  { value: "2.5×", label: "User Engagement" },
-  { value: "-38%", label: "Bounce Rate" },
 ];

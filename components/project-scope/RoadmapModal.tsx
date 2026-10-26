@@ -65,7 +65,7 @@ export function RoadmapModal({ open, name, onClose }: RoadmapModalProps) {
               <Check size={28} strokeWidth={2.5} aria-hidden="true" />
             </div>
             <p className="mb-0 mt-8 text-xs font-semibold uppercase tracking-[0.14em] text-accent">Scope received</p>
-            <h3 id="roadmap-success-title" className="mb-0 mt-3 text-[clamp(28px,5vw,38px)] font-semibold leading-[1.08] tracking-[-0.04em]">
+            <h3 id="roadmap-success-title" className="mb-0 mt-3 text-[clamp(28px,5vw,38px)] font-display font-normal leading-[1.08] tracking-[-0.01em]">
               Your roadmap is taking shape{name ? `, ${name.split(" ")[0]}` : ""}.
             </h3>
             <p className="mb-0 mt-5 text-[15px] leading-6 text-muted">

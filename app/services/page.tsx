@@ -12,7 +12,7 @@ import { WorkProcess } from "@/components/services/work-process";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Strategy, UI/UX, web development, branding, digital marketing and SEO services designed to move modern businesses forward.",
+    "AI automation, chatbots, web development, UI/UX, branding, SEO and digital marketing from one Chandigarh team.",
   alternates: { canonical: "/services" },
 };
 

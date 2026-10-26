@@ -27,7 +27,7 @@ export function ProjectSnapshot({ estimate, selectedServices }: ProjectSnapshotP
             <p className="m-0 text-xs font-semibold uppercase tracking-[0.14em] text-white/50">Live scope</p>
             <span className="size-2.5 rounded-full bg-accent shadow-[0_0_0_6px_rgba(79,140,255,0.12)]" />
           </div>
-          <h3 className="mt-4 text-[clamp(26px,3vw,34px)] font-semibold leading-tight tracking-[-0.035em]">
+          <h3 className="mt-4 text-[clamp(26px,3vw,34px)] font-display font-normal leading-tight tracking-[-0.01em]">
             Your Project Snapshot
           </h3>
         </div>

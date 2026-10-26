@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { DM_Sans, Instrument_Serif } from "next/font/google";
 import { headers } from "next/headers";
 import "lenis/dist/lenis.css";
 import "./globals.css";
@@ -12,6 +12,15 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
 });
 
+// Display face for large headings only; body and small headings stay DM Sans.
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  weight: "400",
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  fallback: ["Georgia", "serif"],
+});
+
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host");
@@ -21,24 +30,24 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(base),
     title: {
-      default: "Webcodder — Digital Products That Move Business",
+      default: "Webcodder — AI & Digital Agency in Chandigarh",
       template: "%s | Webcodder",
     },
     description:
-      "A Chandigarh-based IT agency creating high-converting websites, software products, UI/UX, branding and digital experiences.",
+      "Webcodder is an AI & digital agency in Chandigarh. We build websites, chatbots and automations that save your team hours and win more customers.",
     // Home page canonical. Each child route sets its own, so this is not
     // inherited anywhere it would be wrong.
     alternates: { canonical: "/" },
     openGraph: {
       type: "website",
-      title: "Webcodder — Ideas, coded into impact.",
-      description: "Strategy, design and development for ambitious brands.",
-      images: [{ url: `${base}/og.png`, width: 1200, height: 630, alt: "Webcodder — Ideas, coded into impact." }],
+      title: "Webcodder — Websites and AI that work while you don't.",
+      description: "AI & digital agency in Chandigarh: websites, chatbots and automation.",
+      images: [{ url: `${base}/og.png`, width: 1200, height: 630, alt: "Webcodder — Websites and AI that work while you don't." }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Webcodder — Ideas, coded into impact.",
-      description: "Strategy, design and development for ambitious brands.",
+      title: "Webcodder — Websites and AI that work while you don't.",
+      description: "AI & digital agency in Chandigarh: websites, chatbots and automation.",
       images: [`${base}/og.png`],
     },
   };
@@ -63,7 +72,7 @@ const jsonLd = {
   "@id": `${SITE_URL}/#organization`,
   name: "Webcodder",
   description:
-    "Full-service IT agency offering website development, UI/UX design, software development, mobile apps, branding, SEO, Google Ads, CRM and CMS solutions.",
+    "AI & digital agency in Chandigarh offering AI automation, AI chatbots, website development, UI/UX design, software and app development, branding, SEO and paid advertising.",
   url: SITE_URL,
   logo: `${SITE_URL}/webcodder-logo.png`,
   image: `${SITE_URL}/og.png`,
@@ -90,8 +99,10 @@ const jsonLd = {
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "IT Services",
+    name: "AI & Digital Services",
     itemListElement: [
+      "AI Automation",
+      "AI Chatbots & Agents",
       "Website Development",
       "UI/UX Design",
       "Software Development",
@@ -110,7 +121,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={dmSans.variable}>
+    <html lang="en" className={`${dmSans.variable} ${instrumentSerif.variable}`}>
       <body>
         <script
           type="application/ld+json"

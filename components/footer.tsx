@@ -135,16 +135,16 @@ export function Footer() {
             <Image
               className="footer-brand-logo"
               src="/webcodder-logo.png"
-              alt="Webcodder Digital Marketing Agency"
+              alt="Webcodder"
               width={1000}
               height={250}
             />
             <h2 id="footer-brand-title" className="sr-only">
-              Webcodder Digital Marketing Agency
+              Webcodder, AI &amp; digital agency
             </h2>
             <p className="footer-brand-description">
-              We help brands grow digitally with creative strategies, powerful
-              websites and result-driven marketing.
+              AI &amp; digital agency in Chandigarh. Websites, chatbots and
+              automation that save your team hours and win more customers.
             </p>
             <span className="footer-orange-rule" aria-hidden="true" />
 
@@ -268,6 +268,7 @@ export function Footer() {
           <span>© {new Date().getFullYear()} Webcodder. All rights reserved.</span>
           <span>Built with strategy, pixels &amp; clean code.</span>
           <div className="footer-legal">
+            <Link href="/terms">Terms &amp; Conditions</Link>
             <button type="button" onClick={backToTop} aria-label="Back to top">
               <ArrowUp size={17} />
             </button>

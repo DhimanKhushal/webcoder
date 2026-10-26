@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
-import { Bot, Code2, Megaphone, Palette, PanelsTopLeft, Workflow } from "lucide-react";
+import { ArrowRight, Bot, Code2, Megaphone, Palette, PanelsTopLeft, Workflow } from "lucide-react";
 import { BusinessStageSelector } from "./BusinessStageSelector";
 import { GoalSelector } from "./GoalSelector";
 import { ProjectSnapshot } from "./ProjectSnapshot";
@@ -18,11 +18,11 @@ import type {
 } from "./project-scope-types";
 
 const services: ServiceOption[] = [
+  { id: "ai", title: "AI & Automation", description: "AI chatbots, workflow automation and smart integrations", icon: Bot, complexity: 20 },
   { id: "website", title: "Website Development", description: "Corporate websites, landing pages and e-commerce platforms", icon: Code2, complexity: 8 },
   { id: "design", title: "UI/UX Design", description: "Research-driven interfaces and complete design systems", icon: PanelsTopLeft, complexity: 7 },
   { id: "software", title: "Custom Software", description: "Dashboards, portals, APIs and business applications", icon: Workflow, complexity: 18 },
   { id: "marketing", title: "Digital Marketing", description: "SEO, paid campaigns, social media and lead generation", icon: Megaphone, complexity: 7 },
-  { id: "ai", title: "AI & Automation", description: "AI chatbots, workflow automation and smart integrations", icon: Bot, complexity: 20 },
   { id: "branding", title: "Branding", description: "Logo design, brand identity and marketing creatives", icon: Palette, complexity: 6 },
 ];
 
@@ -56,6 +56,8 @@ export function ProjectScopeBuilder() {
   const [contact, setContact] = useState(initialContact);
   const [errors, setErrors] = useState<Partial<Record<keyof ContactDetails | "services", string>>>({});
   const [modalOpen, setModalOpen] = useState(false);
+  // Below lg the builder is several screens long, so it starts as a compact card.
+  const [expanded, setExpanded] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
   const selectedServices = useMemo(
@@ -82,6 +84,12 @@ export function ProjectScopeBuilder() {
     return Object.keys(nextErrors).length === 0;
   }
 
+  function expandBuilder() {
+    setExpanded(true);
+    // The trigger unmounts, so hand focus to the form rather than dropping it.
+    requestAnimationFrame(() => formRef.current?.focus({ preventScroll: true }));
+  }
+
   function submitRoadmap() {
     if (!validate()) {
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -97,7 +105,7 @@ export function ProjectScopeBuilder() {
         <div className="mb-12 grid gap-6 border-b border-ink/15 pb-9 lg:grid-cols-[1fr_0.7fr] lg:items-end">
           <div>
             <p className="eyebrow">Project scope builder</p>
-            <h2 id="scope-builder-title" className="m-0 max-w-2xl text-[clamp(30px,4vw,48px)] font-semibold leading-[1.08] tracking-[-0.04em] text-ink">
+            <h2 id="scope-builder-title" className="m-0 max-w-2xl text-[clamp(30px,4vw,48px)] font-display font-normal leading-[1.08] tracking-[-0.01em] text-ink">
               Turn an ambitious idea into a clear starting point.
             </h2>
           </div>
@@ -106,8 +114,31 @@ export function ProjectScopeBuilder() {
           </p>
         </div>
 
-        <div className="grid items-start gap-10 xl:grid-cols-[minmax(0,1.18fr)_minmax(390px,0.82fr)] xl:gap-12">
-          <form id="project-scope-form" ref={formRef} onSubmit={(event) => { event.preventDefault(); submitRoadmap(); }} noValidate className="min-w-0 scroll-mt-28">
+        {!expanded && (
+          <div className="rounded-2xl border border-ink/15 bg-white p-6 lg:hidden">
+            <ol className="m-0 grid list-none gap-3 p-0">
+              {["Pick the services you need", "Tell us your business stage", "Choose your main goal"].map((step, index) => (
+                <li key={step} className="flex items-center gap-3 text-[15px] text-ink">
+                  <span className="grid size-7 shrink-0 place-items-center rounded-full bg-accent-soft text-xs font-semibold text-accent-deep">{index + 1}</span>
+                  {step}
+                </li>
+              ))}
+            </ol>
+            <p className="mb-5 mt-4 text-sm leading-6 text-muted">You get a suggested timeline, team and plan as you go. It takes about a minute.</p>
+            <button
+              type="button"
+              onClick={expandBuilder}
+              aria-expanded={false}
+              aria-controls="project-scope-builder"
+              className="button w-full"
+            >
+              Start planning <ArrowRight size={17} aria-hidden="true" />
+            </button>
+          </div>
+        )}
+
+        <div id="project-scope-builder" className={`${expanded ? "grid" : "hidden lg:grid"} items-start gap-10 xl:grid-cols-[minmax(0,1.18fr)_minmax(390px,0.82fr)] xl:gap-12`}>
+          <form id="project-scope-form" ref={formRef} tabIndex={-1} onSubmit={(event) => { event.preventDefault(); submitRoadmap(); }} noValidate className="min-w-0 scroll-mt-28 outline-none">
             <FormSection number="01" title="Required services" description="Select every capability your project needs.">
               <div className="grid gap-3 md:grid-cols-2">
                 {services.map((service) => (

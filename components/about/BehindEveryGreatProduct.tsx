@@ -149,7 +149,7 @@ export function BehindEveryGreatProduct() {
             <p className="mb-6 text-xs font-semibold uppercase tracking-label text-accent">
               Behind every great product
             </p>
-            <h2 id="behind-product-title" className="m-0 max-w-xl text-[clamp(36px,4.6vw,62px)] font-semibold leading-[1.04] tracking-display text-balance">
+            <h2 id="behind-product-title" className="m-0 max-w-xl text-[clamp(36px,4.6vw,62px)] font-display font-normal leading-[1.04] tracking-[-0.01em] text-balance">
               Great products aren&apos;t designed.
               <span className="mt-2 block text-muted">They&apos;re carefully constructed.</span>
             </h2>
@@ -318,9 +318,9 @@ function PolishedInterface() {
       <div className="grid h-[calc(100%-36px)] grid-rows-[1fr_auto] p-[clamp(14px,3vw,28px)]">
         <div className="grid items-center gap-5 sm:grid-cols-[1.08fr_0.92fr]">
           <div>
-            <span data-polish-mark className="block translate-y-2 text-xs font-semibold uppercase tracking-label text-accent opacity-0">Independent product studio</span>
-            <h3 data-polish-mark className="mb-0 mt-3 translate-y-2 text-[clamp(21px,3.5vw,40px)] font-semibold leading-[0.98] tracking-display opacity-0">Ideas shaped<br />into impact.</h3>
-            <p data-polish-mark className="mb-0 mt-3 max-w-[28ch] translate-y-2 text-xs leading-[1.6] text-muted-mid opacity-0 sm:text-xs">Strategy, design and engineering aligned around one clear business outcome.</p>
+            <span data-polish-mark className="block translate-y-2 text-xs font-semibold uppercase tracking-label text-accent opacity-0">AI &amp; digital agency</span>
+            <h3 data-polish-mark className="mb-0 mt-3 translate-y-2 text-[clamp(21px,3.5vw,40px)] font-display font-normal leading-[0.98] tracking-[-0.01em] opacity-0">Websites and AI<br /><em>that work for you.</em></h3>
+            <p data-polish-mark className="mb-0 mt-3 max-w-[28ch] translate-y-2 text-xs leading-[1.6] text-muted-mid opacity-0 sm:text-xs">Design, development and automation aligned around one clear business outcome.</p>
             <span data-polish-mark className="mt-4 inline-flex translate-y-2 rounded-full bg-accent px-3 py-2 text-xs font-semibold opacity-0">Start a project ↗</span>
           </div>
           <div data-polish-mark className="relative aspect-square translate-y-2 overflow-hidden rounded-xl bg-ink p-4 text-white opacity-0">

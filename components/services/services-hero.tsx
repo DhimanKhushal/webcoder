@@ -77,8 +77,8 @@ export function ServicesHero() {
             className="services-hero-description"
             variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } }}
           >
-            From strategy and design to development and growth, we create digital
-            experiences that help modern businesses perform, connect and scale.
+            AI automation, websites, design and marketing from one team. Built to
+            save your people time and bring in more customers.
           </motion.p>
           <motion.div
             className="services-hero-actions"

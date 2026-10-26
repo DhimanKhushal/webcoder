@@ -2,16 +2,14 @@
 
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { motion } from "framer-motion";
 import { ProjectArtwork } from "@/components/project-artwork";
-import { caseStudyMetrics } from "@/lib/services-page-data";
 
 export function FeaturedCaseStudy() {
   return (
     <section className="featured-service-case section">
       <div className="services-page-container">
-        <p className="eyebrow">Featured Result</p>
-        <h2 className="services-editorial-heading">Services that create measurable results.</h2>
+        <p className="eyebrow">Featured project</p>
+        <h2 className="services-editorial-heading">From a dated site to a sharper, faster launch.</h2>
         <div className="case-study-layout">
           <div className="case-study-mockups">
             <div className="case-browser">
@@ -52,21 +50,6 @@ export function FeaturedCaseStudy() {
               <small>Solution</small>
               <p>We redesigned the complete digital experience, simplified the user journey, improved the visual hierarchy and developed a faster, conversion-focused website.</p>
             </div>
-            <div className="case-metrics">
-              {caseStudyMetrics.map((metric, index) => (
-                <motion.div
-                  key={metric.label}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.7 }}
-                  transition={{ duration: 0.55, delay: index * 0.08 }}
-                >
-                  <strong>{metric.value}</strong>
-                  <span>{metric.label}</span>
-                </motion.div>
-              ))}
-            </div>
-            <p className="case-disclaimer">Example case study metrics. Replace with verified project results before publishing.</p>
             <Link className="button button-dark" href="/projects/kingsland-digital">
               View Full Case Study <ArrowUpRight size={17} />
             </Link>

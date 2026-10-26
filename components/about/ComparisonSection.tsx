@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import { AnimatedDivider } from "./AnimatedDivider";
 import { ComparisonCard, type ComparisonItem } from "./ComparisonCard";
-import { Statistics } from "./Statistics";
 
 const typicalAgency: ComparisonItem[] = [
   { title: "Templates", description: "Generic layouts used repeatedly without considering the business.", icon: LayoutTemplate },
@@ -44,7 +43,7 @@ export function ComparisonSection() {
         >
           <div>
             <p className="eyebrow">Why Webcodder</p>
-            <h2 id="comparison-title" className="m-0 max-w-3xl text-[clamp(32px,4.3vw,54px)] font-semibold leading-[1.06] tracking-display text-ink text-balance">
+            <h2 id="comparison-title" className="m-0 max-w-3xl text-[clamp(32px,4.3vw,54px)] font-display font-normal leading-[1.06] tracking-[-0.01em] text-ink text-balance">
               Not every agency builds products. <span className="text-accent">We build digital growth systems.</span>
             </h2>
           </div>
@@ -73,7 +72,6 @@ export function ComparisonSection() {
         <p className="mx-auto mb-0 mt-6 max-w-2xl text-sm leading-6 text-muted">
           Choosing the right agency isn&apos;t about finding a vendor. It&apos;s about finding a long-term technology partner.
         </p>
-        <Statistics />
       </motion.div>
     </section>
   );
@@ -89,7 +87,7 @@ function ComparisonPanel({ title, subtitle, items, variant }: { title: string; s
             <p className={`m-0 text-xs font-semibold uppercase tracking-[0.14em] ${dark ? "text-white/35" : "text-accent"}`}>
               {dark ? "The old model" : "The Webcodder standard"}
             </p>
-            <h3 className="mb-0 mt-3 text-[clamp(26px,3vw,36px)] font-semibold leading-none tracking-[-0.035em]">{title}</h3>
+            <h3 className="mb-0 mt-3 text-[clamp(26px,3vw,36px)] font-display font-normal leading-none tracking-[-0.01em]">{title}</h3>
           </div>
           <p className={`m-0 hidden text-xs sm:block ${dark ? "text-white/35" : "text-muted"}`}>{subtitle}</p>
         </div>
