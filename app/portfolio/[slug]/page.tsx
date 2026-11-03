@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPortfolioCollection, getPortfolioPath, portfolioCollections } from "@/lib/portfolio";
+import { PortfolioDetail } from "@/components/portfolio/detail-renderer";
 
 type PortfolioRouteProps = {
   params: Promise<{ slug: string }>;
@@ -22,17 +23,16 @@ export async function generateMetadata({ params }: PortfolioRouteProps): Promise
     title: `${collection.title} Portfolio`,
     description: collection.summary,
     alternates: { canonical: getPortfolioPath(collection.slug) },
-    // Remove the noindex directive when these empty pages have real content.
+    // Keep detail pages out of search until campaign and ranking evidence is approved.
     robots: { index: false, follow: true },
   };
 }
 
 export default async function PortfolioDetailRoute({ params }: PortfolioRouteProps) {
   const { slug } = await params;
+  const collection = getPortfolioCollection(slug);
 
-  if (!getPortfolioCollection(slug)) notFound();
+  if (!collection) notFound();
 
-  // Intentionally empty for Simran's next implementation pass.
-  // See docs/portfolio-handoff.md for the approved seven-page scope.
-  return null;
+  return <PortfolioDetail collection={collection} />;
 }

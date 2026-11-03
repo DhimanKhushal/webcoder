@@ -18,6 +18,8 @@ export interface CaseStudy {
   industry: string;
   badge: string;
   image?: string;
+  /** Set only after the project's platform has been verified from its source. */
+  websiteTechnology?: "wordpress" | "custom-coded";
   heading: string;
   headingAccent: string;
   summary: string;
