@@ -29,6 +29,7 @@ const footerGroups = [
       ["About Us", "/about"],
       ["Our Process", "/about#how-we-work"],
       ["All Services", "/services"],
+      ["Portfolio", "/portfolio"],
       ["Projects", "/projects"],
       ["Contact Us", "/contact"],
     ],
