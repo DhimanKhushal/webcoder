@@ -39,9 +39,11 @@ export function WebsitePortfolioBrowser() {
   }, [technology, niche, query]);
 
   const hasFilters = technology !== "all" || niche !== "all" || query.trim().length > 0;
-  const enquiryContext = niche !== "all" ? niche : query.trim() || "website development";
-  const emptyMessage = niche !== "all"
-    ? `We can scope a responsive website, clear content structure and a relevant enquiry path for a ${niche} business, then confirm platform fit before recommending a build.`
+  const requestedNiche = query.trim() || (niche !== "all" ? niche : "");
+  const requestedTechnology = technologyOptions.find((item) => item.value === technology)?.label;
+  const enquiryContext = [requestedNiche || "website development", technology !== "all" ? requestedTechnology : ""].filter(Boolean).join(" / ");
+  const emptyMessage = requestedNiche
+    ? `For ${requestedNiche}, we can plan a responsive website with relevant service or product pages, clear navigation and a focused enquiry or booking journey. We'll confirm your needs and platform fit before recommending the build.`
     : "Tell us the industry, audience and goal. We can outline website design and development options, then confirm platform fit before recommending a build.";
 
   return (
@@ -127,7 +129,7 @@ export function WebsitePortfolioBrowser() {
       ) : (
         <section className={styles.nicheEmptyState} aria-labelledby="niche-empty-title">
           <p className={styles.detailEyebrow}>No verified match yet</p>
-          <h3 id="niche-empty-title">Let&apos;s find the right website examples for {niche !== "all" ? niche : query.trim() || technologyOptions.find((item) => item.value === technology)?.label}.</h3>
+          <h3 id="niche-empty-title">Let&apos;s find the right website examples for {requestedNiche || requestedTechnology}.</h3>
           <p>{emptyMessage}</p>
           <Link className={styles.detailAction} href={portfolioEnquiry(enquiryContext)}>
             Ask about this niche <ArrowUpRight size={18} aria-hidden="true" />

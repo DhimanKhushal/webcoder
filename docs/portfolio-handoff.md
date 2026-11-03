@@ -1,7 +1,8 @@
 # Portfolio handoff for Simran
 
-The portfolio hub is implemented, and six detail URLs are scaffolded. Their page
-bodies are intentionally empty, retaining the shared site header and footer.
+The portfolio hub and all six detail pages are implemented. Simran's
+`88fade2` adds the shared ads experience, SMO and SEO pages, and website filtering.
+Marketing assets and performance evidence remain placeholders pending team data.
 Continue from the latest `main`, which also contains the current site's earlier
 service pages, case studies, typography and AI-first positioning updates.
 
@@ -43,8 +44,13 @@ without navigating through the hub. Include an optional link back to `/portfolio
 ## Implementation entry points
 
 - `app/portfolio/page.tsx`: hub sections and collection links.
-- `app/portfolio/[slug]/page.tsx`: all six empty detail routes, route validation,
-  metadata and canonical URLs. Replace its `return null` with the detail renderer.
+- `app/portfolio/[slug]/page.tsx`: all six detail routes, route validation,
+  metadata and canonical URLs, delegating to the shared detail renderer.
+- `components/portfolio/detail-renderer.tsx`: SMO, SEO and Websites sections.
+- `components/portfolio/meta-ads-experience.tsx`: shared Meta, Google and LinkedIn
+  format previews, keyboard-accessible tabs and campaign placeholders.
+- `components/portfolio/website-portfolio-browser.tsx`: build-type and niche filters,
+  text search and contextual no-match enquiry.
 - `lib/portfolio.ts`: shared collection data, valid slugs and URL helpers.
 - `components/portfolio/portfolio.module.css`: hub styles using existing brand tokens.
 - `components/portfolio/portfolio-preview.tsx`: interactive website preview in the hero.
@@ -88,8 +94,15 @@ Full typecheck currently has the pre-existing `worker/index.ts` error:
 
 Verify all seven URLs, an unknown portfolio slug returning 404, direct navigation,
 hub links, images and mobile/desktop layouts. Use Ego Lite for browser QA.
-Empty detail pages deliberately have `noindex` metadata; remove that directive
-when their actual portfolio content is ready for public indexing.
+The detail pages deliberately retain `noindex` metadata; remove that directive
+when their real assets and evidence are approved for public indexing.
+
+Review fixes: detail-page text has a 12px minimum; a typed niche now carries into
+the no-match explanation, and the enquiry includes the selected build type.
+Route checks, source lint and the production build pass. Browser QA covers all six
+detail pages at 1440, 768 and 390px, all ads tabs and keyboard controls, website
+search, niche/build filters and the no-match state. Build-type filters currently
+show no matches until the team verifies and populates `websiteTechnology`.
 
 Pushing GitHub `main` does not itself deploy the live VPS. Production deployment
 is a separate step; this handoff does not change the running production service.
