@@ -136,6 +136,7 @@ export function Footer() {
             <Image
               className="footer-brand-logo"
               src="/webcodder-logo.png"
+              unoptimized
               alt="Webcodder"
               width={1000}
               height={250}

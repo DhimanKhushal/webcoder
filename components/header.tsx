@@ -41,6 +41,7 @@ function HeaderNavigation({ pathname }: { pathname: string }) {
             <Image
               className="brand-logo-image"
               src="/webcodder-logo.png"
+              unoptimized
               alt="Webcodder"
               width={1000}
               height={250}
