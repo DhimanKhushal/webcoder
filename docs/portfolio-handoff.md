@@ -43,14 +43,28 @@ without navigating through the hub. Include an optional link back to `/portfolio
 
 ## Implementation entry points
 
+- Every detail page now has eight main sections. Preserve the full-width dark hero,
+  light introduction, gray showcase and dark evidence/experience rhythm. Later
+  sections explain the scope, process, FAQs and enquiry. Keep each service's
+  narrative specific rather than copying the SMO section content.
 - `app/portfolio/page.tsx`: hub sections and collection links.
 - `app/portfolio/[slug]/page.tsx`: all six detail routes, route validation,
   metadata and canonical URLs, delegating to the shared detail renderer.
-- `components/portfolio/detail-renderer.tsx`: SMO, SEO and Websites sections.
+- `components/portfolio/detail-renderer.tsx`: typed dispatch to the page families.
+- `components/portfolio/detail-layout.tsx` and `detail-layout.module.css`: shared
+  full-width hero, section colours, scope rows, process, FAQ and enquiry components.
+- `components/portfolio/smo-portfolio.tsx` and `social-format-showcase.tsx`: SMO
+  galleries, video areas and keyboard-accessible Posts/Carousels/Stories previews.
+- `components/portfolio/seo-portfolio.tsx`: SEO scope, relevant project and clearly
+  separated keyword/ranking evidence placeholders.
+- `components/portfolio/paid-portfolio.tsx` and `lib/paid-portfolios.ts`: typed
+  platform-specific content for the three advertising pages.
+- `components/portfolio/website-portfolio.tsx`: build options, project browser,
+  website experience, process and industry links.
 - `components/portfolio/meta-ads-experience.tsx`: shared Meta, Google and LinkedIn
   format previews, keyboard-accessible tabs and campaign placeholders.
 - `components/portfolio/website-portfolio-browser.tsx`: build-type and niche filters,
-  text search and contextual no-match enquiry.
+  text search, filter reset and contextual no-match enquiry.
 - `lib/portfolio.ts`: shared collection data, valid slugs and URL helpers.
 - `components/portfolio/portfolio.module.css`: hub styles using existing brand tokens.
 - `components/portfolio/portfolio-preview.tsx`: interactive website preview in the hero.

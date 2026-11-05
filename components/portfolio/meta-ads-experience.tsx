@@ -177,7 +177,7 @@ function MagneticContactLink() {
   );
 }
 
-export function PaidAdsExperience({ platform: platformId }: { platform: CampaignPlatform }) {
+export function PaidAdsExperience({ platform: platformId, embedded = false }: { platform: CampaignPlatform; embedded?: boolean }) {
   const platform = platformContent[platformId];
   const [activeView, setActiveView] = useState<ViewId>(platform.views[0].id);
   const reducedMotion = useReducedMotion();
@@ -202,18 +202,18 @@ export function PaidAdsExperience({ platform: platformId }: { platform: Campaign
 
   return (
     <>
-      <section className={styles.metaExperience} aria-label={`Interactive ${platform.name} campaign browser`}>
-        <div className={styles.metaExperienceIntro} data-reveal>
+      <section className={`${styles.metaExperience} ${embedded ? styles.metaExperienceEmbedded : ""}`} aria-label={`Interactive ${platform.name} campaign browser`}>
+        {!embedded && <div className={styles.metaExperienceIntro} data-reveal>
           <div><p className={styles.detailEyebrow}>Explore the formats</p><h2>{platform.experienceTitle}</h2></div>
           <p>{platform.experienceCopy}</p>
-        </div>
+        </div>}
 
-        <motion.div className={styles.metaBrowserParallax} ref={browserRef} style={{ y: browserParallax }}>
+        <motion.div className={styles.metaBrowserParallax} ref={browserRef} style={embedded ? undefined : { y: browserParallax }}>
         <div className={styles.metaBrowser} data-reveal>
           <div className={styles.metaBrowserChrome}>
             <div className={styles.metaWindowDots} aria-hidden="true"><i /><i /><i /></div>
             <div className={styles.metaAddress}><span>webcodder.com</span><span>{platform.browserPath}</span></div>
-            <span className={styles.metaPreviewLabel}>CAMPAIGN PREVIEW</span>
+            <span className={styles.metaPreviewLabel}>Campaign preview</span>
           </div>
           <div className={styles.metaTabBar} role="tablist" aria-label={`${platform.name} format preview`}>
             {platform.views.map(({ id, label, icon: Icon }, index) => (
@@ -276,7 +276,7 @@ export function PaidAdsExperience({ platform: platformId }: { platform: Campaign
         </motion.div>
       </section>
 
-      <section className={styles.metaCampaignClose} data-reveal>
+      {!embedded && <section className={styles.metaCampaignClose} data-reveal>
         <div>
           <p className={styles.detailEyebrow}>{platform.closeEyebrow}</p>
           <h2>{platform.closeTitle}</h2>
@@ -284,7 +284,7 @@ export function PaidAdsExperience({ platform: platformId }: { platform: Campaign
         </div>
         <MagneticContactLink />
         <span className={styles.metaCloseMark} aria-hidden="true"><ArrowDownRight size={52} strokeWidth={1} /></span>
-      </section>
+      </section>}
     </>
   );
 }

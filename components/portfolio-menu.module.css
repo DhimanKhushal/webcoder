@@ -1,0 +1,21 @@
+.introLabel { color: var(--color-muted); font-size: 14px; line-height: 1.5; }
+.groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; padding: 28px; }
+.group { min-width: 0; }
+.group h2 { margin: 0 0 16px; color: var(--color-ink); font: 500 18px/1.35 var(--font-dm-sans), sans-serif; letter-spacing: -0.02em; }
+.group ul { display: grid; gap: 6px; padding: 0; margin: 0; list-style: none; }
+.panel .entry { display: flex; min-height: 76px; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 12px; margin-inline: -12px; border-radius: 8px; color: var(--color-ink); transition: background-color 180ms ease; }
+.entry > span { display: grid; gap: 6px; }
+.entry strong { font-size: 15px; font-weight: 500; line-height: 1.4; }
+.entry > span > span { max-width: 34ch; color: var(--color-muted); font-size: 13px; line-height: 1.6; }
+.entry > svg { flex-shrink: 0; margin-top: 2px; color: var(--color-accent-deep); }
+.panel .entry:hover, .panel .entry[aria-current="page"] { background: var(--color-accent-soft); color: var(--color-ink); }
+.panel a:focus-visible { outline: 2px solid var(--color-accent-deep); outline-offset: 2px; }
+.mobilePanel .groups { grid-template-columns: 1fr; gap: 24px; padding: 18px; }
+.mobilePanel .group h2 { margin-bottom: 8px; font-size: 16px; }
+.mobilePanel .introLabel { display: none; }
+.mobilePanel .entry { min-height: 64px; padding-block: 10px; }
+@media (min-width: 821px) and (max-width: 1100px) {
+  .groups { gap: 24px; padding: 22px; }
+  .group h2 { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .entry { transition: none; } }

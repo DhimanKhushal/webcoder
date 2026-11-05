@@ -6,12 +6,12 @@ import styles from "./portfolio.module.css";
 
 export function FeaturedProjects() {
   return (
-    <div className={styles.projectGrid}>
+    <div className={`${styles.projectGrid} ${styles.featuredGallery}`}>
       {caseStudies.map((project) => (
-        <Link key={project.slug} href={getCaseStudyPath(project.slug)} className={styles.project}>
+        <Link key={project.slug} href={getCaseStudyPath(project.slug)} className={styles.project} data-reveal>
           <div className={styles.projectImage}>
             <ProjectArtwork src={project.image} alt={`${project.client} website design`} label={project.client}
-              sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 1248px) 46vw, 564px" />
+              sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 1248px) 55vw, 670px" />
           </div>
           <div className={styles.projectCaption}>
             <div><h3>{project.client}</h3><p>{project.industry}</p></div>

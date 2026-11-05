@@ -16,7 +16,7 @@ const technologyOptions: { value: TechnologyFilter; label: string }[] = [
   { value: "custom-coded", label: "Custom-coded" },
 ];
 
-export function WebsitePortfolioBrowser() {
+export function WebsitePortfolioBrowser({ showcase = false }: { showcase?: boolean }) {
   const [technology, setTechnology] = useState<TechnologyFilter>("all");
   const [niche, setNiche] = useState("all");
   const [query, setQuery] = useState("");
@@ -47,7 +47,7 @@ export function WebsitePortfolioBrowser() {
     : "Tell us the industry, audience and goal. We can outline website design and development options, then confirm platform fit before recommending a build.";
 
   return (
-    <div className={styles.websiteBrowser}>
+    <div className={`${styles.websiteBrowser} ${showcase ? styles.websiteBrowserShowcase : ""}`}>
       <div className={styles.websiteFilters}>
         <fieldset className={styles.filterGroup}>
           <legend>Build type</legend>
@@ -100,6 +100,7 @@ export function WebsitePortfolioBrowser() {
         {visibleStudies.length === 1 ? "1 website project" : `${visibleStudies.length} website projects`}
         {hasFilters ? " match these filters." : " in the portfolio."}
       </p>
+      {hasFilters && <button className={styles.resetFilters} type="button" onClick={() => { setTechnology("all"); setNiche("all"); setQuery(""); }}>Reset filters</button>}
 
       {visibleStudies.length > 0 ? (
         <div className={styles.projectGrid}>
@@ -128,8 +129,8 @@ export function WebsitePortfolioBrowser() {
         </div>
       ) : (
         <section className={styles.nicheEmptyState} aria-labelledby="niche-empty-title">
-          <p className={styles.detailEyebrow}>No verified match yet</p>
-          <h3 id="niche-empty-title">Let&apos;s find the right website examples for {requestedNiche || requestedTechnology}.</h3>
+          <h3 id="niche-empty-title">Let&apos;s shape your website.</h3>
+          <p>No verified {requestedNiche || requestedTechnology?.toLowerCase()} project matches these filters yet.</p>
           <p>{emptyMessage}</p>
           <Link className={styles.detailAction} href={portfolioEnquiry(enquiryContext)}>
             Ask about this niche <ArrowUpRight size={18} aria-hidden="true" />
